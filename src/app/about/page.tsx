@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
@@ -46,6 +47,17 @@ export default function AboutPage() {
 
           <aside className="md:col-span-4 md:col-start-9">
             <Reveal delay={0.1}>
+              <div className="relative mb-8 overflow-hidden rounded-2xl border border-border bg-bg-subtle">
+                <Image
+                  src="/profile.jpeg"
+                  alt={`Portrait of ${site.fullName}`}
+                  width={800}
+                  height={800}
+                  priority
+                  sizes="(min-width: 768px) 32vw, 100vw"
+                  className="h-auto w-full object-cover"
+                />
+              </div>
               <div className="space-y-6 border-t border-border pt-6 text-sm">
                 <div>
                   <p className="label mb-1.5">Based in</p>
@@ -168,12 +180,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Recognition */}
+      {/* Education & credentials */}
       <section className="container py-24 md:py-32">
         <SectionHeading
           number="(04)"
-          eyebrow="Recognition"
-          title="A few notable mentions."
+          eyebrow="Education & Credentials"
+          title="Where I learned the craft."
         />
         <ul className="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border md:mt-16 md:grid-cols-2 lg:grid-cols-4">
           {recognition.map((r, i) => (

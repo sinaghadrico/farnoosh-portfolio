@@ -17,10 +17,10 @@ export const site: SiteConfig = {
   location: "Dubai · Remote",
   availability: "Available for select engagements — Summer 2026",
   socials: [
-    { label: "Read.cv", href: "https://read.cv/farnoosh" },
-    { label: "Are.na", href: "https://are.na/farnoosh" },
-    { label: "Dribbble", href: "https://dribbble.com/farnoosh" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/farnoosh" },
+    { label: "LinkedIn", href: "https://linkedin.com/in/farnoosh-bagheri" },
+    { label: "Behance", href: "https://behance.net/farnooshbagheri" },
+    { label: "Dribbble", href: "https://dribbble.com/farnooshbagheri" },
+    { label: "Read.cv", href: "https://read.cv/farnooshbagheri" },
   ],
   ogImage: "/og.png",
 };

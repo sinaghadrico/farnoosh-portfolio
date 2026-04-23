@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Hero } from "@/components/Hero";
 import { ProjectCard } from "@/components/ProjectCard";
@@ -167,6 +168,16 @@ export default function HomePage() {
               A short note from{" "}
               <span className="italic text-fg-muted">the studio.</span>
             </h2>
+            <div className="mt-10 overflow-hidden rounded-2xl border border-border bg-bg-subtle md:mt-12 md:max-w-sm">
+              <Image
+                src="/profile.jpeg"
+                alt={`Portrait of ${site.fullName}`}
+                width={800}
+                height={800}
+                sizes="(min-width: 768px) 24rem, 100vw"
+                className="h-auto w-full object-cover"
+              />
+            </div>
           </Reveal>
           <Reveal delay={0.05} className="md:col-span-7">
             <div className="space-y-5 text-pretty text-base text-fg md:text-lg">

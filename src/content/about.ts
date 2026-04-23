@@ -2,36 +2,43 @@ import type { Experience, Recognition } from "@/types";
 
 export const aboutCopy = {
   intro: [
-    "I'm a product designer with eight years of experience shaping software for the financial, healthcare, and creative tooling industries. I care about the small interactions — the ones that compound into trust.",
-    "Before going independent, I led design at two early-stage startups and worked across the surface area of the product: research, interaction design, prototyping, and shipping the build alongside engineers.",
-    "I think of design as a craft: structured, evidence-led, and quietly opinionated. I bring the same attention to a checkout flow as I do to a marketing site headline.",
+    "I'm a UX/UI designer based in Dubai. I've always been a good listener — and that's the trait I lean on most in this work. Empathising with users, sitting with their pain points, and translating what I learn into solutions that are desirable, feasible, and viable.",
+    "My path into design started in front-end development. Building someone else's screens taught me how product decisions feel from both sides of the handoff — and that hands-on experience is what sparked my interest in design itself.",
+    "Today I work end-to-end: research, ideation, wireframes, prototypes, and polished UI. I'm looking forward to growing inside teams where I can learn from designers ahead of me — and bring my full energy to the problem in front of us.",
   ],
   philosophy: [
     {
-      title: "Calm by default",
-      body: "Software should reduce cognitive load, not add to it. I design for clarity, restraint, and a single primary action per screen.",
+      title: "Listen before drawing",
+      body: "Good design starts with the user's actual pain — not the one we assume. I lean on desk research, interviews, and surveys to make sure the brief is the right brief.",
     },
     {
-      title: "Systems over screens",
-      body: "I build durable patterns and tokens that scale with a product. The work I leave behind should be easier to extend than to replace.",
+      title: "Desirable, feasible, viable",
+      body: "A great solution sits at the intersection of what users want, what the team can build, and what the business can sustain. Every decision is checked against all three.",
     },
     {
-      title: "Evidence over opinion",
-      body: "I prototype early and test with real users. Strong intuition earns its keep; data settles disagreements.",
+      title: "Designed to be built",
+      body: "A front-end background means I think in components, states, and tokens — not just hero shots. The work I hand off is meant to be implemented without surprises.",
     },
     {
-      title: "Close to the build",
-      body: "I design in the browser when it makes sense and stay in the loop through implementation. Pixel-perfect handoffs are a team effort.",
+      title: "Iterate with evidence",
+      body: "Prototype early, test with real users, and let what we hear shape the next round. Strong intuition earns its keep; data settles disagreements.",
     },
   ],
   capabilities: [
-    "Product Strategy",
-    "Interaction Design",
-    "Design Systems",
-    "Prototyping",
     "User Research",
-    "Brand Identity",
-    "Motion & Micro-interactions",
+    "User Interviews",
+    "Surveys",
+    "Usability Testing",
+    "Persona Development",
+    "User Journey Mapping",
+    "Information Architecture",
+    "User Flows",
+    "Wireframing",
+    "Prototyping",
+    "UI Design",
+    "Design Systems",
+    "Style Guides",
+    "Mobile & Web",
     "Front-end Collaboration",
   ],
 };
@@ -39,37 +46,37 @@ export const aboutCopy = {
 export const experience: Experience[] = [
   {
     company: "Independent Practice",
-    role: "Product Designer",
-    period: "2023 — Present",
+    role: "UX/UI Designer",
+    period: "2024 — Present",
     description:
-      "Partnering with founders and product leaders to design end-to-end experiences across fintech, health, and developer tooling.",
+      "Working on case studies and freelance briefs across the full design lifecycle — from research and information architecture to wireframes, prototypes, and final UI.",
   },
   {
-    company: "Northwind Labs",
-    role: "Lead Product Designer",
-    period: "2020 — 2023",
+    company: "Spiral Academy",
+    role: "UX & UI Design Course",
+    period: "2023",
     description:
-      "Led the design org through Series A and B. Owned the design system, hiring, and the roadmap for the core analytics product.",
+      "Comprehensive end-to-end UX & UI program. Covered usability testing, surveys, persona development, user flows, information architecture, wireframing, style guides, and high-fidelity UI design.",
   },
   {
-    company: "Studio Cardinal",
-    role: "Senior Designer",
-    period: "2018 — 2020",
+    company: "Front-End Developer",
+    role: "Web & App Development",
+    period: "2021 — 2022",
     description:
-      "Designed mobile and web products for clients including a national broadcaster and two consumer fintech startups.",
+      "Built and shipped front-end interfaces for a range of websites and applications. The hands-on experience with implementation is what drew me into design.",
   },
   {
-    company: "Helix Agency",
-    role: "Product Designer",
-    period: "2016 — 2018",
+    company: "IAUCTB",
+    role: "BSc Computer Science · Software Engineering",
+    period: "2014 — 2018",
     description:
-      "Cut my teeth on shipping cycles, research sprints, and brand work for early-stage software companies.",
+      "Bachelor's degree in Computer Science with a software engineering specialisation. The foundation underneath everything that came after.",
   },
 ];
 
 export const recognition: Recognition[] = [
-  { title: "Site of the Day", source: "Awwwards", year: "2024" },
-  { title: "Best Independent Practice", source: "Brand New Awards", year: "2024" },
-  { title: "Honorable Mention — UX Design", source: "FWA", year: "2023" },
-  { title: "Featured Designer", source: "Sidebar", year: "2023" },
+  { title: "UX & UI Design", source: "Spiral Academy", year: "2023" },
+  { title: "IELTS Academic — Band 7", source: "British Council", year: "2023" },
+  { title: "BSc Computer Science", source: "IAUCTB", year: "2018" },
+  { title: "Software Engineering", source: "Specialisation", year: "2018" },
 ];
