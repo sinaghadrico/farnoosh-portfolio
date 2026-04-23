@@ -10,11 +10,11 @@ const ratioMap: Record<NonNullable<ProjectImage["ratio"]>, string> = {
 };
 
 const seedColors = [
-  ["#F2D2BD", "#D2553E"], // peach → vermilion
-  ["#E2DED3", "#5A6B52"], // sand → olive
-  ["#D9D2C7", "#3E4A5C"], // bone → slate blue
-  ["#EFE0CE", "#A86B3D"], // cream → clay
-  ["#DCE3DA", "#1F2421"], // mist → ink
+  ["#E5E3FF", "#4F46E5"], // mist → iris
+  ["#DCDCD6", "#1A1A22"], // canvas → ink
+  ["#D8DEE9", "#3B4252"], // pale steel → graphite
+  ["#E6E2D9", "#525058"], // bone → slate
+  ["#D4D3E8", "#312E81"], // lavender → indigo
 ];
 
 function pickGradient(seed: string) {

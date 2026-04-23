@@ -18,8 +18,8 @@ export default async function Image() {
           justifyContent: "space-between",
           padding: "72px",
           background:
-            "radial-gradient(120% 120% at 0% 0%, #F2D2BD 0%, #FAF8F2 55%, #FAF8F2 100%)",
-          color: "#0E0E0C",
+            "radial-gradient(120% 120% at 0% 0%, #E5E3FF 0%, #F5F5F3 55%, #F5F5F3 100%)",
+          color: "#101014",
           fontFamily: "Georgia, serif",
         }}
       >
@@ -31,7 +31,7 @@ export default async function Image() {
             fontSize: "20px",
             letterSpacing: "0.18em",
             textTransform: "uppercase",
-            color: "#636058",
+            color: "#56555C",
           }}
         >
           <div
@@ -39,7 +39,7 @@ export default async function Image() {
               width: "10px",
               height: "10px",
               borderRadius: "999px",
-              background: "#D2553E",
+              background: "#4F46E5",
             }}
           />
           <span>Portfolio · 2026</span>
@@ -57,7 +57,7 @@ export default async function Image() {
           >
             <span>
               {site.fullName}
-              <span style={{ color: "#636058" }}> — {site.role}.</span>
+              <span style={{ color: "#84838A" }}> — {site.role}.</span>
             </span>
           </div>
           <div
@@ -66,7 +66,7 @@ export default async function Image() {
               fontSize: "30px",
               lineHeight: 1.3,
               maxWidth: "900px",
-              color: "#3a3833",
+              color: "#3F3E47",
               fontFamily: "Inter, system-ui, sans-serif",
             }}
           >
@@ -80,7 +80,7 @@ export default async function Image() {
             justifyContent: "space-between",
             alignItems: "flex-end",
             fontSize: "20px",
-            color: "#636058",
+            color: "#56555C",
             fontFamily: "Inter, system-ui, sans-serif",
           }}
         >

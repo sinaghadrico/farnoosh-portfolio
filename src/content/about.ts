@@ -45,15 +45,22 @@ export const aboutCopy = {
 
 export const experience: Experience[] = [
   {
-    company: "Independent Practice",
-    role: "UX/UI Designer",
-    period: "2024 — Present",
+    company: "Malek",
+    role: "Product Designer · Full-time",
+    period: "2025 — 2026",
     description:
-      "Working on case studies and freelance briefs across the full design lifecycle — from research and information architecture to wireframes, prototypes, and final UI.",
+      "Designed a blockchain-inspired fintech platform for fractional real estate — onboarding, end-to-end user journeys, dashboards for investors and agents, a tiered referral and reward system, and a BNPL model that lowered the entry barrier for retail investors.",
   },
   {
-    company: "Spiral Academy",
-    role: "UX & UI Design Course",
+    company: "Independent Practice",
+    role: "UX/UI Designer",
+    period: "2024",
+    description:
+      "Self-initiated case studies and freelance briefs across the full design lifecycle — from research and information architecture to wireframes, prototypes, and final UI.",
+  },
+  {
+    company: "Spiral Design Center",
+    role: "Practical UX/UI Design Course",
     period: "2023",
     description:
       "Comprehensive end-to-end UX & UI program. Covered usability testing, surveys, persona development, user flows, information architecture, wireframing, style guides, and high-fidelity UI design.",
@@ -66,17 +73,16 @@ export const experience: Experience[] = [
       "Built and shipped front-end interfaces for a range of websites and applications. The hands-on experience with implementation is what drew me into design.",
   },
   {
-    company: "IAUCTB",
-    role: "BSc Computer Science · Software Engineering",
+    company: "Azad University (IAU)",
+    role: "Bachelor's degree, Computer Engineering",
     period: "2014 — 2018",
     description:
-      "Bachelor's degree in Computer Science with a software engineering specialisation. The foundation underneath everything that came after.",
+      "Bachelor's degree in Computer Engineering. The foundation underneath everything that came after.",
   },
 ];
 
 export const recognition: Recognition[] = [
-  { title: "UX & UI Design", source: "Spiral Academy", year: "2023" },
-  { title: "IELTS Academic — Band 7", source: "British Council", year: "2023" },
-  { title: "BSc Computer Science", source: "IAUCTB", year: "2018" },
-  { title: "Software Engineering", source: "Specialisation", year: "2018" },
+  { title: "Practical UX/UI Design Course", source: "Spiral Design Center", year: "2023" },
+  { title: "IELTS Academic — Band 7.0", source: "IELTS Official", year: "2023" },
+  { title: "Bachelor's degree, Computer Engineering", source: "Azad University (IAU)", year: "2018" },
 ];

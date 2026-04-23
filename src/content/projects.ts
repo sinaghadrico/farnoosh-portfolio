@@ -8,6 +8,77 @@ import type { Project } from "@/types";
  */
 export const projects: Project[] = [
   {
+    slug: "malek",
+    title: "Malek",
+    tagline: "Designing fractional real-estate ownership for the next generation of investors.",
+    summary:
+      "An end-to-end product design role on a blockchain-inspired fintech platform that lets people buy, trade, and swap micro-shares of property — with onboarding that earns trust quickly and a BNPL model that lowers the entry point for retail investors.",
+    year: "2025 — 2026",
+    client: "Malek",
+    role: "Product Designer (Full-time, Remote)",
+    duration: "1 year",
+    team: ["In-house product, design & engineering team"],
+    tags: ["Fintech", "Web3", "Mobile & Web", "Design System"],
+    tools: ["Figma", "FigJam", "Notion", "Maze"],
+    featured: true,
+    cover: {
+      alt: "Malek fractional real-estate platform — investor and agent surfaces",
+      ratio: "video",
+      span: "full",
+    },
+    problem:
+      "Real estate is a high-barrier asset class — expensive, slow, and largely inaccessible to retail investors. Malek's brief was to redesign that experience around fractional ownership: micro-units traded on a blockchain-inspired platform, with onboarding that earned trust quickly, and rewards that kept users coming back.",
+    process: [
+      {
+        heading: "Discovery & onboarding research",
+        body: "User interviews and iterative testing to find where prospective investors lost confidence — most consistently at KYC, asset comprehension, and the first trade. Every drop-off pointed at a moment where the platform asked for trust before it had earned it.",
+      },
+      {
+        heading: "End-to-end user journeys",
+        body: "Mapped flows for two distinct audiences: retail investors browsing and trading micro-shares, and real-estate agents managing inventory and pipeline. The two sides needed different defaults, different data, and different ways of measuring success.",
+      },
+      {
+        heading: "Stepper, dashboards & design system",
+        body: "Designed a step-by-step onboarding stepper that improved completion rates, dashboards that gave both users and agents a clear next action, and a design system the engineering team could extend without me in the room.",
+      },
+      {
+        heading: "BNPL & tiered rewards",
+        body: "Collaborated with product and engineering to ship Buy Now, Pay Later for property purchases, and a tiered referral system using proprietary reward tokens — with multipliers that increased based on user grading levels, driving acquisition and long-term loyalty.",
+      },
+    ],
+    solution:
+      "A platform where buying property feels closer to buying a stock — clearer onboarding, lower entry through BNPL, dashboards on both sides of the marketplace, and a referral-and-reward loop that turns first-time users into long-term participants.",
+    results: [
+      { label: "Surfaces designed", value: "Mobile + Web" },
+      { label: "Audience segments", value: "Investors + Agents" },
+      { label: "Payment models", value: "BNPL + Crypto-fiat" },
+      { label: "Engagement loop", value: "Tiered token rewards" },
+    ],
+    gallery: [
+      {
+        alt: "Onboarding stepper reducing drop-offs at KYC and first-trade moments",
+        ratio: "portrait",
+        span: "regular",
+      },
+      {
+        alt: "Investor dashboard showing portfolio of micro-share holdings",
+        ratio: "portrait",
+        span: "regular",
+      },
+      {
+        alt: "Agent inventory and pipeline dashboard",
+        ratio: "wide",
+        span: "full",
+      },
+      {
+        alt: "Tiered referral and reward token system with grading multipliers",
+        ratio: "video",
+        span: "wide",
+      },
+    ],
+    link: { label: "View on Figma", href: "https://figma.com" },
+  },
+  {
     slug: "castbox",
     title: "Castbox",
     tagline: "Bringing the community back into a podcast app.",
