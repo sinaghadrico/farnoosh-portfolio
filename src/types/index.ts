@@ -83,4 +83,5 @@ export type Recognition = {
   title: string;
   source: string;
   year: string;
+  emoji?: string;
 };

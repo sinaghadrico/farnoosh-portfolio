@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { site } from "@/content/site";
+import { SocialIcon } from "./SocialIcon";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -43,11 +44,12 @@ export function Footer() {
               {site.socials.map((s) => (
                 <li key={s.href}>
                   <a
-                    className="link-hover inline-flex items-center gap-1"
+                    className="link-hover inline-flex items-center gap-2"
                     href={s.href}
                     target="_blank"
                     rel="noreferrer"
                   >
+                    <SocialIcon label={s.label} size={13} className="text-fg-muted" />
                     {s.label}
                     <ArrowUpRight size={11} className="opacity-50" />
                   </a>

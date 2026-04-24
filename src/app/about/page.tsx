@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 import { ButtonLink } from "@/components/Button";
 import { Tag } from "@/components/Tag";
 import { JsonLd } from "@/components/JsonLd";
+import { AnimatedPortrait } from "@/components/AnimatedPortrait";
+import { SocialIcon } from "@/components/SocialIcon";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
 import { aboutCopy, experience, recognition } from "@/content/about";
 import { site } from "@/content/site";
@@ -47,17 +48,13 @@ export default function AboutPage() {
 
           <aside className="md:col-span-4 md:col-start-9">
             <Reveal delay={0.1}>
-              <div className="relative mb-8 overflow-hidden rounded-2xl border border-border bg-bg-subtle">
-                <Image
-                  src="/profile.jpeg"
-                  alt={`Portrait of ${site.fullName}`}
-                  width={800}
-                  height={800}
-                  priority
-                  sizes="(min-width: 768px) 32vw, 100vw"
-                  className="h-auto w-full object-cover"
-                />
-              </div>
+              <AnimatedPortrait
+                src="/profile.jpeg"
+                alt={`Portrait of ${site.fullName}`}
+                priority
+                sizes="(min-width: 768px) 32vw, 100vw"
+                className="mb-10"
+              />
               <div className="space-y-6 border-t border-border pt-6 text-sm">
                 <div>
                   <p className="label mb-1.5">Based in</p>
@@ -75,15 +72,16 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <p className="label mb-2">Elsewhere</p>
-                  <ul className="space-y-1">
+                  <ul className="space-y-1.5">
                     {site.socials.map((s) => (
                       <li key={s.href}>
                         <a
-                          className="link-hover inline-flex items-center gap-1"
+                          className="link-hover inline-flex items-center gap-2"
                           href={s.href}
                           target="_blank"
                           rel="noreferrer"
                         >
+                          <SocialIcon label={s.label} size={14} className="text-fg-muted" />
                           {s.label}
                           <ArrowUpRight size={11} className="opacity-50" />
                         </a>
@@ -116,9 +114,14 @@ export default function AboutPage() {
               delay={i * 0.05}
               className="bg-bg p-8 md:p-10"
             >
-              <p className="font-mono text-xs text-fg-muted">
-                P/{String(i + 1).padStart(2, "0")}
-              </p>
+              <div className="flex items-center justify-between">
+                <p className="font-mono text-xs text-fg-muted">
+                  P/{String(i + 1).padStart(2, "0")}
+                </p>
+                <span aria-hidden className="text-2xl md:text-3xl">
+                  {p.emoji}
+                </span>
+              </div>
               <h3 className="mt-4 font-serif text-2xl tracking-tight md:text-3xl">
                 {p.title}
               </h3>
@@ -195,7 +198,14 @@ export default function AboutPage() {
               delay={i * 0.05}
               className="bg-bg p-6 md:p-8"
             >
-              <p className="font-mono text-xs text-accent">{r.year}</p>
+              <div className="flex items-center justify-between">
+                <p className="font-mono text-xs text-accent">{r.year}</p>
+                {r.emoji && (
+                  <span aria-hidden className="text-2xl">
+                    {r.emoji}
+                  </span>
+                )}
+              </div>
               <h3 className="mt-3 font-serif text-lg tracking-tight">{r.title}</h3>
               <p className="text-sm text-fg-muted">{r.source}</p>
             </Reveal>
@@ -207,10 +217,11 @@ export default function AboutPage() {
       <section className="container py-24 md:py-32">
         <Reveal className="grid gap-8 rounded-2xl border border-border bg-bg-subtle p-10 md:grid-cols-12 md:items-end md:p-16">
           <div className="md:col-span-8">
-            <p className="label mb-3">Working together</p>
+            <p className="label mb-3">✨ Working together</p>
             <h2 className="font-serif text-display-md text-balance">
               Got a project that deserves the time?{" "}
-              <span className="italic text-fg-muted">Let&rsquo;s talk.</span>
+              <span className="italic text-fg-muted">Let&rsquo;s talk.</span>{" "}
+              <span aria-hidden>💬</span>
             </h2>
           </div>
           <div className="md:col-span-4 md:text-right">

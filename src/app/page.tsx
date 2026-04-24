@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Hero } from "@/components/Hero";
 import { ProjectCard } from "@/components/ProjectCard";
@@ -9,6 +8,7 @@ import { Marquee } from "@/components/Marquee";
 import { Reveal } from "@/components/Reveal";
 import { ButtonLink } from "@/components/Button";
 import { Tag } from "@/components/Tag";
+import { AnimatedPortrait } from "@/components/AnimatedPortrait";
 import { getFeaturedProjects } from "@/content/projects";
 import { aboutCopy } from "@/content/about";
 import { site } from "@/content/site";
@@ -22,21 +22,25 @@ export const metadata: Metadata = {
 const services = [
   {
     no: "01",
+    emoji: "✏️",
     title: "Product design",
     body: "End-to-end design for software products: from research and IA to interaction design and shipped UI.",
   },
   {
     no: "02",
+    emoji: "🧩",
     title: "Design systems",
     body: "Tokens, components, and documentation that scale with the team — built to be easy to extend and easy to leave.",
   },
   {
     no: "03",
+    emoji: "🎨",
     title: "Brand & identity",
     body: "The verbal and visual surface of the product — names, voice, type, color, and the marketing site that introduces them.",
   },
   {
     no: "04",
+    emoji: "🧭",
     title: "Advisory",
     body: "Embedded design leadership for early-stage teams: hiring, process, design reviews, and roadmap shaping.",
   },
@@ -129,6 +133,9 @@ export default function HomePage() {
                 <div className="flex items-baseline gap-3 text-fg-muted">
                   <span className="font-mono text-xs">{s.no}</span>
                   <span className="h-px flex-1 bg-border" />
+                  <span aria-hidden className="text-2xl">
+                    {s.emoji}
+                  </span>
                 </div>
                 <h3 className="mt-6 font-serif text-2xl tracking-tight md:text-3xl">
                   {s.title}
@@ -168,16 +175,12 @@ export default function HomePage() {
               A short note from{" "}
               <span className="italic text-fg-muted">the studio.</span>
             </h2>
-            <div className="mt-10 overflow-hidden rounded-2xl border border-border bg-bg-subtle md:mt-12 md:max-w-sm">
-              <Image
-                src="/profile.jpeg"
-                alt={`Portrait of ${site.fullName}`}
-                width={800}
-                height={800}
-                sizes="(min-width: 768px) 24rem, 100vw"
-                className="h-auto w-full object-cover"
-              />
-            </div>
+            <AnimatedPortrait
+              src="/profile.jpeg"
+              alt={`Portrait of ${site.fullName}`}
+              sizes="(min-width: 768px) 24rem, 100vw"
+              className="mt-10 md:mt-12 md:max-w-sm"
+            />
           </Reveal>
           <Reveal delay={0.05} className="md:col-span-7">
             <div className="space-y-5 text-pretty text-base text-fg md:text-lg">

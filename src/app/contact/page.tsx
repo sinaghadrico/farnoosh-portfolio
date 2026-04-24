@@ -4,6 +4,7 @@ import { Reveal } from "@/components/Reveal";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
 import { CopyEmailButton } from "@/components/CopyEmailButton";
+import { SocialIcon } from "@/components/SocialIcon";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -48,7 +49,8 @@ export default function ContactPage() {
         </p>
         <h1 className="font-serif text-display-2xl text-balance md:max-w-[14ch]">
           Let&rsquo;s build something{" "}
-          <span className="italic text-fg-muted">worth using.</span>
+          <span className="italic text-fg-muted">worth using.</span>{" "}
+          <span aria-hidden>🛠️</span>
         </h1>
         <p className="mt-8 max-w-prose text-base text-fg-muted md:text-lg">
           The best way to start is a short note: a few sentences about your
@@ -92,20 +94,20 @@ export default function ContactPage() {
                 <p className="label mb-1.5">Status</p>
                 <p className="text-sm">
                   <span className="mr-2 inline-block h-1.5 w-1.5 translate-y-[-1px] rounded-full bg-emerald-500 align-middle" />
-                  Available
+                  Available 🟢
                 </p>
               </div>
               <div>
                 <p className="label mb-1.5">Response time</p>
-                <p className="text-sm">~ 2 business days</p>
+                <p className="text-sm">⚡ ~ 2 business days</p>
               </div>
               <div>
                 <p className="label mb-1.5">Location</p>
-                <p className="text-sm">{site.location}</p>
+                <p className="text-sm">📍 {site.location}</p>
               </div>
               <div>
                 <p className="label mb-1.5">Booking</p>
-                <p className="text-sm">{site.availability}</p>
+                <p className="text-sm">📅 {site.availability}</p>
               </div>
             </div>
           </div>
@@ -125,7 +127,14 @@ export default function ContactPage() {
                   rel="noreferrer"
                   className="group flex items-center justify-between bg-bg p-6 transition-colors duration-300 hover:bg-bg-subtle"
                 >
-                  <span className="font-serif text-xl">{s.label}</span>
+                  <span className="inline-flex items-center gap-3 font-serif text-xl">
+                    <SocialIcon
+                      label={s.label}
+                      size={18}
+                      className="text-fg-muted transition-colors duration-300 group-hover:text-accent"
+                    />
+                    {s.label}
+                  </span>
                   <ArrowUpRight
                     size={16}
                     className="text-fg-muted transition-all duration-500 ease-out-expo group-hover:translate-x-1 group-hover:rotate-45 group-hover:text-accent"
@@ -140,7 +149,7 @@ export default function ContactPage() {
       {/* FAQ */}
       <section className="container py-24 md:py-32">
         <Reveal>
-          <p className="label mb-6">Frequently asked</p>
+          <p className="label mb-6">💬 Frequently asked</p>
           <h2 className="font-serif text-display-md text-balance md:max-w-[20ch]">
             Quick answers, in case they help.
           </h2>

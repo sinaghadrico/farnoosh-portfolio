@@ -8,18 +8,22 @@ export const aboutCopy = {
   ],
   philosophy: [
     {
+      emoji: "👂",
       title: "Listen before drawing",
       body: "Good design starts with the user's actual pain — not the one we assume. I lean on desk research, interviews, and surveys to make sure the brief is the right brief.",
     },
     {
+      emoji: "⚖️",
       title: "Desirable, feasible, viable",
       body: "A great solution sits at the intersection of what users want, what the team can build, and what the business can sustain. Every decision is checked against all three.",
     },
     {
+      emoji: "🧱",
       title: "Designed to be built",
       body: "A front-end background means I think in components, states, and tokens — not just hero shots. The work I hand off is meant to be implemented without surprises.",
     },
     {
+      emoji: "🔁",
       title: "Iterate with evidence",
       body: "Prototype early, test with real users, and let what we hear shape the next round. Strong intuition earns its keep; data settles disagreements.",
     },
@@ -82,7 +86,7 @@ export const experience: Experience[] = [
 ];
 
 export const recognition: Recognition[] = [
-  { title: "Practical UX/UI Design Course", source: "Spiral Design Center", year: "2023" },
-  { title: "IELTS Academic — Band 7.0", source: "IELTS Official", year: "2023" },
-  { title: "Bachelor's degree, Computer Engineering", source: "Azad University (IAU)", year: "2018" },
+  { emoji: "🎨", title: "Practical UX/UI Design Course", source: "Spiral Design Center", year: "2023" },
+  { emoji: "🌐", title: "IELTS Academic — Band 7.0", source: "IELTS Official", year: "2023" },
+  { emoji: "🎓", title: "Bachelor's degree, Computer Engineering", source: "Azad University (IAU)", year: "2018" },
 ];
