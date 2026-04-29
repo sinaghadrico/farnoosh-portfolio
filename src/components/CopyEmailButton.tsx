@@ -29,7 +29,7 @@ export function CopyEmailButton({ email }: { email: string }) {
         </>
       ) : (
         <>
-          <Copy size={14} /> Copy address
+          <Copy size={14} /> Copy Email address
         </>
       )}
     </button>

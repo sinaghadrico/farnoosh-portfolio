@@ -15,10 +15,10 @@ export function Footer() {
               Open to one new engagement this season. Let&rsquo;s talk.
             </h2>
             <Link
-              href="/contact"
+              href="/#contact"
               className="group mt-6 inline-flex items-center gap-2 rounded-full border border-fg px-5 py-3 text-sm transition-all duration-300 hover:bg-fg hover:text-bg"
             >
-              Start a project
+              Contact me
               <ArrowUpRight
                 size={14}
                 className="transition-transform duration-500 ease-out-expo group-hover:rotate-45"
@@ -49,7 +49,11 @@ export function Footer() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <SocialIcon label={s.label} size={13} className="text-fg-muted" />
+                    <SocialIcon
+                      label={s.label}
+                      size={13}
+                      className="text-fg-muted"
+                    />
                     {s.label}
                     <ArrowUpRight size={11} className="opacity-50" />
                   </a>

@@ -7,12 +7,17 @@ const config: Config = {
     container: {
       center: true,
       padding: {
-        DEFAULT: "1.5rem",
-        sm: "2rem",
-        lg: "3rem",
-        xl: "4rem",
+        DEFAULT: "2rem",
+        sm: "2.5rem",
+        md: "3rem",
+        lg: "4rem",
+        xl: "5rem",
       },
       screens: {
+        sm: "600px",
+        md: "740px",
+        lg: "960px",
+        xl: "1180px",
         "2xl": "1440px",
       },
     },

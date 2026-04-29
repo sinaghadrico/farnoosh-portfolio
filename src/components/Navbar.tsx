@@ -6,13 +6,13 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { site } from "@/content/site";
+import { Logo } from "@/components/Logo";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const nav = [
-  { href: "/", label: "Index", number: "01" },
-  { href: "/projects", label: "Work", number: "02" },
-  { href: "/about", label: "About", number: "03" },
-  { href: "/contact", label: "Contact", number: "04" },
+  { href: "/#work", label: "Work" },
+  { href: "/#about", label: "About me" },
+  { href: "/#experience", label: "Experience" },
 ];
 
 export function Navbar() {
@@ -39,8 +39,11 @@ export function Navbar() {
     };
   }, [mobileOpen]);
 
-  const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const isActive = (href: string) => {
+    // Anchor links on the home page — only "active" when actually at "/"
+    if (href.startsWith("/#")) return false;
+    return href === "/" ? pathname === "/" : pathname.startsWith(href);
+  };
 
   return (
     <>
@@ -49,57 +52,43 @@ export function Navbar() {
           "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out-expo",
           scrolled
             ? "border-b border-border bg-bg/80 backdrop-blur-xl"
-            : "border-b border-transparent bg-transparent"
+            : "border-b border-transparent bg-transparent",
         )}
       >
         <div className="container flex h-16 items-center justify-between md:h-20">
           <Link
             href="/"
-            className="group flex items-center gap-2 font-serif text-lg tracking-tight"
+            className="group inline-flex items-center transition-opacity duration-300 hover:opacity-80"
             aria-label={`${site.fullName} — Home`}
           >
-            <span
-              aria-hidden
-              className="inline-block h-2 w-2 rounded-full bg-accent transition-transform duration-500 ease-out-expo group-hover:scale-150"
-            />
-            <span className="font-medium">{site.name}</span>
-            <span className="hidden text-fg-muted md:inline">— {site.role}</span>
+            <Logo />
           </Link>
 
-          <nav className="hidden md:block" aria-label="Primary">
-            <ul className="flex items-center gap-1">
-              {nav.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className={cn(
-                      "group relative inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm transition-colors duration-300",
-                      isActive(item.href)
-                        ? "text-fg"
-                        : "text-fg-muted hover:text-fg"
-                    )}
-                  >
-                    <span
+          <div className="flex items-center gap-2 md:gap-4">
+            <nav className="hidden md:block" aria-label="Primary">
+              <ul className="flex items-center gap-1">
+                {nav.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
                       className={cn(
-                        "font-mono text-[10px] tracking-widest",
-                        isActive(item.href) ? "text-accent" : "text-fg-subtle"
+                        "group relative inline-flex items-center rounded-full px-5 py-2 text-base font-medium transition-colors duration-300",
+                        isActive(item.href)
+                          ? "text-fg"
+                          : "text-fg-muted hover:text-fg",
                       )}
                     >
-                      {item.number}
-                    </span>
-                    <span>{item.label}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <div className="flex items-center gap-3">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
             <Link
-              href="/contact"
-              className="hidden rounded-full border border-border px-4 py-2 text-sm transition-colors duration-300 hover:border-fg hover:bg-fg hover:text-bg md:inline-flex"
+              href="/#contact"
+              className="hidden rounded-full border border-fg bg-fg px-4 py-2 text-sm font-medium text-bg transition-colors duration-300 hover:bg-bg hover:text-fg md:inline-flex"
             >
-              Start a project
+              Contact me
             </Link>
             <ThemeToggle />
             <button
@@ -119,7 +108,9 @@ export function Navbar() {
       <div
         className={cn(
           "fixed inset-0 z-40 bg-bg transition-opacity duration-300 md:hidden",
-          mobileOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+          mobileOpen
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0",
         )}
         aria-hidden={!mobileOpen}
       >
@@ -131,14 +122,11 @@ export function Navbar() {
                   <Link
                     href={item.href}
                     className={cn(
-                      "flex items-baseline justify-between border-b border-border py-5 text-3xl font-serif transition-colors",
-                      isActive(item.href) ? "text-fg" : "text-fg-muted"
+                      "block border-b border-border py-5 text-3xl font-serif transition-colors",
+                      isActive(item.href) ? "text-fg" : "text-fg-muted",
                     )}
                   >
-                    <span>{item.label}</span>
-                    <span className="font-mono text-xs text-fg-subtle">
-                      {item.number}
-                    </span>
+                    {item.label}
                   </Link>
                 </li>
               ))}

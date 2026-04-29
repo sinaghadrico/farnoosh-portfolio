@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Hero } from "@/components/Hero";
 import { ProjectCard } from "@/components/ProjectCard";
-import { SectionHeading } from "@/components/SectionHeading";
-import { Marquee } from "@/components/Marquee";
+import { UnderlinedTitle } from "@/components/UnderlinedTitle";
 import { Reveal } from "@/components/Reveal";
 import { ButtonLink } from "@/components/Button";
-import { Tag } from "@/components/Tag";
 import { AnimatedPortrait } from "@/components/AnimatedPortrait";
+import { CopyEmailButton } from "@/components/CopyEmailButton";
+import { SocialIcon } from "@/components/SocialIcon";
 import { getFeaturedProjects } from "@/content/projects";
-import { aboutCopy } from "@/content/about";
+import { aboutCopy, experience, recognition } from "@/content/about";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -19,33 +18,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-const services = [
-  {
-    no: "01",
-    emoji: "✏️",
-    title: "Product design",
-    body: "End-to-end design for software products: from research and IA to interaction design and shipped UI.",
-  },
-  {
-    no: "02",
-    emoji: "🧩",
-    title: "Design systems",
-    body: "Tokens, components, and documentation that scale with the team — built to be easy to extend and easy to leave.",
-  },
-  {
-    no: "03",
-    emoji: "🎨",
-    title: "Brand & identity",
-    body: "The verbal and visual surface of the product — names, voice, type, color, and the marketing site that introduces them.",
-  },
-  {
-    no: "04",
-    emoji: "🧭",
-    title: "Advisory",
-    body: "Embedded design leadership for early-stage teams: hiring, process, design reviews, and roadmap shaping.",
-  },
-];
-
 export default function HomePage() {
   const featured = getFeaturedProjects();
 
@@ -53,42 +25,17 @@ export default function HomePage() {
     <>
       <Hero />
 
-      {/* Marquee transition */}
-      <section aria-hidden className="border-y border-border bg-bg-subtle">
-        <Marquee
-          items={[
-            "Product Design",
-            "Design Systems",
-            "Interaction",
-            "Strategy",
-            "Independent Practice",
-            "Available 2026",
-          ]}
-        />
-      </section>
-
       {/* Selected work */}
       <section
+        id="work"
         aria-labelledby="work-heading"
-        className="container py-24 md:py-36"
+        className="container scroll-mt-24 py-24 md:py-36"
       >
-        <SectionHeading
-          number="(02)"
-          eyebrow="Selected Work"
-          title={
-            <>
-              A small body of work,{" "}
-              <span className="italic text-fg-muted">made carefully.</span>
-            </>
-          }
-          description="A handful of projects I'm proud to have shipped. Most are full case studies — a few are quieter."
-        />
+        <UnderlinedTitle id="work-heading" icon="💼">
+          My works
+        </UnderlinedTitle>
 
-        <h2 id="work-heading" className="sr-only">
-          Selected Work
-        </h2>
-
-        <ul className="mt-16 grid gap-x-8 gap-y-20 md:mt-24 md:grid-cols-2">
+        <ul className="mt-20 grid gap-x-8 gap-y-20 md:mt-24 md:grid-cols-2">
           {featured.map((project, i) => (
             <li key={project.slug} className={i % 2 ? "md:mt-24" : ""}>
               <ProjectCard project={project} index={i} priority={i < 2} />
@@ -96,107 +43,227 @@ export default function HomePage() {
           ))}
         </ul>
 
-        <Reveal className="mt-20 flex justify-center">
+        {/* <Reveal className="mt-20 flex justify-center">
           <ButtonLink href="/projects" variant="secondary" size="lg">
             View all projects
           </ButtonLink>
-        </Reveal>
+        </Reveal> */}
       </section>
 
-      {/* Services */}
+      {/* About — intro + portrait */}
       <section
-        aria-labelledby="services-heading"
-        className="border-t border-border bg-bg-subtle"
+        id="about"
+        aria-labelledby="about-heading"
+        className="scroll-mt-24 border-t border-border bg-bg-subtle"
       >
         <div className="container py-24 md:py-36">
-          <SectionHeading
-            number="(03)"
-            eyebrow="Practice"
-            title={
-              <>
-                What I do,{" "}
-                <span className="italic text-fg-muted">how I work.</span>
-              </>
-            }
-            description="Engagements typically run six to twelve weeks. I work with a small number of teams at a time so I can stay close to the build."
-          />
-          <h2 id="services-heading" className="sr-only">
-            Services
-          </h2>
-          <div className="mt-16 grid gap-px overflow-hidden rounded-lg border border-border bg-border md:mt-20 md:grid-cols-2">
-            {services.map((s, i) => (
-              <Reveal
-                key={s.no}
-                delay={i * 0.05}
-                className="bg-bg-subtle p-8 transition-colors duration-300 hover:bg-bg md:p-10"
-              >
-                <div className="flex items-baseline gap-3 text-fg-muted">
-                  <span className="font-mono text-xs">{s.no}</span>
-                  <span className="h-px flex-1 bg-border" />
-                  <span aria-hidden className="text-2xl">
-                    {s.emoji}
-                  </span>
-                </div>
-                <h3 className="mt-6 font-serif text-2xl tracking-tight md:text-3xl">
-                  {s.title}
-                </h3>
-                <p className="mt-3 max-w-md text-fg-muted">{s.body}</p>
-              </Reveal>
-            ))}
-          </div>
+          <UnderlinedTitle id="about-heading" icon="👋">
+            About me
+          </UnderlinedTitle>
 
-          <div className="mt-16 flex flex-wrap items-center gap-2">
-            <span className="label mr-3">Capabilities</span>
-            {aboutCopy.capabilities.map((c) => (
-              <Tag key={c} variant="outline">
-                {c}
-              </Tag>
-            ))}
+          <div className="mt-20 grid gap-12 md:mt-24 md:grid-cols-12 md:gap-16">
+            <Reveal className="md:col-span-7">
+              <div className="space-y-6 text-pretty text-base text-fg md:text-lg">
+                {aboutCopy.intro.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
+            </Reveal>
+
+            <aside className="md:col-span-4 md:col-start-9">
+              <Reveal delay={0.1}>
+                <AnimatedPortrait
+                  src="/profile.jpeg"
+                  alt={`Portrait of ${site.fullName}`}
+                  sizes="(min-width: 768px) 32vw, 100vw"
+                  className="mb-10"
+                />
+                <div className="space-y-6 border-t border-border pt-6 text-sm">
+                  <div>
+                    <p className="label mb-1.5">Based in</p>
+                    <p>{site.location}</p>
+                  </div>
+                  <div>
+                    <p className="label mb-1.5">Currently</p>
+                    <p>{site.availability}</p>
+                  </div>
+                  <div>
+                    <p className="label mb-1.5">Email</p>
+                    <a className="link-hover" href={`mailto:${site.email}`}>
+                      {site.email}
+                    </a>
+                  </div>
+                </div>
+              </Reveal>
+            </aside>
           </div>
         </div>
       </section>
 
-      {/* About preview */}
+      {/* Experience */}
       <section
-        aria-labelledby="about-preview-heading"
-        className="container py-24 md:py-36"
+        id="experience"
+        aria-labelledby="experience-heading"
+        className="container scroll-mt-24 py-24 md:py-32"
       >
-        <div className="grid gap-12 md:grid-cols-12 md:gap-16">
-          <Reveal className="md:col-span-5">
-            <p className="label mb-6 flex items-center gap-3">
-              <span className="text-fg-subtle">(04)</span>
-              <span className="h-px w-8 bg-fg-subtle/40" />
-              About
-            </p>
-            <h2
-              id="about-preview-heading"
-              className="font-serif text-display-lg text-balance"
+        <UnderlinedTitle id="experience-heading" icon="🚀">
+          My experience
+        </UnderlinedTitle>
+        <ul className="mt-20 space-y-px md:mt-24">
+          {experience.map((e, i) => (
+            <Reveal
+              as="li"
+              key={e.company + e.period}
+              delay={i * 0.04}
+              className="grid grid-cols-12 items-baseline gap-4 border-t border-border py-6 md:py-8"
             >
-              A short note from{" "}
-              <span className="italic text-fg-muted">the studio.</span>
-            </h2>
-            <AnimatedPortrait
-              src="/profile.jpeg"
-              alt={`Portrait of ${site.fullName}`}
-              sizes="(min-width: 768px) 24rem, 100vw"
-              className="mt-10 md:mt-12 md:max-w-sm"
-            />
-          </Reveal>
-          <Reveal delay={0.05} className="md:col-span-7">
-            <div className="space-y-5 text-pretty text-base text-fg md:text-lg">
-              {aboutCopy.intro.slice(0, 2).map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
-            </div>
-            <Link
-              href="/about"
-              className="link-hover mt-8 inline-flex items-center gap-2 text-sm"
-            >
-              Read more about me
-              <ArrowUpRight size={14} />
-            </Link>
-          </Reveal>
+              <div className="col-span-12 font-mono text-xs uppercase tracking-widest text-fg-muted md:col-span-3">
+                {e.period}
+              </div>
+              <div className="col-span-12 md:col-span-4">
+                <h3 className="font-serif text-xl tracking-tight md:text-2xl">
+                  {e.company}
+                </h3>
+                <p className="text-sm text-fg-muted">{e.role}</p>
+              </div>
+              <p className="col-span-12 text-fg-muted md:col-span-5">
+                {e.description}
+              </p>
+            </Reveal>
+          ))}
+        </ul>
+      </section>
+
+      {/* Education & credentials */}
+      <section
+        aria-labelledby="education-heading"
+        className="border-t border-border bg-bg-subtle"
+      >
+        <div className="container py-24 md:py-32">
+          <UnderlinedTitle id="education-heading" icon="🎓">
+            Education & credentials
+          </UnderlinedTitle>
+          <ul className="mt-20 grid gap-px overflow-hidden rounded-lg border border-border bg-border md:mt-24 md:grid-cols-3">
+            {recognition.map((r, i) => (
+              <Reveal
+                as="li"
+                key={r.title + r.year}
+                delay={i * 0.05}
+                className="bg-bg p-6 md:p-8"
+              >
+                <div className="flex items-center justify-between">
+                  <p className="font-mono text-xs text-accent">{r.year}</p>
+                  {r.emoji && (
+                    <span aria-hidden className="text-2xl">
+                      {r.emoji}
+                    </span>
+                  )}
+                </div>
+                <h3 className="mt-3 font-serif text-lg tracking-tight">
+                  {r.title}
+                </h3>
+                <p className="text-sm text-fg-muted">{r.source}</p>
+              </Reveal>
+            ))}
+          </ul>
         </div>
+      </section>
+
+      {/* Contact */}
+      <section
+        id="contact"
+        aria-labelledby="contact-heading"
+        className="container scroll-mt-24 py-24 md:py-36"
+      >
+        <UnderlinedTitle id="contact-heading" icon="📬">
+          Get in touch
+        </UnderlinedTitle>
+        <p className="mt-8 max-w-prose text-base text-fg-muted md:text-lg">
+          The best way to start is a short note: a few sentences about your
+          team, the problem, and the timeline you have in mind. I&rsquo;ll come
+          back within two business days.
+        </p>
+
+        <Reveal className="mt-16 md:mt-20">
+          <div className="group relative overflow-hidden rounded-2xl border border-border bg-bg-subtle p-8 md:p-12">
+            <div className="grid gap-8 md:grid-cols-12 md:items-end">
+              <div className="md:col-span-8">
+                <p className="label mb-4">Email</p>
+                <a
+                  href={`mailto:${site.email}`}
+                  className="block font-serif text-display-md tracking-tight transition-colors duration-300 hover:text-accent md:text-display-lg"
+                >
+                  {site.email}
+                </a>
+              </div>
+              <div className="flex flex-wrap items-center gap-3 md:col-span-4 md:justify-end">
+                <CopyEmailButton email={site.email} />
+                <a
+                  href={`mailto:${site.email}`}
+                  className="group inline-flex items-center gap-2 rounded-full border border-fg bg-fg px-5 py-3 text-sm text-bg transition-colors duration-300 hover:bg-bg hover:text-fg"
+                >
+                  Compose
+                  <ArrowUpRight
+                    size={14}
+                    className="transition-transform duration-500 ease-out-expo group-hover:rotate-45"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <div className="mt-12 grid grid-cols-2 gap-6 border-t border-border pt-6 md:grid-cols-4">
+              <div>
+                <p className="label mb-1.5">Status</p>
+                <p className="text-sm">
+                  <span className="mr-2 inline-block h-1.5 w-1.5 translate-y-[-1px] rounded-full bg-emerald-500 align-middle" />
+                  Available
+                </p>
+              </div>
+              <div>
+                <p className="label mb-1.5">Response time</p>
+                <p className="text-sm">~ 2 business days</p>
+              </div>
+              <div>
+                <p className="label mb-1.5">Location</p>
+                <p className="text-sm">{site.location}</p>
+              </div>
+              <div>
+                <p className="label mb-1.5">Booking</p>
+                <p className="text-sm">{site.availability}</p>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Elsewhere */}
+        <Reveal className="mt-12">
+          <p className="label mb-6">Elsewhere</p>
+          <ul className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-4">
+            {site.socials.map((s) => (
+              <li key={s.href}>
+                <a
+                  href={s.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex items-center justify-between bg-bg p-6 transition-colors duration-300 hover:bg-bg-subtle"
+                >
+                  <span className="inline-flex items-center gap-3 font-serif text-xl">
+                    <SocialIcon
+                      label={s.label}
+                      size={18}
+                      className="text-fg-muted transition-colors duration-300 group-hover:text-accent"
+                    />
+                    {s.label}
+                  </span>
+                  <ArrowUpRight
+                    size={16}
+                    className="text-fg-muted transition-all duration-500 ease-out-expo group-hover:translate-x-1 group-hover:rotate-45 group-hover:text-accent"
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </section>
     </>
   );

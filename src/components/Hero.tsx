@@ -7,6 +7,7 @@ import Link from "next/link";
 import { site } from "@/content/site";
 import { CloudHalos } from "./CloudHalos";
 import { FloatingShapes } from "./FloatingShapes";
+import { Marquee } from "./Marquee";
 import { WavingHand } from "./WavingHand";
 
 export function Hero() {
@@ -24,64 +25,37 @@ export function Hero() {
     }),
   };
 
-  const headlineWords = [
-    "Designing",
-    "calm,",
-    "considered",
-    "software",
-    "for",
-    "people.",
-  ];
+  const headlineWords = ["Hi,", "I'm", "Farnoosh."];
 
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative min-h-[100svh] overflow-hidden pt-28 md:pt-32"
+      className="relative flex min-h-[100svh] flex-col overflow-hidden pt-28 md:pt-32"
     >
       <CloudHalos />
       <FloatingShapes />
-      <div className="container relative">
-        {/* Top meta strip */}
-        <motion.div
-          initial={reduce ? false : { opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          className="grid grid-cols-2 gap-6 border-b border-border pb-6 text-xs md:grid-cols-4"
-        >
-          <div>
-            <p className="label mb-1.5">Designer</p>
-            <p className="text-fg">{site.fullName}</p>
-          </div>
-          <div>
-            <p className="label mb-1.5">Based in</p>
-            <p className="text-fg">{site.location}</p>
-          </div>
-          <div>
-            <p className="label mb-1.5">Index</p>
-            <p className="font-mono text-fg-muted">No. 04 / 2026</p>
-          </div>
-          <div>
-            <p className="label mb-1.5">Status</p>
-            <p className="inline-flex items-center text-fg">
-              <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-emerald-500" />
-              Available <span aria-hidden className="ml-1">🟢</span>
-            </p>
-          </div>
-        </motion.div>
-
+      <div className="container relative flex-1">
         {/* Main hero: text left, portrait right */}
-        <div className="mt-12 grid items-center gap-12 md:mt-16 md:grid-cols-12 md:gap-12 lg:gap-16">
+        <div className="grid items-center gap-12 md:grid-cols-12 md:gap-12 lg:gap-16">
           {/* Left: headline + copy + CTAs */}
-          <div className="md:col-span-8">
+          <div className="md:col-span-9">
             <h1
               id="hero-heading"
               className="font-serif text-display-md text-balance leading-[0.95] md:text-display-lg lg:text-display-xl"
             >
-              <span className="block">
-                {headlineWords.slice(0, 3).map((word, i) => (
-                  <span key={i} className="inline-block overflow-hidden align-bottom">
+              {headlineWords.map((word, i) => {
+                const isName = i === headlineWords.length - 1;
+                return (
+                  <span
+                    key={i}
+                    className="inline-block overflow-hidden align-bottom"
+                  >
                     <motion.span
-                      className="inline-block pr-[0.18em]"
+                      className={
+                        isName
+                          ? "inline-block bg-gradient-to-r from-[#F97316] via-[#E94BA4] to-[#9333EA] bg-clip-text pr-[0.18em] italic text-transparent"
+                          : "inline-block pr-[0.18em]"
+                      }
                       custom={i}
                       initial={reduce ? false : "hidden"}
                       animate="visible"
@@ -90,53 +64,46 @@ export function Hero() {
                       {word}
                     </motion.span>
                   </span>
-                ))}
-              </span>
-              <span className="block">
-                {headlineWords.slice(3).map((word, i) => (
-                  <span key={i} className="inline-block overflow-hidden align-bottom">
-                    <motion.span
-                      className="inline-block pr-[0.18em] italic text-fg-muted last:text-accent"
-                      custom={i + 3}
-                      initial={reduce ? false : "hidden"}
-                      animate="visible"
-                      variants={wordVariants}
-                    >
-                      {word}
-                    </motion.span>
-                  </span>
-                ))}
-              </span>
+                );
+              })}
             </h1>
 
             <motion.div
               initial={reduce ? false : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.65, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                delay: 0.65,
+                duration: 0.9,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               className="mt-6 md:mt-8"
             >
               <p className="max-w-prose text-balance text-base text-fg-muted md:text-lg">
-                <WavingHand className="mr-2 text-xl md:text-2xl" />
-                Hi, I&rsquo;m {site.name} — a {site.role.toLowerCase()} working with founders and
-                product teams on the surface area of digital products. Independent practice,
-                currently {site.location.split("·")[0].trim().toLowerCase()}.
+                <WavingHand className="mr-2 text-xl md:text-2xl" />A{" "}
+                {site.role.toLowerCase()}, based in{" "}
+                {site.location.split("·")[0].trim().toLowerCase()}, specializing
+                in simplifying complex workflows and turning ambiguous problems
+                into intuitive, scalable solutions through UX strategy and
+                systems thinking.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-3 md:mt-8">
                 <Link
                   href="/projects"
                   className="group inline-flex items-center gap-2 rounded-full border border-fg bg-fg px-5 py-3 text-sm text-bg transition-colors duration-300 hover:bg-bg hover:text-fg"
                 >
-                  View selected work
+                  View my work
                   <span className="inline-block transition-transform duration-500 ease-out-expo group-hover:translate-x-0.5">
                     →
                   </span>
                 </Link>
-                <Link
-                  href="/about"
-                  className="rounded-full border border-border px-5 py-3 text-sm transition-colors duration-300 hover:border-fg"
+                <a
+                  href="/FarnooshBagheri-Resume(Product Designer).pdf"
+                  download
+                  className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm transition-colors duration-300 hover:border-fg"
                 >
-                  About me
-                </Link>
+                  Download CV
+                  <span aria-hidden>↓</span>
+                </a>
               </div>
             </motion.div>
           </div>
@@ -146,7 +113,7 @@ export function Hero() {
             initial={reduce ? false : { opacity: 0, scale: 0.92, y: 24 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="relative md:col-span-4 md:justify-self-end"
+            className="relative mx-auto w-full max-w-[260px] md:col-span-3 md:max-w-none md:justify-self-end"
           >
             <span
               aria-hidden
@@ -170,10 +137,10 @@ export function Hero() {
               <Image
                 src="/personal.JPG"
                 alt={`Portrait of ${site.fullName}`}
-                width={720}
-                height={900}
+                width={560}
+                height={700}
                 priority
-                sizes="(min-width: 768px) 32vw, 80vw"
+                sizes="(min-width: 768px) 22vw, 60vw"
                 className="h-auto w-full object-cover"
               />
             </motion.div>
@@ -189,7 +156,12 @@ export function Hero() {
             <motion.div
               aria-hidden
               animate={reduce ? undefined : { y: [0, 6, 0], rotate: [0, 6, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.5,
+              }}
               className="absolute -right-3 bottom-10 hidden rounded-full border border-border bg-bg px-3 py-2 shadow-md md:block"
             >
               <span className="text-xl">🎨</span>
@@ -202,13 +174,30 @@ export function Hero() {
           initial={reduce ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
-          className="mt-24 flex items-center justify-center gap-3 pb-8 text-fg-muted md:mt-32"
+          className="mt-12 flex items-center justify-center gap-3 pb-6 text-fg-muted md:mt-16"
         >
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em]">
-            Selected work below
+          <span className="font-mono text-base uppercase tracking-[0.3em] md:text-lg">
+            My work below
           </span>
-          <ArrowDown size={14} className="animate-bounce" />
+          <ArrowDown size={24} className="animate-bounce" />
         </motion.div>
+      </div>
+
+      {/* Marquee strip — sits at the bottom of the hero viewport */}
+      <div
+        aria-hidden
+        className="relative mt-auto border-y border-border bg-bg-subtle"
+      >
+        <Marquee
+          items={[
+            "Product Design",
+            "Design Systems",
+            "Interaction",
+            "Strategy",
+            "Independent Practice",
+            "Available 2026",
+          ]}
+        />
       </div>
     </section>
   );

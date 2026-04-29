@@ -12,10 +12,10 @@ export const site: SiteConfig = {
     "Designing calm, considered software for the people who use it every day.",
   description:
     "Farnoosh Bagheri is an independent product designer crafting digital products for early-stage startups and established teams. Specializing in interaction design, design systems, and product strategy.",
-  url: "https://farnoosh.design",
-  email: "hello@farnoosh.design",
-  location: "Dubai · Remote",
-  availability: "Available for select engagements — Summer 2026",
+  url: "https://farnooshbagheri.com",
+  email: "hello@farnooshbagheri.com",
+  location: "Dubai",
+  availability: "Available for new projects",
   socials: [
     { label: "LinkedIn", href: "https://linkedin.com/in/farnoosh-bagheri" },
     { label: "Behance", href: "https://behance.net/farnooshbagheri" },

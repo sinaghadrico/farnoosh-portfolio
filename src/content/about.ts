@@ -2,9 +2,11 @@ import type { Experience, Recognition } from "@/types";
 
 export const aboutCopy = {
   intro: [
-    "I'm a UX/UI designer based in Dubai. I've always been a good listener — and that's the trait I lean on most in this work. Empathising with users, sitting with their pain points, and translating what I learn into solutions that are desirable, feasible, and viable.",
-    "My path into design started in front-end development. Building someone else's screens taught me how product decisions feel from both sides of the handoff — and that hands-on experience is what sparked my interest in design itself.",
-    "Today I work end-to-end: research, ideation, wireframes, prototypes, and polished UI. I'm looking forward to growing inside teams where I can learn from designers ahead of me — and bring my full energy to the problem in front of us.",
+    "🎨 I'm a Product Designer specializing in simplifying complex workflows for B2B SaaS products and marketplaces.",
+    "💪 I'm particularly strong in critical thinking, problem discovery through deep user empathy, conducting user research and analysis, and turning insights into scalable design solutions and polished UI execution.",
+    "🤝 I approach design through strong cross-functional collaboration with designers, engineers, and product managers to balance user needs with business goals and ensure a desirable, feasible, and viable product.",
+    "💼 Over the past few years, I've worked as a UI/UX Designer on a property tokenization fintech product, as well as multiple freelance UX/UI projects, primarily in the media and transportation spaces. My background in computer science and frontend development has strengthened my systems thinking and problem-solving skills.",
+    "🟢 I'm looking for opportunities in UX/UI Design and UX Research roles within collaborative B2B environments and marketplaces, where I can reduce user friction, improve efficiency, and contribute to product strategy and decision-making.",
   ],
   philosophy: [
     {
@@ -50,43 +52,51 @@ export const aboutCopy = {
 export const experience: Experience[] = [
   {
     company: "Malek",
-    role: "Product Designer · Full-time",
+    role: "Product Designer · Full-time, Remote",
     period: "2025 — 2026",
     description:
-      "Designed a blockchain-inspired fintech platform for fractional real estate — onboarding, end-to-end user journeys, dashboards for investors and agents, a tiered referral and reward system, and a BNPL model that lowered the entry barrier for retail investors.",
+      "Designed a blockchain-inspired fintech platform for fractional real estate — micro-unit asset trading across mobile and desktop. Built end-to-end user journeys, investor and agent dashboards, a stepper-based onboarding flow that lifted task completion, a tiered referral and reward-token system, and a BNPL model that lowered the entry barrier for retail investors. Also collaborated on a property-conversion feature with crypto-to-fiat payments.",
   },
   {
-    company: "Independent Practice",
-    role: "UX/UI Designer",
-    period: "2024",
+    company: "MarziUXD",
+    role: "UX Design Fellow",
+    period: "2025",
     description:
-      "Self-initiated case studies and freelance briefs across the full design lifecycle — from research and information architecture to wireframes, prototypes, and final UI.",
+      "🏆 Selected Talent. Chosen as a UX Design Fellow at MarziUXD based on consistent high performance across a 10-week UX Challenge — recognised for problem-solving, product thinking, and high-quality execution.",
   },
   {
-    company: "Spiral Design Center",
-    role: "Practical UX/UI Design Course",
-    period: "2023",
+    company: "Freelance",
+    role: "UI/UX Designer",
+    period: "2024 — 2025",
     description:
-      "Comprehensive end-to-end UX & UI program. Covered usability testing, surveys, persona development, user flows, information architecture, wireframing, style guides, and high-fidelity UI design.",
+      "Delivered end-to-end UX/UI solutions across web and mobile — from research and ideation through prototyping to final design. Skills: UX Research, Data Analysis, and more.",
   },
   {
-    company: "Front-End Developer",
-    role: "Web & App Development",
+    company: "Freelance",
+    role: "Frontend Developer",
     period: "2021 — 2022",
     description:
-      "Built and shipped front-end interfaces for a range of websites and applications. The hands-on experience with implementation is what drew me into design.",
-  },
-  {
-    company: "Azad University (IAU)",
-    role: "Bachelor's degree, Computer Engineering",
-    period: "2014 — 2018",
-    description:
-      "Bachelor's degree in Computer Engineering. The foundation underneath everything that came after.",
+      "Built responsive, high-performance web applications with HTML, CSS, JavaScript, and Angular. Optimised layout, accessibility, and responsiveness across devices; collaborated in an agile team using Git; developed complex dashboards for data-heavy products that helped users manage multi-step workflows and make informed decisions.",
   },
 ];
 
 export const recognition: Recognition[] = [
-  { emoji: "🎨", title: "Practical UX/UI Design Course", source: "Spiral Design Center", year: "2023" },
-  { emoji: "🌐", title: "IELTS Academic — Band 7.0", source: "IELTS Official", year: "2023" },
-  { emoji: "🎓", title: "Bachelor's degree, Computer Engineering", source: "Azad University (IAU)", year: "2018" },
+  {
+    emoji: "🎨",
+    title: "Practical UX/UI Design Course",
+    source: "Spiral Design Center",
+    year: "2023",
+  },
+  {
+    emoji: "🌐",
+    title: "IELTS Academic — Band 7.0",
+    source: "IELTS Official",
+    year: "2023",
+  },
+  {
+    emoji: "🎓",
+    title: "Bachelor's degree, Computer Engineering",
+    source: "Azad University (IAU)",
+    year: "2018",
+  },
 ];
