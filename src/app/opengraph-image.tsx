@@ -22,35 +22,6 @@ export default async function Image() {
           position: "relative",
         }}
       >
-        {/* Decorative gradient blob — top right */}
-        <div
-          style={{
-            position: "absolute",
-            top: -200,
-            right: -150,
-            width: 600,
-            height: 600,
-            borderRadius: "50%",
-            background:
-              "radial-gradient(closest-side, rgba(249,123,170,0.45), rgba(249,123,170,0) 70%)",
-            display: "flex",
-          }}
-        />
-        {/* Decorative gradient blob — bottom left */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: -180,
-            left: -120,
-            width: 520,
-            height: 520,
-            borderRadius: "50%",
-            background:
-              "radial-gradient(closest-side, rgba(123,107,240,0.4), rgba(123,107,240,0) 70%)",
-            display: "flex",
-          }}
-        />
-
         {/* Top row: logo + label */}
         <div
           style={{
