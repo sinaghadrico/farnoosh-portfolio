@@ -145,27 +145,6 @@ export function Hero() {
               />
             </motion.div>
 
-            <motion.div
-              aria-hidden
-              animate={reduce ? undefined : { y: [0, -8, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -left-4 top-6 hidden rounded-2xl border border-border bg-bg px-3 py-2 shadow-md md:block"
-            >
-              <span className="text-2xl">✨</span>
-            </motion.div>
-            <motion.div
-              aria-hidden
-              animate={reduce ? undefined : { y: [0, 6, 0], rotate: [0, 6, 0] }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.5,
-              }}
-              className="absolute -right-3 bottom-10 hidden rounded-full border border-border bg-bg px-3 py-2 shadow-md md:block"
-            >
-              <span className="text-xl">🎨</span>
-            </motion.div>
           </motion.div>
         </div>
 
