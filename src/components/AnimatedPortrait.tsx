@@ -43,18 +43,17 @@ export function AnimatedPortrait({
 
       {/* Portrait container */}
       <motion.div
-        className="relative overflow-hidden rounded-2xl border border-border bg-bg-subtle"
+        className="relative h-full overflow-hidden rounded-2xl border border-border bg-bg-subtle"
         animate={reduce ? {} : { scale: hover ? 1.015 : 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
         <Image
           src={src}
           alt={alt}
-          width={800}
-          height={800}
+          fill
           priority={priority}
           sizes={sizes}
-          className="h-auto w-full object-cover"
+          className="object-cover object-top"
         />
 
         {/* Sparkle on hover */}

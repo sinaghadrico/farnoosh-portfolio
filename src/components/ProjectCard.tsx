@@ -13,6 +13,7 @@ type Props = {
   index?: number;
   variant?: Variant;
   priority?: boolean;
+  disableLink?: boolean;
 };
 
 export function ProjectCard({
@@ -20,43 +21,34 @@ export function ProjectCard({
   index,
   variant = "feature",
   priority,
+  disableLink = false,
 }: Props) {
   if (variant === "list") {
     return <ProjectListRow project={project} index={index} />;
   }
 
+  const Wrapper = disableLink ? "div" : Link;
+  const wrapperProps = disableLink
+    ? { className: "block cursor-default" }
+    : { href: `/projects/${project.slug}`, className: "block focus:outline-none" };
+
   return (
-    <Reveal as="article" className="group">
-      <Link
-        href={`/projects/${project.slug}`}
-        className="block focus:outline-none"
-      >
-        <PlaceholderImage
-          image={project.cover}
-          seed={project.slug}
-          priority={priority}
-          sizes={
-            variant === "feature"
-              ? "(min-width: 1024px) 50vw, 100vw"
-              : "(min-width: 1024px) 33vw, 100vw"
-          }
-        />
-        <div className="mt-5 flex items-start justify-between gap-6">
+    <Reveal as="article" className="group h-full" delay={(index ?? 0) * 0.15} y={40}>
+      <Wrapper {...(wrapperProps as any)} className={`${(wrapperProps as any).className} overflow-hidden rounded-2xl border border-border bg-[#F5F5F0] shadow-[0_2px_8px_-2px_rgba(0,0,0,0.08),0_8px_24px_-4px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.12),0_20px_48px_-8px_rgba(0,0,0,0.10)]`}>
+        <div className="overflow-hidden rounded-t-2xl">
+            <PlaceholderImage
+              image={project.cover}
+              seed={project.slug}
+              priority={priority}
+              sizes={
+                variant === "feature"
+                  ? "(min-width: 1024px) 50vw, 100vw"
+                  : "(min-width: 1024px) 33vw, 100vw"
+              }
+            />
+        </div>
+        <div className="flex items-start justify-between gap-6 px-5 pb-5">
           <div>
-            <div className="flex items-center gap-3 text-fg-muted">
-              {typeof index === "number" && (
-                <span className="font-mono text-[11px] tracking-widest">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-              )}
-              <span className="font-mono text-[11px] uppercase tracking-widest">
-                {project.year}
-              </span>
-              <span className="hidden h-px w-6 bg-fg-subtle/40 md:inline-block" aria-hidden />
-              <span className="hidden font-mono text-[11px] uppercase tracking-widest md:inline">
-                {project.client}
-              </span>
-            </div>
             <h3
               className={cn(
                 "mt-2 font-serif tracking-tight text-balance transition-colors duration-300",
@@ -66,9 +58,6 @@ export function ProjectCard({
               )}
             >
               {project.title}
-              <span className="ml-2 inline-block translate-y-0 align-middle text-fg-muted transition-transform duration-500 ease-out-expo group-hover:translate-x-1 group-hover:text-accent">
-                <ArrowUpRight size={20} strokeWidth={1.4} />
-              </span>
             </h3>
             <p className="mt-2 max-w-xl text-fg-muted">{project.tagline}</p>
             <div className="mt-4 flex flex-wrap gap-1.5">
@@ -78,9 +67,15 @@ export function ProjectCard({
                 </Tag>
               ))}
             </div>
+            <div className="mt-5">
+              <span className="inline-flex items-center gap-2 rounded-full border border-fg bg-fg px-5 py-2.5 text-sm text-bg transition-colors duration-300 group-hover:bg-bg group-hover:text-fg">
+                View Project
+                <ArrowUpRight size={15} strokeWidth={1.6} />
+              </span>
+            </div>
           </div>
         </div>
-      </Link>
+      </Wrapper>
     </Reveal>
   );
 }

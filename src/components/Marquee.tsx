@@ -21,7 +21,7 @@ export function Marquee({ items, className, separator }: Props) {
       )}
       aria-hidden="true"
     >
-      <div className="flex shrink-0 animate-marquee items-center font-serif text-4xl tracking-tight md:text-6xl">
+      <div className="flex shrink-0 animate-marquee items-center font-serif text-xl tracking-tight md:text-2xl">
         {[...items, ...items].map((item, i) => (
           <span key={i} className="inline-flex items-center">
             <span className="text-fg">{item}</span>

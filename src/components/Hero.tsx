@@ -81,7 +81,7 @@ export function Hero() {
               <p className="max-w-prose text-balance text-base text-fg-muted md:text-lg">
                 <WavingHand className="mr-2 text-xl md:text-2xl" />A{" "}
                 {site.role.toLowerCase()}, based in{" "}
-                {site.location.split("·")[0].trim().toLowerCase()}, specializing
+                {site.location.split("·")[0].trim()}, specializing
                 in simplifying complex workflows and turning ambiguous problems
                 into intuitive, scalable solutions through UX strategy and
                 systems thinking.
@@ -177,7 +177,7 @@ export function Hero() {
           className="mt-12 flex items-center justify-center gap-3 pb-6 text-fg-muted md:mt-16"
         >
           <span className="font-mono text-base uppercase tracking-[0.3em] md:text-lg">
-            My work below
+            Explore my work
           </span>
           <ArrowDown size={24} className="animate-bounce" />
         </motion.div>
@@ -190,12 +190,16 @@ export function Hero() {
       >
         <Marquee
           items={[
-            "Product Design",
+            "Interaction Design",
+            "Critical Thinking",
+            "UX Research Skills", 
             "Design Systems",
-            "Interaction",
-            "Strategy",
-            "Independent Practice",
-            "Available 2026",
+            "User Testing",
+            "Information Architecture",
+            "Persona Development",
+            "User Journey Mapping", 
+            "UX Writing",
+            "Prototyping"
           ]}
         />
       </div>

@@ -11,7 +11,7 @@ export const projects: Project[] = [
     slug: "malek",
     title: "Malek",
     tagline:
-      "Designing fractional real-estate ownership for the next generation of investors.",
+      "Optimizing User Flows for Malek, a Property Tokenization Platform.",
     summary:
       "An end-to-end product design role on a blockchain-inspired fintech platform that lets people buy, trade, and swap micro-shares of property — with onboarding that earns trust quickly and a BNPL model that lowers the entry point for retail investors.",
     year: "2025 — 2026",
@@ -19,7 +19,7 @@ export const projects: Project[] = [
     role: "Product Designer (Full-time, Remote)",
     duration: "1 year",
     team: ["In-house product, design & engineering team"],
-    tags: ["Fintech", "Web3", "Mobile & Web", "Design System"],
+    tags: ["Fintech", "Mobile & Web", "Convertion", "Product Thinking", "Design System"],
     tools: ["Figma", "FigJam", "Notion", "Maze"],
     featured: true,
     cover: {
@@ -80,17 +80,84 @@ export const projects: Project[] = [
     link: { label: "View on Figma", href: "https://figma.com" },
   },
   {
+    slug: "google-maps",
+    title: "Google Maps",
+    tagline: "Improving Navigation Trust in Unfamiliar Areas for Tourists on Google Maps.",
+    summary:
+      "A case study exploring how Google Maps could better serve travelers — with personalised directions, stronger visual hierarchy, and real-time updates that build trust and reduce reliance on third-party apps.",
+    year: "2024",
+    client: "Self-initiated case study",
+    role: "UX/UI Designer",
+    duration: "6 weeks",
+    team: ["Solo case study"],
+    tags: ["Transportation", "Mobile", "Retention", "UX Strategy", "Information Architecture"],
+    tools: ["Figma", "FigJam", "Notion"],
+    featured: true,
+    cover: {
+      src: "/projects/google-maps/cover.jpeg",
+      alt: "Google Maps redesign for travelers — mobile screens",
+      ratio: "video",
+      span: "full",
+    },
+    problem:
+      "Tourists in unfamiliar cities use Maps differently to locals — they second-guess routes, switch to other apps for transit and reviews, and lose trust the moment context goes missing. The same product is doing two jobs and quietly under-serving one of them.",
+    process: [
+      {
+        heading: "User research",
+        body: "Interviews with travelers across three city types — capital, coastal, and rural — alongside a desk-research review of the apps they reached for instead of Maps.",
+      },
+      {
+        heading: "Journey mapping",
+        body: "Mapped the tourist journey from arrival to departure to find the moments where trust breaks down. The pattern was consistent: transit handoffs, low-data zones, and decision-heavy intersections.",
+      },
+      {
+        heading: "Concept exploration",
+        body: "Sketched solutions around three principles — personalised directions, real-time data, and a stronger visual hierarchy under cognitive load.",
+      },
+      {
+        heading: "UI & prototype",
+        body: "Designed high-fidelity flows for the four highest-impact moments: first arrival, transit transfer, finding a place, and re-routing.",
+      },
+    ],
+    solution:
+      "Personalised routes that adapt to a traveler's pace, clearer hierarchy when many things compete for attention, and richer in-context information built into the map itself — so visitors don't have to leave Maps to feel oriented.",
+    results: [
+      { label: "Travelers interviewed", value: "9" },
+      { label: "Journey maps produced", value: "4" },
+      { label: "High-fidelity screens", value: "18" },
+      { label: "Concept videos", value: "2" },
+    ],
+    gallery: [
+      {
+        alt: "Personalised route summary on arrival in a new city",
+        ratio: "portrait",
+        span: "regular",
+      },
+      {
+        alt: "Transit transfer view with clearer next-step hierarchy",
+        ratio: "portrait",
+        span: "regular",
+      },
+      {
+        alt: "Place detail view with traveler-focused context",
+        ratio: "wide",
+        span: "full",
+      },
+    ],
+    link: { label: "View on Figma", href: "https://figma.com" },
+  },
+  {
     slug: "castbox",
     title: "Castbox",
-    tagline: "Bringing the community back into a podcast app.",
+    tagline: "Enhancing Community Engagement and Listener Interaction on Castbox.",
     summary:
-      "An end-to-end case study on Castbox's community section — uncovering why listeners disengage, redesigning the information architecture, and clarifying the features that invite them back in.",
+      "A UX case study exploring why listeners face challenges interacting with the community section on Castbox. The project focused on redesigning the information architecture to improve clarity, streamline comment sharing, and encourage greater listener engagement through a more intuitive experience.",
     year: "2024",
     client: "Self-initiated case study",
     role: "UX/UI Designer",
     duration: "8 weeks",
     team: ["Solo case study"],
-    tags: ["UX Research", "Mobile App", "Information Architecture"],
+    tags: ["Media", "Mobile", "Behavioral Design", "UX Research", "Visual Hierarchy"],
     tools: ["Figma", "FigJam", "Maze", "Notion"],
     featured: true,
     cover: {
@@ -152,73 +219,6 @@ export const projects: Project[] = [
         alt: "Onboarding flow introducing the community section to new listeners",
         ratio: "video",
         span: "wide",
-      },
-    ],
-    link: { label: "View on Figma", href: "https://figma.com" },
-  },
-  {
-    slug: "google-maps",
-    title: "Google Maps for Travelers",
-    tagline: "Redesigning navigation for a tourist in an unfamiliar city.",
-    summary:
-      "A case study exploring how Google Maps could better serve travelers — with personalised directions, stronger visual hierarchy, and real-time updates that build trust and reduce reliance on third-party apps.",
-    year: "2024",
-    client: "Self-initiated case study",
-    role: "UX/UI Designer",
-    duration: "6 weeks",
-    team: ["Solo case study"],
-    tags: ["UX Research", "Mobile App", "Travel"],
-    tools: ["Figma", "FigJam", "Notion"],
-    featured: true,
-    cover: {
-      src: "/projects/google-maps/cover.jpeg",
-      alt: "Google Maps redesign for travelers — mobile screens",
-      ratio: "video",
-      span: "full",
-    },
-    problem:
-      "Tourists in unfamiliar cities use Maps differently to locals — they second-guess routes, switch to other apps for transit and reviews, and lose trust the moment context goes missing. The same product is doing two jobs and quietly under-serving one of them.",
-    process: [
-      {
-        heading: "User research",
-        body: "Interviews with travelers across three city types — capital, coastal, and rural — alongside a desk-research review of the apps they reached for instead of Maps.",
-      },
-      {
-        heading: "Journey mapping",
-        body: "Mapped the tourist journey from arrival to departure to find the moments where trust breaks down. The pattern was consistent: transit handoffs, low-data zones, and decision-heavy intersections.",
-      },
-      {
-        heading: "Concept exploration",
-        body: "Sketched solutions around three principles — personalised directions, real-time data, and a stronger visual hierarchy under cognitive load.",
-      },
-      {
-        heading: "UI & prototype",
-        body: "Designed high-fidelity flows for the four highest-impact moments: first arrival, transit transfer, finding a place, and re-routing.",
-      },
-    ],
-    solution:
-      "Personalised routes that adapt to a traveler's pace, clearer hierarchy when many things compete for attention, and richer in-context information built into the map itself — so visitors don't have to leave Maps to feel oriented.",
-    results: [
-      { label: "Travelers interviewed", value: "9" },
-      { label: "Journey maps produced", value: "4" },
-      { label: "High-fidelity screens", value: "18" },
-      { label: "Concept videos", value: "2" },
-    ],
-    gallery: [
-      {
-        alt: "Personalised route summary on arrival in a new city",
-        ratio: "portrait",
-        span: "regular",
-      },
-      {
-        alt: "Transit transfer view with clearer next-step hierarchy",
-        ratio: "portrait",
-        span: "regular",
-      },
-      {
-        alt: "Place detail view with traveler-focused context",
-        ratio: "wide",
-        span: "full",
       },
     ],
     link: { label: "View on Figma", href: "https://figma.com" },

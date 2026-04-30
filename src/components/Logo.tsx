@@ -4,51 +4,51 @@ type LogoProps = {
   className?: string;
 };
 
-/**
- * Two-letter monogram for Farnoosh Bagheri.
- *
- * Soft squircle filled with a warm sunset gradient (lavender → coral → peach),
- * with white lowercase "fb" set in Fraunces italic inside. A subtle inner
- * highlight gives it depth, like a polished pebble.
- */
 export function Logo({ className }: LogoProps) {
   return (
-    <span
-      aria-hidden
-      className={cn(
-        "relative inline-flex h-10 w-10 items-center justify-center overflow-hidden",
-        className
-      )}
-      style={{
-        borderRadius: "32%",
-        background:
-          "linear-gradient(135deg, #8B7BFF 0%, #FF8E9A 55%, #FFB778 100%)",
-        boxShadow:
-          "0 6px 14px -6px rgba(139, 123, 255, 0.5), 0 2px 4px -2px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.35), inset 0 -1px 1px rgba(0, 0, 0, 0.08)",
-      }}
-    >
-      {/* Soft top highlight */}
+    <span className={cn("inline-flex items-center gap-3", className)}>
+      {/* F mark — gradient squircle + stroke-based F */}
       <span
-        aria-hidden
-        className="pointer-events-none absolute inset-x-1 top-[2px] h-[35%] rounded-[24%] opacity-50"
+        className="relative inline-flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden"
         style={{
-          background:
-            "linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 100%)",
-        }}
-      />
-
-      {/* Monogram */}
-      <span
-        className="relative font-serif italic leading-none text-white"
-        style={{
-          fontVariationSettings: '"opsz" 144, "SOFT" 100',
-          fontSize: "19px",
-          fontWeight: 500,
-          letterSpacing: "-0.07em",
-          textShadow: "0 1px 1px rgba(0, 0, 0, 0.12)",
+          borderRadius: "28%",
+          background: "linear-gradient(135deg, #7B6BF0 0%, #F97BAA 55%, #FFB060 100%)",
+          boxShadow: "0 6px 14px -6px rgba(139,123,255,0.5), 0 2px 4px -2px rgba(0,0,0,0.1)",
         }}
       >
-        fb
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Top arm + vertical stem */}
+          <path
+            d="M 20,5 L 5,5 L 5,19"
+            stroke="white"
+            strokeWidth="3.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          {/* Crossbar */}
+          <path
+            d="M 5,12 L 16,12"
+            stroke="white"
+            strokeWidth="3.2"
+            strokeLinecap="round"
+          />
+        </svg>
+      </span>
+
+      {/* Wordmark */}
+      <span
+        style={{
+          fontFamily: "var(--font-handwriting), cursive",
+          fontSize: "20px",
+          fontWeight: 700,
+          WebkitTextStroke: "0.2px currentColor",
+          lineHeight: 1.15,
+          letterSpacing: "0.01em",
+        }}
+        className="text-fg"
+      >
+        <span style={{ fontSize: "21px" }}>F</span>arnoosh{" "}
+        <span style={{ fontSize: "21px" }}>B</span>agheri
       </span>
     </span>
   );

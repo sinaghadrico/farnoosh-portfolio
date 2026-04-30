@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Check, Copy } from "lucide-react";
 
-export function CopyEmailButton({ email }: { email: string }) {
+export function CopyEmailButton({ email, iconOnly }: { email: string; iconOnly?: boolean }) {
   const [copied, setCopied] = useState(false);
 
   const onClick = async () => {
@@ -21,16 +21,12 @@ export function CopyEmailButton({ email }: { email: string }) {
       type="button"
       onClick={onClick}
       aria-label="Copy email address"
-      className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm transition-colors duration-300 hover:border-fg"
+      className={iconOnly ? "text-fg-muted transition-colors duration-200 hover:text-fg" : "inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm transition-colors duration-300 hover:border-fg"}
     >
       {copied ? (
-        <>
-          <Check size={14} /> Copied
-        </>
+        iconOnly ? <Check size={14} /> : <><Check size={14} /> Copied</>
       ) : (
-        <>
-          <Copy size={14} /> Copy Email address
-        </>
+        iconOnly ? <Copy size={14} /> : <><Copy size={14} /> Copy Email address</>
       )}
     </button>
   );
