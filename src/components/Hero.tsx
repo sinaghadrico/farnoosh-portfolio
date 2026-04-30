@@ -81,8 +81,8 @@ export function Hero() {
               <p className="max-w-prose text-balance text-base text-fg-muted md:text-lg">
                 <WavingHand className="mr-2 text-xl md:text-2xl" />A{" "}
                 {site.role.toLowerCase()}, based in{" "}
-                {site.location.split("·")[0].trim()}, specializing
-                in simplifying complex workflows and turning ambiguous problems
+                {site.location.split("·")[0].trim()}, specializing in
+                simplifying complex workflows and turning ambiguous problems
                 into intuitive, scalable solutions through UX strategy and
                 systems thinking.
               </p>
@@ -104,6 +104,39 @@ export function Hero() {
                   Download CV
                   <span aria-hidden>↓</span>
                 </a>
+              </div>
+
+              <div className="mt-10 md:mt-14">
+                <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-fg-subtle">
+                  Industries
+                </p>
+                <ul className="flex flex-wrap gap-2">
+                  {[
+                    { label: "Fintech", dot: "#7B6BF0" },
+                    { label: "B2B SaaS", dot: "#F97BAA" },
+                    { label: "Marketplaces", dot: "#FFB060" },
+                    { label: "Media", dot: "#9333EA" },
+                  ].map((tag, i) => (
+                    <motion.li
+                      key={tag.label}
+                      initial={reduce ? false : { opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{
+                        delay: 0.9 + i * 0.06,
+                        duration: 0.6,
+                        ease: [0.16, 1, 0.3, 1],
+                      }}
+                      className="inline-flex items-center gap-2 rounded-full border border-border bg-bg-subtle px-3.5 py-1.5 text-sm text-fg"
+                    >
+                      <span
+                        aria-hidden
+                        className="h-1.5 w-1.5 rounded-full"
+                        style={{ background: tag.dot }}
+                      />
+                      {tag.label}
+                    </motion.li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
           </div>
@@ -144,7 +177,6 @@ export function Hero() {
                 className="h-auto w-full object-cover"
               />
             </motion.div>
-
           </motion.div>
         </div>
 
@@ -153,12 +185,20 @@ export function Hero() {
           initial={reduce ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
-          className="mt-auto flex items-center justify-center gap-3 pb-6 pt-12 text-fg-muted md:pt-16"
+          className="mt-auto flex justify-center pb-6 pt-12 md:pt-16"
         >
-          <span className="font-sans text-base uppercase tracking-[0.3em] md:text-lg">
-            Explore my work
-          </span>
-          <ArrowDown size={24} className="animate-bounce" />
+          <Link
+            href="/#work"
+            className="group inline-flex items-center gap-3 text-fg-muted transition-colors duration-300 hover:text-fg"
+          >
+            <span className="font-sans text-base uppercase tracking-[0.3em] md:text-lg">
+              Explore my work
+            </span>
+            <ArrowDown
+              size={24}
+              className="animate-bounce transition-transform duration-300 group-hover:translate-y-0.5"
+            />
+          </Link>
         </motion.div>
       </div>
 
@@ -171,14 +211,14 @@ export function Hero() {
           items={[
             "Interaction Design",
             "Critical Thinking",
-            "UX Research Skills", 
+            "UX Research Skills",
             "Design Systems",
             "User Testing",
             "Information Architecture",
             "Persona Development",
-            "User Journey Mapping", 
+            "User Journey Mapping",
             "UX Writing",
-            "Prototyping"
+            "Prototyping",
           ]}
         />
       </div>
