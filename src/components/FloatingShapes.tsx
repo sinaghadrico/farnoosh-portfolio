@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 
-type ToolKind = "figma" | "jira" | "analytics";
+type ToolKind = "figma" | "jira" | "analytics" | "claude";
 
 type Tool = {
   kind: ToolKind;
@@ -59,10 +59,7 @@ function ToolIcon({ kind, size }: { kind: ToolKind; size: number }) {
             d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0Z"
             fill="#0ACF83"
           />
-          <path
-            d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19Z"
-            fill="#FF7262"
-          />
+          <path d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19Z" fill="#FF7262" />
           <path
             d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5Z"
             fill="#F24E1E"
@@ -77,7 +74,12 @@ function ToolIcon({ kind, size }: { kind: ToolKind; size: number }) {
     case "claude":
       // Claude — app icon: orange rounded square + white 8-arm starburst
       return (
-        <svg width={size} height={size} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <rect width="100" height="100" rx="22" fill="#CC4A28" />
           <g transform="translate(50,50)" fill="white">
             {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, i) => (
@@ -148,22 +150,8 @@ function ToolIcon({ kind, size }: { kind: ToolKind; size: number }) {
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <rect
-            x="16"
-            y="2"
-            width="6"
-            height="20"
-            rx="3"
-            fill="#F9AB00"
-          />
-          <rect
-            x="9"
-            y="9"
-            width="6"
-            height="13"
-            rx="3"
-            fill="#E37400"
-          />
+          <rect x="16" y="2" width="6" height="20" rx="3" fill="#F9AB00" />
+          <rect x="9" y="9" width="6" height="13" rx="3" fill="#E37400" />
           <circle cx="5" cy="19" r="3" fill="#E37400" />
         </svg>
       );

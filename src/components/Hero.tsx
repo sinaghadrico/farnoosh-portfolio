@@ -41,7 +41,7 @@ export function Hero() {
           <div className="md:col-span-9">
             <h1
               id="hero-heading"
-              className="font-serif text-display-md text-balance leading-[0.95] md:text-display-lg lg:text-display-xl"
+              className="font-serif text-balance leading-[0.95] tracking-[-0.025em] text-[clamp(2.5rem,8vw,5.75rem)]"
             >
               {headlineWords.map((word, i) => {
                 const isName = i === headlineWords.length - 1;
