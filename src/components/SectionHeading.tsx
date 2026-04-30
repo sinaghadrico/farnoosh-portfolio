@@ -10,14 +10,7 @@ type Props = {
   className?: string;
 };
 
-export function SectionHeading({
-  number,
-  eyebrow,
-  title,
-  description,
-  align = "left",
-  className,
-}: Props) {
+export function SectionHeading({ eyebrow, align = "left", className }: Props) {
   return (
     <div
       className={cn(

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ArrowUpRight, Mail } from "lucide-react";
 import { site } from "@/content/site";
 import { SocialIcon } from "./SocialIcon";
@@ -18,7 +17,8 @@ export function Footer() {
             Available for new projects
           </div>
           <h2 className="font-serif text-display-md">
-            Ready to collaborate?{" "}<br />Let’s turn your ideas into reality!
+            Ready to collaborate? <br />
+            Let’s turn your ideas into reality!
           </h2>
           <ul className="mt-6 flex flex-wrap justify-center gap-16 text-sm">
             <li className="flex items-center gap-2">
@@ -28,20 +28,26 @@ export function Footer() {
               </a>
               <CopyEmailButton email={site.email} iconOnly />
             </li>
-            {site.socials.filter(s => s.label === "LinkedIn").map((s) => (
-              <li key={s.href}>
-                <a
-                  className="link-hover inline-flex items-center gap-2"
-                  href={s.href}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <SocialIcon label={s.label} size={13} className="text-fg-muted" />
-                  {s.label}
-                  <ArrowUpRight size={11} className="opacity-50" />
-                </a>
-              </li>
-            ))}
+            {site.socials
+              .filter((s) => s.label === "LinkedIn")
+              .map((s) => (
+                <li key={s.href}>
+                  <a
+                    className="link-hover inline-flex items-center gap-2"
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <SocialIcon
+                      label={s.label}
+                      size={13}
+                      className="text-fg-muted"
+                    />
+                    {s.label}
+                    <ArrowUpRight size={11} className="opacity-50" />
+                  </a>
+                </li>
+              ))}
           </ul>
         </div>
 

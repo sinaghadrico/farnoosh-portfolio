@@ -30,22 +30,33 @@ export function ProjectCard({
   const Wrapper = disableLink ? "div" : Link;
   const wrapperProps = disableLink
     ? { className: "block cursor-default" }
-    : { href: `/projects/${project.slug}`, className: "block focus:outline-none" };
+    : {
+        href: `/projects/${project.slug}`,
+        className: "block focus:outline-none",
+      };
 
   return (
-    <Reveal as="article" className="group h-full" delay={(index ?? 0) * 0.15} y={40}>
-      <Wrapper {...(wrapperProps as any)} className={`${(wrapperProps as any).className} overflow-hidden rounded-2xl border border-border bg-[#F5F5F0] shadow-[0_2px_8px_-2px_rgba(0,0,0,0.08),0_8px_24px_-4px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.12),0_20px_48px_-8px_rgba(0,0,0,0.10)]`}>
+    <Reveal
+      as="article"
+      className="group h-full"
+      delay={(index ?? 0) * 0.15}
+      y={40}
+    >
+      <Wrapper
+        {...(wrapperProps as any)}
+        className={`${(wrapperProps as any).className} overflow-hidden rounded-2xl border border-border bg-[#F5F5F0] shadow-[0_2px_8px_-2px_rgba(0,0,0,0.08),0_8px_24px_-4px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.12),0_20px_48px_-8px_rgba(0,0,0,0.10)]`}
+      >
         <div className="overflow-hidden rounded-t-2xl">
-            <PlaceholderImage
-              image={project.cover}
-              seed={project.slug}
-              priority={priority}
-              sizes={
-                variant === "feature"
-                  ? "(min-width: 1024px) 50vw, 100vw"
-                  : "(min-width: 1024px) 33vw, 100vw"
-              }
-            />
+          <PlaceholderImage
+            image={project.cover}
+            seed={project.slug}
+            priority={priority}
+            sizes={
+              variant === "feature"
+                ? "(min-width: 1024px) 50vw, 100vw"
+                : "(min-width: 1024px) 33vw, 100vw"
+            }
+          />
         </div>
         <div className="flex items-start justify-between gap-6 px-5 pb-5">
           <div>
@@ -54,7 +65,7 @@ export function ProjectCard({
                 "mt-2 font-serif tracking-tight text-balance transition-colors duration-300",
                 variant === "feature"
                   ? "text-2xl md:text-3xl"
-                  : "text-xl md:text-2xl"
+                  : "text-xl md:text-2xl",
               )}
             >
               {project.title}
@@ -80,7 +91,13 @@ export function ProjectCard({
   );
 }
 
-function ProjectListRow({ project, index }: { project: Project; index?: number }) {
+function ProjectListRow({
+  project,
+  index,
+}: {
+  project: Project;
+  index?: number;
+}) {
   return (
     <Reveal as="li" className="group">
       <Link

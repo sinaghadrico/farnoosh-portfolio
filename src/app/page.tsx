@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
-import { ArrowUpRight } from "lucide-react";
 import { Hero } from "@/components/Hero";
 import { ProjectCard } from "@/components/ProjectCard";
 import { UnderlinedTitle } from "@/components/UnderlinedTitle";
 import { Reveal } from "@/components/Reveal";
-import { ButtonLink } from "@/components/Button";
 import { AnimatedPortrait } from "@/components/AnimatedPortrait";
 import { CloudHalos } from "@/components/CloudHalos";
-import { CopyEmailButton } from "@/components/CopyEmailButton";
-import { SocialIcon } from "@/components/SocialIcon";
 import { getFeaturedProjects } from "@/content/projects";
-import { aboutCopy, experience, recognition } from "@/content/about";
+import { aboutCopy } from "@/content/about";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -39,7 +35,12 @@ export default function HomePage() {
         <ul className="mt-16 grid items-start gap-x-8 gap-y-20 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
           {featured.map((project, i) => (
             <li key={project.slug}>
-              <ProjectCard project={project} index={i} priority={i < 2} disableLink />
+              <ProjectCard
+                project={project}
+                index={i}
+                priority={i < 2}
+                disableLink
+              />
             </li>
           ))}
         </ul>
@@ -154,7 +155,6 @@ export default function HomePage() {
           </ul>
         </div>
       </section> */}
-
     </>
   );
 }
