@@ -34,7 +34,7 @@ export function Hero() {
     >
       <CloudHalos />
       <FloatingShapes />
-      <div className="container relative flex-1">
+      <div className="container relative flex flex-1 flex-col">
         {/* Main hero: text left, portrait right */}
         <div className="grid items-center gap-12 md:grid-cols-12 md:gap-12 lg:gap-16">
           {/* Left: headline + copy + CTAs */}
@@ -174,7 +174,7 @@ export function Hero() {
           initial={reduce ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
-          className="mt-12 flex items-center justify-center gap-3 pb-6 text-fg-muted md:mt-16"
+          className="mt-auto flex items-center justify-center gap-3 pb-6 pt-12 text-fg-muted md:pt-16"
         >
           <span className="font-mono text-base uppercase tracking-[0.3em] md:text-lg">
             Explore my work
