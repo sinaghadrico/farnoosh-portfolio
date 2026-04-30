@@ -16,60 +16,132 @@ export default async function TwitterImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px",
-          background:
-            "radial-gradient(120% 120% at 0% 0%, #E5E3FF 0%, #F5F5F3 55%, #F5F5F3 100%)",
+          background: "#F5F5F3",
           color: "#101014",
           fontFamily: "Georgia, serif",
+          position: "relative",
         }}
       >
         <div
           style={{
+            position: "absolute",
+            top: -200,
+            right: -150,
+            width: 600,
+            height: 600,
+            borderRadius: "50%",
+            background:
+              "radial-gradient(closest-side, rgba(249,123,170,0.45), rgba(249,123,170,0) 70%)",
+            display: "flex",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            bottom: -180,
+            left: -120,
+            width: 520,
+            height: 520,
+            borderRadius: "50%",
+            background:
+              "radial-gradient(closest-side, rgba(123,107,240,0.4), rgba(123,107,240,0) 70%)",
+            display: "flex",
+          }}
+        />
+
+        <div
+          style={{
             display: "flex",
             alignItems: "center",
-            gap: "12px",
-            fontSize: "20px",
-            letterSpacing: "0.18em",
-            textTransform: "uppercase",
-            color: "#56555C",
+            gap: "20px",
+            position: "relative",
           }}
         >
           <div
             style={{
-              width: "10px",
-              height: "10px",
-              borderRadius: "999px",
-              background: "#4F46E5",
+              width: 72,
+              height: 72,
+              borderRadius: 20,
+              background:
+                "linear-gradient(135deg, #7B6BF0 0%, #F97BAA 55%, #FFB060 100%)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              boxShadow: "0 6px 14px -6px rgba(139,123,255,0.5)",
             }}
-          />
-          <span>Portfolio · 2026</span>
-        </div>
-
-        <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+          >
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M 20,5 L 5,5 L 5,19"
+                stroke="white"
+                strokeWidth="3.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M 5,12 L 16,12"
+                stroke="white"
+                strokeWidth="3.2"
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
           <div
             style={{
               display: "flex",
-              fontSize: "92px",
-              lineHeight: 1,
-              letterSpacing: "-0.03em",
-              maxWidth: "1000px",
+              fontSize: 24,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "#56555C",
+              fontFamily: "Inter, system-ui, sans-serif",
             }}
           >
-            <span>
+            Portfolio · 2026
+          </div>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 24,
+            position: "relative",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              fontSize: 120,
+              lineHeight: 0.95,
+              letterSpacing: "-0.03em",
+              fontStyle: "italic",
+            }}
+          >
+            <span
+              style={{
+                background:
+                  "linear-gradient(90deg, #F97316 0%, #E94BA4 50%, #9333EA 100%)",
+                backgroundClip: "text",
+                color: "transparent",
+              }}
+            >
               {site.fullName}
-              <span style={{ color: "#84838A" }}> — {site.role}.</span>
             </span>
           </div>
           <div
             style={{
               display: "flex",
-              fontSize: "30px",
+              fontSize: 36,
               lineHeight: 1.3,
-              maxWidth: "900px",
+              maxWidth: 900,
               color: "#3F3E47",
               fontFamily: "Inter, system-ui, sans-serif",
+              letterSpacing: "-0.01em",
             }}
           >
-            <span>{site.tagline}</span>
+            {site.role} · simplifying complex workflows through UX strategy and
+            systems thinking.
           </div>
         </div>
 
@@ -78,16 +150,17 @@ export default async function TwitterImage() {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "flex-end",
-            fontSize: "20px",
+            fontSize: 22,
             color: "#56555C",
             fontFamily: "Inter, system-ui, sans-serif",
+            position: "relative",
           }}
         >
           <span>{site.url.replace("https://", "")}</span>
-          <span>{site.location}</span>
+          <span>📍 {site.location}</span>
         </div>
       </div>
     ),
-    { ...size }
+    { ...size },
   );
 }

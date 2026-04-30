@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const size = { width: 32, height: 32 };
+export const size = { width: 64, height: 64 };
 export const contentType = "image/png";
 
 export default function Icon() {
@@ -13,17 +13,34 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#0C0C10",
-          color: "#ECECE8",
-          fontSize: 22,
-          fontWeight: 600,
-          fontFamily: "Georgia, serif",
-          borderRadius: 8,
+          background:
+            "linear-gradient(135deg, #7B6BF0 0%, #F97BAA 55%, #FFB060 100%)",
+          borderRadius: 18,
         }}
       >
-        F
+        <svg
+          width="44"
+          height="44"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 20,5 L 5,5 L 5,19"
+            stroke="white"
+            strokeWidth="3.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M 5,12 L 16,12"
+            stroke="white"
+            strokeWidth="3.2"
+            strokeLinecap="round"
+          />
+        </svg>
       </div>
     ),
-    { ...size }
+    { ...size },
   );
 }

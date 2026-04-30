@@ -102,10 +102,6 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  icons: {
-    icon: [{ url: "/favicon.ico" }],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
-  },
   formatDetection: {
     email: false,
     address: false,
