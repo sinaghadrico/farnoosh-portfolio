@@ -10,9 +10,9 @@ import { Logo } from "@/components/Logo";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const nav = [
-  { href: "/#work", label: "Work" },
+  { href: "/#work", label: "My work" },
   { href: "/#about", label: "About me" },
-  { href: "/#experience", label: "Experience" },
+  { href: "/FarnooshBagheri-Resume(Product Designer).pdf", label: "Resume", download: true },
 ];
 
 export function Navbar() {
@@ -69,17 +69,27 @@ export function Navbar() {
               <ul className="flex items-center gap-1">
                 {nav.map((item) => (
                   <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className={cn(
-                        "group relative inline-flex items-center rounded-full px-5 py-2 text-base font-medium transition-colors duration-300",
-                        isActive(item.href)
-                          ? "text-fg"
-                          : "text-fg-muted hover:text-fg",
-                      )}
-                    >
-                      {item.label}
-                    </Link>
+                    {item.download ? (
+                      <a
+                        href={item.href}
+                        download
+                        className="group relative inline-flex items-center rounded-full px-5 py-2 text-base font-medium text-fg-muted transition-colors duration-300 hover:text-fg"
+                      >
+                        {item.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className={cn(
+                          "group relative inline-flex items-center rounded-full px-5 py-2 text-base font-medium transition-colors duration-300",
+                          isActive(item.href)
+                            ? "text-fg"
+                            : "text-fg-muted hover:text-fg",
+                        )}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -88,7 +98,7 @@ export function Navbar() {
               href="/#contact"
               className="hidden rounded-full border border-fg bg-fg px-4 py-2 text-sm font-medium text-bg transition-colors duration-300 hover:bg-bg hover:text-fg md:inline-flex"
             >
-              Contact me
+              Contact
             </Link>
             <ThemeToggle />
             <button
@@ -119,15 +129,25 @@ export function Navbar() {
             <ul className="flex flex-col gap-1">
               {nav.map((item) => (
                 <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className={cn(
-                      "block border-b border-border py-5 text-3xl font-serif transition-colors",
-                      isActive(item.href) ? "text-fg" : "text-fg-muted",
-                    )}
-                  >
-                    {item.label}
-                  </Link>
+                  {item.download ? (
+                    <a
+                      href={item.href}
+                      download
+                      className="block border-b border-border py-5 text-3xl font-serif text-fg-muted transition-colors"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        "block border-b border-border py-5 text-3xl font-serif transition-colors",
+                        isActive(item.href) ? "text-fg" : "text-fg-muted",
+                      )}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

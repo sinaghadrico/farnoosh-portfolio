@@ -88,7 +88,7 @@ export function Hero() {
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-3 md:mt-8">
                 <Link
-                  href="/projects"
+                  href="/#work"
                   className="group inline-flex items-center gap-2 rounded-full border border-fg bg-fg px-5 py-3 text-sm text-bg transition-colors duration-300 hover:bg-bg hover:text-fg"
                 >
                   View my work
@@ -176,7 +176,7 @@ export function Hero() {
           transition={{ delay: 1.2, duration: 0.8 }}
           className="mt-auto flex items-center justify-center gap-3 pb-6 pt-12 text-fg-muted md:pt-16"
         >
-          <span className="font-mono text-base uppercase tracking-[0.3em] md:text-lg">
+          <span className="font-sans text-base uppercase tracking-[0.3em] md:text-lg">
             Explore my work
           </span>
           <ArrowDown size={24} className="animate-bounce" />

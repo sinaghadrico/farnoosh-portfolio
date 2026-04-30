@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 
-type ToolKind = "figma" | "claude" | "jira" | "analytics";
+type ToolKind = "figma" | "jira" | "analytics";
 
 type Tool = {
   kind: ToolKind;
@@ -21,14 +21,6 @@ const tools: Tool[] = [
     duration: 12,
     delay: 0.3,
     drift: { x: 12, y: -10 },
-  },
-  {
-    kind: "claude",
-    className: "right-[5%] top-[16%] md:right-[6%] md:top-[18%]",
-    size: 72,
-    duration: 14,
-    delay: 1.0,
-    drift: { x: -14, y: 12 },
   },
   {
     kind: "jira",
@@ -83,39 +75,19 @@ function ToolIcon({ kind, size }: { kind: ToolKind; size: number }) {
       );
 
     case "claude":
-      // Claude / Anthropic — 8-arm asterisk burst (the Claude sparkle mark)
+      // Claude — app icon: orange rounded square + white 8-arm starburst
       return (
-        <svg
-          width={size}
-          height={size}
-          viewBox="-12 -12 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="#D97757"
-        >
-          {/* Four long arms */}
-          <ellipse cx="0" cy="0" rx="1.6" ry="11" />
-          <ellipse
-            cx="0"
-            cy="0"
-            rx="1.6"
-            ry="11"
-            transform="rotate(90)"
-          />
-          {/* Four shorter diagonal arms */}
-          <ellipse
-            cx="0"
-            cy="0"
-            rx="1.1"
-            ry="7.5"
-            transform="rotate(45)"
-          />
-          <ellipse
-            cx="0"
-            cy="0"
-            rx="1.1"
-            ry="7.5"
-            transform="rotate(135)"
-          />
+        <svg width={size} height={size} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" rx="22" fill="#CC4A28" />
+          <g transform="translate(50,50)" fill="white">
+            {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, i) => (
+              <path
+                key={i}
+                transform={`rotate(${angle})`}
+                d="M 0,0 C -5,-8 -4,-22 0,-35 C 4,-22 5,-8 0,0"
+              />
+            ))}
+          </g>
         </svg>
       );
 

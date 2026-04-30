@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Fraunces, JetBrains_Mono, Dancing_Script } from "next/font/google";
+import { Inter, Fraunces, JetBrains_Mono, DM_Sans } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -21,11 +21,10 @@ const serif = Fraunces({
   axes: ["opsz", "SOFT"],
 });
 
-const handwriting = Dancing_Script({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-handwriting",
+  variable: "--font-dm-sans",
   display: "swap",
-  weight: ["600", "700"],
 });
 
 const mono = JetBrains_Mono({
@@ -123,7 +122,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${sans.variable} ${serif.variable} ${mono.variable} ${handwriting.variable}`}
+      className={`${sans.variable} ${serif.variable} ${mono.variable} ${dmSans.variable}`}
     >
       <body className="min-h-screen bg-bg text-fg antialiased">
         <ThemeProvider>

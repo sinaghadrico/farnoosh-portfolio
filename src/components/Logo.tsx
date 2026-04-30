@@ -35,21 +35,6 @@ export function Logo({ className }: LogoProps) {
         </svg>
       </span>
 
-      {/* Wordmark */}
-      <span
-        style={{
-          fontFamily: "var(--font-handwriting), cursive",
-          fontSize: "20px",
-          fontWeight: 700,
-          WebkitTextStroke: "0.2px currentColor",
-          lineHeight: 1.15,
-          letterSpacing: "0.01em",
-        }}
-        className="text-fg"
-      >
-        <span style={{ fontSize: "21px" }}>F</span>arnoosh{" "}
-        <span style={{ fontSize: "21px" }}>B</span>agheri
-      </span>
     </span>
   );
 }

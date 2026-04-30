@@ -58,27 +58,27 @@ export function ProjectCard({
             }
           />
         </div>
-        <div className="flex items-start justify-between gap-6 px-5 pb-5">
+        <div className="flex items-start justify-between gap-6 px-5 pb-6 pt-3">
           <div>
             <h3
               className={cn(
-                "mt-2 font-serif tracking-tight text-balance transition-colors duration-300",
+                "mt-2 font-sans font-semibold tracking-tight text-balance transition-colors duration-300",
                 variant === "feature"
-                  ? "text-2xl md:text-3xl"
-                  : "text-xl md:text-2xl",
+                  ? "text-lg md:text-xl"
+                  : "text-base md:text-lg"
               )}
             >
               {project.title}
             </h3>
             <p className="mt-2 max-w-xl text-fg-muted">{project.tagline}</p>
-            <div className="mt-4 flex flex-wrap gap-1.5">
+            <div className="mt-4 flex flex-wrap gap-2">
               {project.tags.map((t) => (
                 <Tag key={t} variant="outline">
                   {t}
                 </Tag>
               ))}
             </div>
-            <div className="mt-5">
+            <div className="mt-6">
               <span className="inline-flex items-center gap-2 rounded-full border border-fg bg-fg px-5 py-2.5 text-sm text-bg transition-colors duration-300 group-hover:bg-bg group-hover:text-fg">
                 View Project
                 <ArrowUpRight size={15} strokeWidth={1.6} />

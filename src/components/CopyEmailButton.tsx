@@ -24,9 +24,9 @@ export function CopyEmailButton({ email, iconOnly }: { email: string; iconOnly?:
       className={iconOnly ? "text-fg-muted transition-colors duration-200 hover:text-fg" : "inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm transition-colors duration-300 hover:border-fg"}
     >
       {copied ? (
-        iconOnly ? <Check size={14} /> : <><Check size={14} /> Copied</>
+        iconOnly ? <Check size={18} /> : <><Check size={14} /> Copied</>
       ) : (
-        iconOnly ? <Copy size={14} /> : <><Copy size={14} /> Copy Email address</>
+        iconOnly ? <Copy size={18} /> : <><Copy size={14} /> Copy Email address</>
       )}
     </button>
   );
