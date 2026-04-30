@@ -12,7 +12,11 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 const nav = [
   { href: "/#work", label: "My work" },
   { href: "/#about", label: "About me" },
-  { href: "/FarnooshBagheri-Resume(Product Designer).pdf", label: "Resume", download: true },
+  {
+    href: "/FarnooshBagheri-Resume(Product Designer).pdf",
+    label: "Resume",
+    download: true,
+  },
 ];
 
 export function Navbar() {
@@ -49,7 +53,7 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out-expo",
+          "fixed inset-x-0 top-0 z-50 ",
           scrolled
             ? "border-b border-border bg-bg/80 backdrop-blur-xl"
             : "border-b border-transparent bg-transparent",
