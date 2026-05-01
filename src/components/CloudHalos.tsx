@@ -113,7 +113,6 @@ export function CloudHalos() {
               : {
                   opacity: h.opacity,
                   scale: [0.96, 1.06, 0.96],
-                  y: [0, h.drift.y, 0, -h.drift.y, 0],
                 }
           }
           transition={{
@@ -125,12 +124,6 @@ export function CloudHalos() {
             },
             scale: {
               duration: h.duration * 0.7,
-              delay: h.delay,
-              repeat: Infinity,
-              ease: "easeInOut",
-            },
-            y: {
-              duration: h.duration * 0.85,
               delay: h.delay,
               repeat: Infinity,
               ease: "easeInOut",
