@@ -153,14 +153,8 @@ export function Hero() {
               aria-hidden
               className="absolute -right-2 -top-2 hidden h-full w-full rounded-3xl border border-border md:block"
             />
-            <motion.span
+            <span
               aria-hidden
-              animate={
-                reduce
-                  ? undefined
-                  : { opacity: [0.45, 0.7, 0.45], scale: [0.97, 1.03, 0.97] }
-              }
-              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
               className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-accent/30 via-fuchsia-300/25 to-sky-300/25 blur-2xl"
             />
             <motion.div
