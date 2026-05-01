@@ -21,7 +21,7 @@ export function Marquee({ items, className, separator }: Props) {
       )}
       aria-hidden="true"
     >
-      <div className="flex shrink-0 animate-marquee items-center text-xl tracking-tight md:text-2xl" style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}>
+      <div className="flex shrink-0 animate-marquee items-center text-base tracking-tight md:text-lg" style={{ fontFamily: "var(--font-dm-sans), sans-serif" }}>
         {[...items, ...items].map((item, i) => (
           <span key={i} className="inline-flex items-center">
             <span className="text-fg">{item}</span>

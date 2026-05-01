@@ -166,7 +166,7 @@ export function Hero() {
             <motion.div
               whileHover={reduce ? undefined : { rotate: -1.5, scale: 1.01 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="relative overflow-hidden rounded-3xl border border-border bg-bg-subtle shadow-lg"
+              className="relative overflow-hidden rounded-3xl border border-border bg-bg-subtle shadow-lg aspect-[4/5]"
             >
               <Image
                 src="/personal.png"
@@ -175,7 +175,8 @@ export function Hero() {
                 height={700}
                 priority
                 sizes="(min-width: 768px) 22vw, 60vw"
-                className="h-auto w-full object-cover object-top"
+                className="absolute inset-0 h-full w-full object-cover"
+                style={{ objectPosition: "50% 30%" }}
               />
             </motion.div>
           </motion.div>
@@ -186,13 +187,13 @@ export function Hero() {
           initial={reduce ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
-          className="mt-auto flex justify-center pb-6 pt-12 md:pt-16"
+          className="mt-auto flex justify-center pb-10 pt-12 md:pt-16"
         >
           <Link
             href="/#work"
             className="group inline-flex items-center gap-3 text-fg-muted transition-colors duration-300 hover:text-fg"
           >
-            <span className="font-sans text-base uppercase tracking-[0.3em] md:text-lg">
+            <span className="font-sans text-sm uppercase tracking-[0.3em] md:text-base">
               Explore my work
             </span>
             <ArrowDown

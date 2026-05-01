@@ -116,7 +116,7 @@ export function Navbar() {
                   <Link
                     href={item.href}
                     className={cn(
-                      "block border-b border-border py-5 text-3xl font-serif transition-colors",
+                      "block border-b border-border py-3 text-xl font-serif transition-colors",
                       isActive(item.href) ? "text-fg" : "text-fg-muted",
                     )}
                   >
@@ -126,23 +126,6 @@ export function Navbar() {
               ))}
             </ul>
           </nav>
-          <div className="mt-auto pb-8">
-            <p className="label mb-3">Elsewhere</p>
-            <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
-              {site.socials.map((s) => (
-                <li key={s.href}>
-                  <a
-                    href={s.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="link-hover"
-                  >
-                    {s.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
       </div>
     </>
