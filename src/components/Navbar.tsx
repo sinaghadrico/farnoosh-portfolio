@@ -116,7 +116,7 @@ export function Navbar() {
                   <Link
                     href={item.href}
                     className={cn(
-                      "block border-b border-border py-3 text-xl font-serif transition-colors",
+                      "block border-b border-border py-3 text-xl font-sans transition-colors",
                       isActive(item.href) ? "text-fg" : "text-fg-muted",
                     )}
                   >
