@@ -23,6 +23,7 @@ export const projects: Project[] = [
     tools: ["Figma", "FigJam", "Notion", "Maze"],
     featured: true,
     cover: {
+      src: "/projects/malek/malek.png",
       alt: "Malek fractional real-estate platform — investor and agent surfaces",
       ratio: "video",
       span: "full",
@@ -94,7 +95,7 @@ export const projects: Project[] = [
     tools: ["Figma", "FigJam", "Notion"],
     featured: true,
     cover: {
-      src: "/projects/google-maps/cover.jpeg",
+      src: "/projects/google-maps/google-maps.png",
       alt: "Google Maps redesign for travelers — mobile screens",
       ratio: "video",
       span: "full",
@@ -161,7 +162,7 @@ export const projects: Project[] = [
     tools: ["Figma", "FigJam", "Maze", "Notion"],
     featured: true,
     cover: {
-      src: "/projects/castbox/cover.jpeg",
+      src: "/projects/castbox/castbox.png",
       alt: "Castbox community section redesign — mobile screens",
       ratio: "video",
       span: "full",

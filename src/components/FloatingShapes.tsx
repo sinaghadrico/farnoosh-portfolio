@@ -16,7 +16,7 @@ type Tool = {
 const tools: Tool[] = [
   {
     kind: "figma",
-    className: "left-[5%] top-[14%] md:left-[6%] md:top-[16%]",
+    className: "left-[76%] top-[48%] md:left-[69%] md:top-[22%]",
     size: 64,
     duration: 12,
     delay: 0.3,

@@ -47,7 +47,7 @@ export function PlaceholderImage({
     <figure className={cn("group relative", className)}>
       <div
         className={cn(
-          "relative overflow-hidden rounded-md border border-border bg-bg-subtle",
+          "relative overflow-hidden rounded-t-[12px] bg-bg-subtle",
           ratioMap[ratio]
         )}
       >

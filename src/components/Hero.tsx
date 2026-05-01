@@ -99,7 +99,7 @@ export function Hero() {
                 <a
                   href="/FarnooshBagheri-Resume(Product Designer).pdf"
                   download
-                  className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm transition-colors duration-300 hover:border-fg"
+                  className="inline-flex items-center gap-2 rounded-full border border-fg/30 px-5 py-3 text-sm transition-colors duration-300 hover:border-fg"
                 >
                   Download CV
                   <span aria-hidden>↓</span>
@@ -107,7 +107,7 @@ export function Hero() {
               </div>
 
               <div className="mt-10 md:mt-14">
-                <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-fg-subtle">
+                <p className="mb-4 font-sans text-xs uppercase tracking-[0.2em] text-fg-subtle">
                   Industries
                 </p>
                 <ul className="flex flex-wrap gap-2">
@@ -126,7 +126,8 @@ export function Hero() {
                         duration: 0.6,
                         ease: [0.16, 1, 0.3, 1],
                       }}
-                      className="inline-flex items-center gap-2 rounded-full border border-border bg-bg-subtle px-3.5 py-1.5 text-sm text-fg"
+                      className="inline-flex items-center gap-2 rounded-full border border-border px-3.5 py-1.5 text-sm text-fg"
+                      style={{ background: `linear-gradient(135deg, ${tag.dot}09 0%, ${tag.dot}05 100%)` }}
                     >
                       <span
                         aria-hidden
@@ -168,13 +169,13 @@ export function Hero() {
               className="relative overflow-hidden rounded-3xl border border-border bg-bg-subtle shadow-lg"
             >
               <Image
-                src="/personal.JPG"
+                src="/personal.png"
                 alt={`Portrait of ${site.fullName}`}
                 width={560}
                 height={700}
                 priority
                 sizes="(min-width: 768px) 22vw, 60vw"
-                className="h-auto w-full object-cover"
+                className="h-auto w-full object-cover object-top"
               />
             </motion.div>
           </motion.div>

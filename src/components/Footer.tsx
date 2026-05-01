@@ -20,10 +20,31 @@ export function Footer() {
           </span>
         </div>
 
-        {/* Heading + contact — 2-col grid so each line aligns with its contact item */}
-        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 gap-y-5">
-          {/* Row 1 */}
-          <span className="font-sans font-medium text-3xl md:text-4xl tracking-tight flex items-center">
+        {/* Mobile: heading then contacts stacked / Desktop: 2-col aligned grid */}
+        <div className="flex flex-col gap-6 md:hidden">
+          <h2 className="font-sans font-medium text-3xl tracking-tight">
+            <span className="block">Ready to collaborate?</span>
+            <span className="block mt-2">Let's turn your ideas into reality!</span>
+          </h2>
+          <div className="flex flex-col gap-4 text-lg">
+            <div className="flex items-center gap-2">
+              <Mail size={14} className="text-fg-muted shrink-0" />
+              <a className="link-hover" href={`mailto:${site.email}`}>{site.email}</a>
+              <CopyEmailButton email={site.email} iconOnly />
+            </div>
+            {site.socials.filter(s => s.label === "LinkedIn").map((s) => (
+              <a key={s.href} className="link-hover inline-flex items-center gap-2" href={s.href} target="_blank" rel="noreferrer">
+                <SocialIcon label={s.label} size={18} className="text-fg-muted" />
+                {s.label}
+                <ArrowUpRight size={16} className="opacity-50" />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop grid */}
+        <div className="hidden md:grid md:grid-cols-2 md:gap-x-16 gap-y-5">
+          <span className="font-sans font-medium text-4xl tracking-tight flex items-center">
             Ready to collaborate?
           </span>
           <div className="flex items-center gap-2 text-lg md:justify-end">
@@ -31,19 +52,12 @@ export function Footer() {
             <a className="link-hover" href={`mailto:${site.email}`}>{site.email}</a>
             <CopyEmailButton email={site.email} iconOnly />
           </div>
-
-          {/* Row 2 */}
-          <span className="font-sans font-medium text-3xl md:text-4xl tracking-tight flex items-center">
+          <span className="font-sans font-medium text-4xl tracking-tight flex items-center">
             Let's turn your ideas into reality!
           </span>
           {site.socials.filter(s => s.label === "LinkedIn").map((s) => (
             <div key={s.href} className="flex items-center text-lg md:justify-end">
-              <a
-                className="link-hover inline-flex items-center gap-2"
-                href={s.href}
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a className="link-hover inline-flex items-center gap-2" href={s.href} target="_blank" rel="noreferrer">
                 <SocialIcon label={s.label} size={18} className="text-fg-muted" />
                 {s.label}
                 <ArrowUpRight size={16} className="opacity-50" />
