@@ -30,7 +30,7 @@ export function Hero() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative flex min-h-[100svh] flex-col overflow-hidden pt-28 md:pt-32"
+      className="relative flex min-h-[100svh] flex-col overflow-hidden pt-20 md:pt-32"
     >
       <CloudHalos />
       <FloatingShapes />
