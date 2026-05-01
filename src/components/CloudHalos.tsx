@@ -14,7 +14,8 @@ type Halo = {
 const halos: Halo[] = [
   {
     // Iris cloud — left, behind headline
-    className: "left-[-6%] top-[8%] bg-[radial-gradient(closest-side,rgba(120,108,255,0.55),rgba(120,108,255,0)_70%)]",
+    className:
+      "left-[-6%] top-[8%] bg-[radial-gradient(closest-side,rgba(120,108,255,0.55),rgba(120,108,255,0)_70%)]",
     size: 520,
     duration: 22,
     delay: 0,
@@ -23,7 +24,8 @@ const halos: Halo[] = [
   },
   {
     // Peach / coral cloud — bottom-left under copy
-    className: "left-[8%] bottom-[-10%] bg-[radial-gradient(closest-side,rgba(255,170,140,0.5),rgba(255,170,140,0)_70%)]",
+    className:
+      "left-[8%] bottom-[-10%] bg-[radial-gradient(closest-side,rgba(255,170,140,0.5),rgba(255,170,140,0)_70%)]",
     size: 460,
     duration: 26,
     delay: 1.2,
@@ -32,7 +34,8 @@ const halos: Halo[] = [
   },
   {
     // Sky cloud — middle, behind text gap
-    className: "left-[34%] top-[35%] bg-[radial-gradient(closest-side,rgba(140,200,255,0.45),rgba(140,200,255,0)_70%)]",
+    className:
+      "left-[34%] top-[35%] bg-[radial-gradient(closest-side,rgba(140,200,255,0.45),rgba(140,200,255,0)_70%)]",
     size: 380,
     duration: 30,
     delay: 0.6,
@@ -41,7 +44,8 @@ const halos: Halo[] = [
   },
   {
     // Mint cloud — center bottom
-    className: "left-[42%] bottom-[6%] bg-[radial-gradient(closest-side,rgba(140,230,200,0.45),rgba(140,230,200,0)_70%)]",
+    className:
+      "left-[42%] bottom-[6%] bg-[radial-gradient(closest-side,rgba(140,230,200,0.45),rgba(140,230,200,0)_70%)]",
     size: 340,
     duration: 24,
     delay: 1.8,
@@ -50,7 +54,8 @@ const halos: Halo[] = [
   },
   {
     // Pink cloud — far right behind portrait
-    className: "right-[-4%] top-[40%] bg-[radial-gradient(closest-side,rgba(255,150,210,0.45),rgba(255,150,210,0)_70%)]",
+    className:
+      "right-[-4%] top-[40%] bg-[radial-gradient(closest-side,rgba(255,150,210,0.45),rgba(255,150,210,0)_70%)]",
     size: 420,
     duration: 28,
     delay: 0.9,
@@ -59,7 +64,8 @@ const halos: Halo[] = [
   },
   {
     // Lavender cloud — top right corner
-    className: "right-[2%] top-[-6%] bg-[radial-gradient(closest-side,rgba(170,150,255,0.55),rgba(170,150,255,0)_70%)]",
+    className:
+      "right-[2%] top-[-6%] bg-[radial-gradient(closest-side,rgba(170,150,255,0.55),rgba(170,150,255,0)_70%)]",
     size: 460,
     duration: 24,
     delay: 0.4,
@@ -68,7 +74,8 @@ const halos: Halo[] = [
   },
   {
     // Apricot cloud — right under portrait
-    className: "right-[6%] bottom-[-8%] bg-[radial-gradient(closest-side,rgba(255,190,120,0.5),rgba(255,190,120,0)_70%)]",
+    className:
+      "right-[6%] bottom-[-8%] bg-[radial-gradient(closest-side,rgba(255,190,120,0.5),rgba(255,190,120,0)_70%)]",
     size: 400,
     duration: 30,
     delay: 1.5,
@@ -77,7 +84,8 @@ const halos: Halo[] = [
   },
   {
     // Aqua cloud — right middle accent
-    className: "right-[18%] top-[18%] bg-[radial-gradient(closest-side,rgba(120,210,230,0.45),rgba(120,210,230,0)_70%)]",
+    className:
+      "right-[18%] top-[18%] bg-[radial-gradient(closest-side,rgba(120,210,230,0.45),rgba(120,210,230,0)_70%)]",
     size: 320,
     duration: 26,
     delay: 2.1,
@@ -105,15 +113,21 @@ export function CloudHalos() {
               : {
                   opacity: h.opacity,
                   scale: [0.96, 1.06, 0.96],
-                  x: [0, h.drift.x, 0, -h.drift.x, 0],
-                  y: [0, h.drift.y, 0, -h.drift.y, 0],
                 }
           }
           transition={{
-            opacity: { duration: h.duration * 0.6, delay: h.delay, repeat: Infinity, ease: "easeInOut" },
-            scale: { duration: h.duration * 0.7, delay: h.delay, repeat: Infinity, ease: "easeInOut" },
-            x: { duration: h.duration, delay: h.delay, repeat: Infinity, ease: "easeInOut" },
-            y: { duration: h.duration * 0.85, delay: h.delay, repeat: Infinity, ease: "easeInOut" },
+            opacity: {
+              duration: h.duration * 0.6,
+              delay: h.delay,
+              repeat: Infinity,
+              ease: "easeInOut",
+            },
+            scale: {
+              duration: h.duration * 0.7,
+              delay: h.delay,
+              repeat: Infinity,
+              ease: "easeInOut",
+            },
           }}
         />
       ))}

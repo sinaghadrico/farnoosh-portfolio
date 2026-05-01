@@ -177,8 +177,6 @@ export function FloatingShapes() {
               : {
                   opacity: 0.6,
                   scale: 1,
-                  x: [0, t.drift.x, 0, -t.drift.x, 0],
-                  y: [0, t.drift.y, 0, -t.drift.y, 0],
                   rotate: [0, 4, 0, -4, 0],
                 }
           }
@@ -188,18 +186,6 @@ export function FloatingShapes() {
               duration: 1.4,
               delay: t.delay,
               ease: [0.16, 1, 0.3, 1],
-            },
-            x: {
-              duration: t.duration,
-              delay: t.delay,
-              repeat: Infinity,
-              ease: "easeInOut",
-            },
-            y: {
-              duration: t.duration * 0.85,
-              delay: t.delay,
-              repeat: Infinity,
-              ease: "easeInOut",
             },
             rotate: {
               duration: t.duration * 1.6,
