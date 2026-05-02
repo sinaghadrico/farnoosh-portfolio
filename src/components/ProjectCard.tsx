@@ -29,65 +29,63 @@ export function ProjectCard({
 
   const Wrapper = disableLink ? "div" : Link;
   const wrapperProps = disableLink
-    ? { className: "block cursor-default" }
+    ? { className: "group block h-full cursor-default" }
     : {
         href: `/projects/${project.slug}`,
-        className: "block focus:outline-none",
+        className: "group block h-full focus:outline-none",
       };
 
   return (
-    <Reveal
-      as="article"
-      className="group h-full"
-      delay={(index ?? 0) * 0.15}
-      y={40}
-    >
+    <article className="h-full">
       <Wrapper
         {...(wrapperProps as any)}
-        className={`${(wrapperProps as any).className} overflow-hidden rounded-2xl border border-border bg-[#F5F5F0] shadow-[0_2px_8px_-2px_rgba(0,0,0,0.08),0_8px_24px_-4px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.12),0_20px_48px_-8px_rgba(0,0,0,0.10)]`}
       >
-        <div className="overflow-hidden rounded-t-2xl">
-          <PlaceholderImage
-            image={project.cover}
-            seed={project.slug}
-            priority={priority}
-            sizes={
-              variant === "feature"
-                ? "(min-width: 1024px) 50vw, 100vw"
-                : "(min-width: 1024px) 33vw, 100vw"
-            }
-          />
-        </div>
-        <div className="flex items-start justify-between gap-6 px-5 pb-6 pt-3">
-          <div>
-            <h3
-              className={cn(
-                "mt-2 font-sans font-semibold tracking-tight text-balance transition-colors duration-300",
+        <div
+          className="overflow-hidden rounded-2xl border border-border bg-[#F5F5F0] shadow-[0_2px_8px_-2px_rgba(0,0,0,0.08),0_8px_24px_-4px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.12),0_20px_48px_-8px_rgba(0,0,0,0.10)]"
+        >
+          <div className="overflow-hidden rounded-t-2xl">
+            <PlaceholderImage
+              image={project.cover}
+              seed={project.slug}
+              priority={priority}
+              sizes={
                 variant === "feature"
-                  ? "text-lg md:text-xl"
-                  : "text-base md:text-lg"
-              )}
-            >
-              {project.title}
-            </h3>
-            <p className="mt-2 max-w-xl text-fg-muted">{project.tagline}</p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {project.tags.map((t) => (
-                <Tag key={t} variant="outline">
-                  {t}
-                </Tag>
-              ))}
-            </div>
-            <div className="mt-6">
-              <span className="inline-flex items-center gap-2 rounded-full border border-fg bg-fg px-5 py-2.5 text-sm text-bg transition-colors duration-300 group-hover:bg-bg group-hover:text-fg">
-                View Project
-                <ArrowUpRight size={15} strokeWidth={1.6} />
-              </span>
+                  ? "(min-width: 1024px) 50vw, 100vw"
+                  : "(min-width: 1024px) 33vw, 100vw"
+              }
+            />
+          </div>
+          <div className="flex items-start justify-between gap-6 px-5 pb-6 pt-3">
+            <div>
+              <h3
+                className={cn(
+                  "mt-2 font-sans font-semibold tracking-tight text-balance transition-colors duration-300",
+                  variant === "feature"
+                    ? "text-lg md:text-xl"
+                    : "text-base md:text-lg"
+                )}
+              >
+                {project.title}
+              </h3>
+              <p className="mt-2 max-w-xl text-fg-muted">{project.tagline}</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {project.tags.map((t) => (
+                  <Tag key={t} variant="outline">
+                    {t}
+                  </Tag>
+                ))}
+              </div>
+              <div className="mt-6">
+                <span className="inline-flex items-center gap-2 rounded-full border border-fg bg-fg px-5 py-2.5 text-sm text-bg transition-colors duration-300 group-hover:bg-bg group-hover:text-fg">
+                  View Project
+                  <ArrowUpRight size={15} strokeWidth={1.6} />
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </Wrapper>
-    </Reveal>
+    </article>
   );
 }
 
