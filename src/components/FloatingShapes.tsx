@@ -1,42 +1,42 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
-
 type ToolKind = "figma" | "jira" | "analytics" | "claude";
 
 type Tool = {
   kind: ToolKind;
+  label: string;
   className: string;
   size: number;
-  duration: number;
-  delay: number;
-  drift: { x: number; y: number };
+  animation: string;
+  floatDelay: string;
+  appearDelay: string;
 };
 
 const tools: Tool[] = [
   {
     kind: "figma",
+    label: "Figma",
     className: "left-[76%] top-[48%] md:left-[69%] md:top-[22%]",
     size: 64,
-    duration: 12,
-    delay: 0.3,
-    drift: { x: 12, y: -10 },
+    animation: "animate-float-a",
+    floatDelay: "0s",
+    appearDelay: "0.9s",
   },
   {
     kind: "jira",
+    label: "Jira",
     className: "left-[6%] bottom-[14%] md:left-[7%] md:bottom-[16%]",
     size: 68,
-    duration: 11,
-    delay: 0.6,
-    drift: { x: 10, y: -8 },
+    animation: "animate-float-b",
+    floatDelay: "-3s",
+    appearDelay: "1.2s",
   },
   {
     kind: "analytics",
+    label: "Analytics",
     className: "right-[6%] bottom-[16%] md:right-[7%] md:bottom-[18%]",
     size: 64,
-    duration: 13,
-    delay: 1.5,
-    drift: { x: -10, y: 10 },
+    animation: "animate-float-c",
+    floatDelay: "-5s",
+    appearDelay: "1.5s",
   },
 ];
 
@@ -159,37 +159,33 @@ function ToolIcon({ kind, size }: { kind: ToolKind; size: number }) {
 }
 
 export function FloatingShapes() {
-  const reduce = useReducedMotion();
-
   return (
     <div
       aria-hidden
-      className="pointer-events-none absolute inset-0 overflow-hidden"
+      className="pointer-events-none absolute inset-0 overflow-hidden motion-reduce:[&_*]:!animate-none"
     >
       {tools.map((t, i) => (
-        <motion.div
+        <div
           key={i}
-          className={`absolute ${t.className}`}
-          initial={{ opacity: 0, scale: 0.6 }}
-          animate={
-            reduce
-              ? { opacity: 0.6, scale: 1 }
-              : {
-                  opacity: 0.6,
-                  scale: 1,
-                }
-          }
-          transition={{
-            opacity: { duration: 1.4, delay: t.delay },
-            scale: {
-              duration: 1.4,
-              delay: t.delay,
-              ease: [0.16, 1, 0.3, 1],
-            },
-          }}
+          className={`absolute animate-appear ${t.className}`}
+          style={{ animationDelay: t.appearDelay }}
         >
-          <ToolIcon kind={t.kind} size={t.size} />
-        </motion.div>
+          <div
+            className={t.animation}
+            style={{ animationDelay: t.floatDelay }}
+          >
+            <button
+              type="button"
+              aria-label={t.label}
+              className="group pointer-events-auto relative block cursor-pointer opacity-60 transition-all duration-500 ease-out-expo hover:scale-110 hover:opacity-100 hover:-rotate-6 hover:[animation-play-state:paused] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fg/40 rounded-2xl"
+            >
+              <ToolIcon kind={t.kind} size={t.size} />
+              <span className="pointer-events-none absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-full border border-border bg-bg px-2.5 py-1 font-sans text-xs text-fg opacity-0 shadow-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+                {t.label}
+              </span>
+            </button>
+          </div>
+        </div>
       ))}
     </div>
   );

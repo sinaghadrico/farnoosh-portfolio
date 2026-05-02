@@ -69,6 +69,14 @@ const config: Config = {
         "marquee": "marquee 40s linear infinite",
         "fade-up": "fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both",
         "fade-in": "fadeIn 0.6s ease-out both",
+        "float-a": "floatA 8s ease-in-out infinite",
+        "float-b": "floatB 9s ease-in-out infinite",
+        "float-c": "floatC 7s ease-in-out infinite",
+        "drift-a": "driftA 18s ease-in-out infinite",
+        "drift-b": "driftB 22s ease-in-out infinite",
+        "drift-c": "driftC 20s ease-in-out infinite",
+        "appear": "appear 0.9s cubic-bezier(0.16, 1, 0.3, 1) both",
+        "appear-soft": "appearSoft 1.6s cubic-bezier(0.16, 1, 0.3, 1) both",
       },
       keyframes: {
         marquee: {
@@ -82,6 +90,46 @@ const config: Config = {
         fadeIn: {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
+        },
+        floatA: {
+          "0%, 100%": { transform: "translate3d(0, 0, 0) rotate(0deg)" },
+          "25%": { transform: "translate3d(8px, -18px, 0) rotate(4deg)" },
+          "50%": { transform: "translate3d(-6px, -28px, 0) rotate(-3deg)" },
+          "75%": { transform: "translate3d(-10px, -10px, 0) rotate(2deg)" },
+        },
+        floatB: {
+          "0%, 100%": { transform: "translate3d(0, 0, 0) rotate(0deg)" },
+          "33%": { transform: "translate3d(-12px, -22px, 0) rotate(-5deg)" },
+          "66%": { transform: "translate3d(10px, -14px, 0) rotate(6deg)" },
+        },
+        floatC: {
+          "0%, 100%": { transform: "translate3d(0, 0, 0) rotate(0deg)" },
+          "25%": { transform: "translate3d(-14px, -12px, 0) rotate(-4deg)" },
+          "50%": { transform: "translate3d(0, -26px, 0) rotate(3deg)" },
+          "75%": { transform: "translate3d(12px, -16px, 0) rotate(5deg)" },
+        },
+        appear: {
+          "0%": { opacity: "0", transform: "scale(0.6) translateY(12px)" },
+          "100%": { opacity: "1", transform: "scale(1) translateY(0)" },
+        },
+        appearSoft: {
+          "0%": { opacity: "0", transform: "scale(0.85)" },
+          "100%": { opacity: "1", transform: "scale(1)" },
+        },
+        driftA: {
+          "0%, 100%": { transform: "translate3d(0, 0, 0) scale(1)" },
+          "33%": { transform: "translate3d(28px, -22px, 0) scale(1.05)" },
+          "66%": { transform: "translate3d(-18px, 14px, 0) scale(0.97)" },
+        },
+        driftB: {
+          "0%, 100%": { transform: "translate3d(0, 0, 0) scale(1)" },
+          "50%": { transform: "translate3d(-32px, -28px, 0) scale(1.06)" },
+        },
+        driftC: {
+          "0%, 100%": { transform: "translate3d(0, 0, 0) scale(1)" },
+          "25%": { transform: "translate3d(20px, 18px, 0) scale(0.96)" },
+          "50%": { transform: "translate3d(-14px, -20px, 0) scale(1.04)" },
+          "75%": { transform: "translate3d(-22px, 8px, 0) scale(1)" },
         },
       },
     },
