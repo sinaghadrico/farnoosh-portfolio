@@ -97,7 +97,7 @@ export function Hero() {
                   </span>
                 </Link>
                 <a
-                  href="/FarnooshBagheri-Resume(Product Designer).pdf"
+                  href="/Farnoosh_Bagheri_UX_UI_Designer_Resume.pdf"
                   download
                   className="inline-flex items-center gap-2 rounded-full border border-fg/30 px-5 py-3 text-sm transition-colors duration-300 hover:border-fg"
                 >

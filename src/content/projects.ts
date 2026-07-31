@@ -11,7 +11,7 @@ export const projects: Project[] = [
     slug: "malek",
     title: "Malek",
     tagline:
-      "Optimizing User Flows for Malek, a Property Tokenization Platform.",
+      "Optimizing User Flows for Higher Adoption in Malek, a Property Tokenization Platform.",
     summary:
       "An end-to-end product design role on a blockchain-inspired fintech platform that lets people buy, trade, and swap micro-shares of property — with onboarding that earns trust quickly and a BNPL model that lowers the entry point for retail investors.",
     year: "2025 — 2026",
@@ -83,7 +83,7 @@ export const projects: Project[] = [
   {
     slug: "google-maps",
     title: "Google Maps",
-    tagline: "Improving Navigation Trust in Unfamiliar Areas for Tourists on Google Maps.",
+    tagline: "Improving Navigation Trust and Safety in Unfamiliar Areas for Tourists on Google Maps.",
     summary:
       "A case study exploring how Google Maps could better serve travelers — with personalised directions, stronger visual hierarchy, and real-time updates that build trust and reduce reliance on third-party apps.",
     year: "2024",
