@@ -2,8 +2,7 @@ import type { Experience, Recognition } from "@/types";
 
 export const aboutCopy = {
   intro: [
-    "🎨 I'm a UX/UI Designer specializing in simplifying complex workflows.",
-    "💼 Over the past few years, I've worked as a UI/UX Designer on a property tokenization fintech product, as well as multiple freelance UX/UI projects, primarily in the media and transportation spaces. My background in computer science and frontend development has strengthened my systems thinking and problem-solving skills.",
+    "🎨 I'm a UX/UI Designer specializing in simplifying complex workflows. Over the past few years, I've worked as a UI/UX Designer on a property tokenization fintech product, as well as multiple freelance UX/UI projects, primarily in the media and transportation spaces. My background in computer science and frontend development has strengthened my systems thinking and problem-solving skills.",
     "💪 I'm particularly strong in critical thinking, problem discovery through deep user empathy, conducting user research and analysis, and turning insights into scalable design solutions and polished UI execution.",
     "🤝 I approach design through strong cross-functional collaboration with designers, engineers, and product managers to balance user needs with business goals and ensure a desirable, feasible, and viable product.",
     "🟢 I'm looking for UX/UI Design and UX Research roles within collaborative environments, where I can reduce complexity, improve efficiency, and contribute to business objectives.",
