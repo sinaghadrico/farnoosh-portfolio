@@ -141,11 +141,15 @@ export function ProblemDiscoverySection() {
               key={insight.title}
               className="flex flex-col gap-6 rounded-[20px] bg-white p-4"
             >
-              <Figure
-                name={insight.image}
-                className="rounded-lg"
-                sizes="(min-width: 1024px) 244px, (min-width: 640px) 45vw, 90vw"
-              />
+              {/* The four illustrations are cropped to different heights in
+                  Figma, so give each one the same 244×169 slot to sit in. */}
+              <div className="flex aspect-[244/169] items-center justify-center">
+                <Figure
+                  name={insight.image}
+                  className="max-h-full w-auto max-w-full object-contain"
+                  sizes="(min-width: 1024px) 244px, (min-width: 640px) 45vw, 90vw"
+                />
+              </div>
               <div className="flex flex-col gap-3">
                 <h3 className="font-dm text-[14px] font-bold leading-[1.5] text-[#1A2432]">
                   {insight.title}

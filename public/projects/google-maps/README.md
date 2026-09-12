@@ -19,6 +19,20 @@ ratio, so nothing breaks.
 - Sizes below are the **intrinsic pixel sizes** used for aspect ratio — the
   exact number matters less than the ratio.
 
+## Status
+
+**18 of 33 exported and live** — pulled straight out of Figma via the MCP
+`download_assets` tool, converted to WebP, and already flipped to `ready: true`
+in `assets.ts`.
+
+**15 still missing** (marked ⏳ below). The export ran into the *Figma MCP tool
+call limit on the Starter plan*, which resets after a while. Two ways to finish:
+
+1. **Ask me to resume** once the quota resets — I'll pull the remaining 15 the
+   same way (I have every node id).
+2. **Export them by hand** from the table below and drop them in; then flip
+   `ready` to `true` for those entries in `assets.ts`.
+
 ## The list (33 files)
 
 ### Section 1 — Hero
@@ -36,8 +50,8 @@ ratio, so nothing breaks.
 | `source-reddit.webp` | 48×48 | `18:746` → `Reddit` | Reddit logo next to "Blind Spot for Attractions" |
 | `insight-routing.webp` | 244×169 | `18:813` | Car skidding off a snowy road |
 | `insight-transit.webp` | 244×169 | `18:1487` | Anxious traveller at a bus stop |
-| `insight-labels.webp` | 244×169 | `18:1639` | Person at a confusing signpost |
-| `insight-attractions.webp` | 244×169 | `18:1847` | Traveller exploring a 3D city map |
+| ⏳ `insight-labels.webp` | 244×169 | `18:1639` | Person at a confusing signpost |
+| ⏳ `insight-attractions.webp` | 244×169 | `18:1847` | Traveller exploring a 3D city map |
 
 ### Section 4 — Interviews
 
@@ -82,24 +96,24 @@ block (that's real text on the page).
 
 | File | Size | Figma node | Block |
 | --- | --- | --- | --- |
-| `ui-1a-route-details.webp` | 1080×874 | `18:3906` | ① Separated route details — pair 1 |
-| `ui-1b-route-details.webp` | 1080×874 | `18:4239` | ① Separated route details — pair 2 |
-| `ui-1c-route-details.webp` | 1080×874 | `18:4457` | ① Separated route details — pair 3 |
-| `ui-2a-lane-feedback.webp` | 1080×874 | `18:4847` | ② Lane display & real-time feedback — pair 1 |
-| `ui-2b-lane-feedback.webp` | 1080×874 | `18:5117` | ② Lane display & real-time feedback — pair 2 |
-| `ui-2c-lane-feedback.webp` | 1080×874 | `18:5334` | ② Lane display & real-time feedback — pair 3 |
-| `ui-3a-arrival-feedback.webp` | 1080×874 | `18:5411` | ③ Feedback upon arrival — pair 1 |
-| `ui-3b-arrival-feedback.webp` | 1080×874 | `18:5509` | ③ Feedback upon arrival — pair 2 |
+| ⏳ `ui-1a-route-details.webp` | 1080×874 | `18:3906` | ① Separated route details — pair 1 |
+| ⏳ `ui-1b-route-details.webp` | 1080×874 | `18:4239` | ① Separated route details — pair 2 |
+| ⏳ `ui-1c-route-details.webp` | 1080×874 | `18:4457` | ① Separated route details — pair 3 |
+| ⏳ `ui-2a-lane-feedback.webp` | 1080×874 | `18:4847` | ② Lane display & real-time feedback — pair 1 |
+| ⏳ `ui-2b-lane-feedback.webp` | 1080×874 | `18:5117` | ② Lane display & real-time feedback — pair 2 |
+| ⏳ `ui-2c-lane-feedback.webp` | 1080×874 | `18:5334` | ② Lane display & real-time feedback — pair 3 |
+| ⏳ `ui-3a-arrival-feedback.webp` | 1080×874 | `18:5411` | ③ Feedback upon arrival — pair 1 |
+| ⏳ `ui-3b-arrival-feedback.webp` | 1080×874 | `18:5509` | ③ Feedback upon arrival — pair 2 |
 
 ### Section 10 — Success metric icons
 
 | File | Size | Figma node | What to select |
 | --- | --- | --- | --- |
-| `metric-safety.webp` | 48×48 | `18:5603` | Green shield with a tick |
-| `metric-exit-misses.webp` | 48×48 | `18:5617` | Cluster of coloured map pins |
-| `metric-incident.webp` | 48×48 | `18:5637` | Magnifying glass with an exclamation mark |
-| `metric-feedback.webp` | 48×48 | `18:5646` | Sad/happy face pair with an arrow |
-| `metric-trip-planning.webp` | 48×48 | `18:5653` | Calendar with a clock |
+| ⏳ `metric-safety.webp` | 48×48 | `18:5603` | Green shield with a tick |
+| ⏳ `metric-exit-misses.webp` | 48×48 | `18:5617` | Cluster of coloured map pins |
+| ⏳ `metric-incident.webp` | 48×48 | `18:5637` | Magnifying glass with an exclamation mark |
+| ⏳ `metric-feedback.webp` | 48×48 | `18:5646` | Sad/happy face pair with an arrow |
+| ⏳ `metric-trip-planning.webp` | 48×48 | `18:5653` | Calendar with a clock |
 
 ## Not needed
 

@@ -26,35 +26,26 @@ export type Asset = {
   ready: boolean;
 };
 
-function a(file: string, w: number, h: number, alt: string): Asset {
-  return { file, w, h, alt, ready: false };
+function a(
+  file: string,
+  w: number,
+  h: number,
+  alt: string,
+  ready = false
+): Asset {
+  return { file, w, h, alt, ready };
 }
 
 export const assets = {
   // Section 1 — Hero
-  heroDevices: a(
-    "hero-devices.webp",
-    1280,
-    840,
-    "Two iPhones showing the redesigned Google Maps route screen and the new 'Add a report' sheet, over a travel-doodle backdrop"
-  ),
+  heroDevices: a("hero-devices.webp", 1280, 840, "Two iPhones showing the redesigned Google Maps route screen and the new 'Add a report' sheet, over a travel-doodle backdrop", true),
 
   // Section 3 — Problem discovery: press sources and desk-research illustrations
-  sourceCnn: a("source-cnn.webp", 48, 48, "CNN"),
-  sourceBusinessInsider: a("source-business-insider.webp", 48, 48, "Business Insider"),
-  sourceReddit: a("source-reddit.webp", 48, 48, "Reddit"),
-  insightRouting: a(
-    "insight-routing.webp",
-    244,
-    169,
-    "Illustration of a car skidding off a snowy road past a warning sign"
-  ),
-  insightTransit: a(
-    "insight-transit.webp",
-    244,
-    169,
-    "Illustration of an anxious traveller waiting at a bus stop"
-  ),
+  sourceCnn: a("source-cnn.webp", 96, 96, "CNN", true),
+  sourceBusinessInsider: a("source-business-insider.webp", 96, 96, "Business Insider", true),
+  sourceReddit: a("source-reddit.webp", 96, 96, "Reddit", true),
+  insightRouting: a("insight-routing.webp", 489, 209, "Illustration of a car skidding off a snowy road past a warning sign", true),
+  insightTransit: a("insight-transit.webp", 486, 324, "Illustration of an anxious traveller waiting at a bus stop", true),
   insightLabels: a(
     "insight-labels.webp",
     244,
@@ -69,50 +60,25 @@ export const assets = {
   ),
 
   // Section 4 — Interviews
-  interviewMap: a(
-    "interview-map.webp",
-    1136,
-    552,
-    "Dotted world map used as the backdrop for the five interview insights"
-  ),
+  interviewMap: a("interview-map.webp", 1136, 552, "Dotted world map used as the backdrop for the five interview insights", true),
 
   // Section 6 — Persona profile
-  personaIllustration: a(
-    "persona-illustration.webp",
-    1136,
-    584,
-    "Two travellers — one pointing out a landmark, one reading a paper map — in front of a stylised city skyline"
-  ),
+  personaIllustration: a("persona-illustration.webp", 1136, 585, "Two travellers — one pointing out a landmark, one reading a paper map — in front of a stylised city skyline", true),
 
   // Section 7 — Competitive analysis: app icons
-  appAppleMaps: a("app-apple-maps.webp", 128, 128, "Apple Maps"),
-  appWaze: a("app-waze.webp", 128, 128, "Waze"),
-  appCitymapper: a("app-citymapper.webp", 128, 128, "Citymapper"),
-  appKakaoMap: a("app-kakaomap.webp", 128, 128, "KakaoMap"),
-  appMapsMe: a("app-maps-me.webp", 128, 128, "Maps.me"),
-  appNeshan: a("app-neshan.webp", 128, 128, "Neshan"),
+  appAppleMaps: a("app-apple-maps.webp", 128, 128, "Apple Maps", true),
+  appWaze: a("app-waze.webp", 128, 128, "Waze", true),
+  appCitymapper: a("app-citymapper.webp", 128, 128, "Citymapper", true),
+  appKakaoMap: a("app-kakaomap.webp", 128, 128, "KakaoMap", true),
+  appMapsMe: a("app-maps-me.webp", 128, 128, "Maps.me", true),
+  appNeshan: a("app-neshan.webp", 128, 128, "Neshan", true),
 
   // Section 7 — Competitive analysis: reference screenshots
-  shotWaze: a("shot-waze.webp", 193, 420, "Waze's 'What do you see?' real-time reporting sheet"),
-  shotAppleMaps: a(
-    "shot-apple-maps.webp",
-    193,
-    420,
-    "Apple Maps showing each route option listed separately with its own details"
-  ),
-  shotKakaoMap: a("shot-kakaomap.webp", 193, 420, "KakaoMap showing real-time transit information"),
-  shotCitymapper: a(
-    "shot-citymapper.webp",
-    193,
-    420,
-    "Citymapper showing public transport delays and multiple route options"
-  ),
-  shotNeshan: a(
-    "shot-neshan.webp",
-    193,
-    420,
-    "Neshan showing lane exit guidance, road signs and speed control"
-  ),
+  shotWaze: a("shot-waze.webp", 387, 840, "Waze's 'What do you see?' real-time reporting sheet", true),
+  shotAppleMaps: a("shot-apple-maps.webp", 387, 840, "Apple Maps showing each route option listed separately with its own details", true),
+  shotKakaoMap: a("shot-kakaomap.webp", 387, 840, "KakaoMap showing real-time transit information", true),
+  shotCitymapper: a("shot-citymapper.webp", 387, 840, "Citymapper showing public transport delays and multiple route options", true),
+  shotNeshan: a("shot-neshan.webp", 387, 840, "Neshan showing lane exit guidance, road signs and speed control", true),
 
   // Section 9 — Visual design (one composition per phone pair)
   ui1a: a(
