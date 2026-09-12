@@ -39,6 +39,7 @@ export default function HomePage() {
                 project={project}
                 index={i}
                 priority={i < 2}
+                disableLink={true}
               />
             </li>
           ))}
