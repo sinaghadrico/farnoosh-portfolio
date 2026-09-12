@@ -14,10 +14,11 @@ import { site } from "@/content/site";
 type Params = { slug: string };
 
 export function generateStaticParams() {
-  // Castbox has its own bespoke route at /projects/castbox, which takes
-  // precedence over this dynamic one — don't prerender a shadow copy here.
+  // Castbox and Google Maps have their own bespoke routes at
+  // /projects/castbox and /projects/google-maps, which take precedence over
+  // this dynamic one — don't prerender shadow copies here.
   return projects
-    .filter((p) => p.slug !== "castbox")
+    .filter((p) => p.slug !== "castbox" && p.slug !== "google-maps")
     .map((p) => ({ slug: p.slug }));
 }
 
