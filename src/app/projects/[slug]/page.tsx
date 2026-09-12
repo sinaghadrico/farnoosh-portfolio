@@ -14,7 +14,11 @@ import { site } from "@/content/site";
 type Params = { slug: string };
 
 export function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
+  // Castbox has its own bespoke route at /projects/castbox, which takes
+  // precedence over this dynamic one — don't prerender a shadow copy here.
+  return projects
+    .filter((p) => p.slug !== "castbox")
+    .map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata(props: {
