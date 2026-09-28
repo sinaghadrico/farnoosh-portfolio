@@ -146,15 +146,16 @@ export function TakeawaysSection() {
         {takeaways.map((takeaway) => (
           <li
             key={takeaway.n}
-            className="relative overflow-hidden rounded-lg border px-6 py-5"
+            className="relative overflow-hidden rounded-lg border-l-[5px] px-6 py-5"
             style={{
               backgroundColor: takeaway.bg,
               borderColor: takeaway.border,
             }}
           >
+            {/* Oversized ghost numeral, bleeding off the top-right corner. */}
             <span
               aria-hidden
-              className="pointer-events-none absolute -top-6 right-6 select-none font-dm text-[120px] font-bold leading-none text-white md:text-[160px]"
+              className="pointer-events-none absolute -top-10 right-8 select-none font-dm text-[130px] font-bold leading-none text-[#1A2432]/[0.04] md:text-[170px]"
             >
               {takeaway.n}
             </span>
@@ -180,15 +181,20 @@ export function ThanksSection() {
     <Section className="pb-16">
       <div className="rounded-[16px] border border-[#F2F4F7] bg-white px-6 py-10 text-center md:px-8 md:py-12">
         <p aria-hidden className="font-dm text-[48px] leading-none md:text-[64px]">
-          💫
+          🌠
         </p>
         <Heading className="mt-5">
           That’s it! I really appreciate the time you spent
         </Heading>
         <p className="mt-1 font-dm text-[15px] leading-[1.8] text-[#475467] md:text-[16px]">
-          We would like to thank 🪄{" "}
-          <span className="font-bold text-[#1A2432]">Marzie Nadali</span> (UX
-          Leader turned Entrepreneur)
+          We would like to thank{" "}
+          <span className="whitespace-nowrap rounded bg-[#F2F4F7] px-1.5 py-0.5">
+            🪄{" "}
+            <span className="font-bold text-[#1A2432] underline underline-offset-2">
+              Marzie Nadali
+            </span>
+          </span>{" "}
+          (UX Leader turned Entrepreneur)
           <br className="hidden sm:block" /> for being our mentor and helping us
           implement this case study.
         </p>
@@ -206,6 +212,12 @@ export function ThanksSection() {
             className="underline underline-offset-2"
           >
             farnooshbagheriii@gmail.com
+          </a>
+        </p>
+        <p className="font-dm text-[15px] leading-[1.8] text-[#475467] md:text-[16px]">
+          📞{" "}
+          <a href="tel:+971525662144" className="underline underline-offset-2">
+            +971 52 566 2144
           </a>
         </p>
       </div>

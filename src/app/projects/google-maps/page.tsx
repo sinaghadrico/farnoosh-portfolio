@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { HeroSection } from "@/components/google-maps/HeroSection";
 import { ScopeSection } from "@/components/google-maps/ScopeSection";
+import { MyRoleSection } from "@/components/google-maps/MyRoleSection";
 import { ProblemDiscoverySection } from "@/components/google-maps/ProblemDiscoverySection";
 import { InterviewSection } from "@/components/google-maps/InterviewSection";
 import { ChallengesSection } from "@/components/google-maps/ChallengesSection";
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
 
 /**
  * Bespoke Google Maps case study, implemented from the Figma frame
- * "All Sections" (1280×21104).
+ * "Google Maps" (1280×24208).
  *
  * This static route takes precedence over /projects/[slug], so the shared
  * case-study template still serves every other project.
@@ -57,6 +58,7 @@ export default function GoogleMapsCaseStudy() {
 
       <HeroSection />
       <ScopeSection />
+      <MyRoleSection />
       <ProblemDiscoverySection />
       <InterviewSection />
       <ChallengesSection />

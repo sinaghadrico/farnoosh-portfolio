@@ -8,22 +8,22 @@ const methods = [
   "Persona Profile",
   "Competitive Analysis",
   "Ideation, Prioritizations Matrix",
-  "Sketching Ideas",
-  "Wireframe, UI",
+  "Visual Design",
 ];
 
 const objectives = [
-  "Improving Route Clarity",
+  "Navigation Clarity",
   "End-to-end Trip Planning",
-  "Adding Safety Features",
+  "Safety Features",
   "Real-time Feedback",
-  "Explorer Walk Mode",
-  "Enabling Tourist Discovery Mode",
+  "Exploration Mode",
+  "Emergency Conditions",
+  "Structured Place Information",
 ];
 
 const facts = [
   { label: "Team", value: "2 Product designers" },
-  { label: "Role", value: "UX Researcher, UI Designer" },
+  { label: "Role", value: "UX Researcher, UX Designer, UI Designer" },
   { label: "Duration", value: "4 Weeks (Remote)" },
   { label: "Tools", value: "Figma, FigJam, Google Meet" },
 ];

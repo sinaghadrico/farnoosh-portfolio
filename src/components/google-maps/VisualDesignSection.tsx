@@ -8,39 +8,97 @@ import {
 } from "@/components/google-maps/primitives";
 
 /**
- * Section 9 — Visual design (Figma node 18:3892).
+ * Section 10 — Visual design.
  *
- * Four numbered blocks. The headings are real text; each phone pair below them
- * is one 1080×874 composition exported straight out of Figma.
+ * Eight numbered blocks. Each heading is a light verb followed by the bold
+ * feature name, next to a dark hexagon badge. The screens below every heading
+ * are fixed compositions in Figma — phones, connector lines and dashed
+ * annotation boxes — so each part is exported as one image.
  */
 
-const blocks: { n: number; title: string; shots: AssetKey[] }[] = [
+type Block = {
+  n: number;
+  /** Light-weight lead-in, e.g. "Provided Feedback:" */
+  prefix: string;
+  /** Bold feature name. */
+  title: string;
+  parts: AssetKey[];
+};
+
+const blocks: Block[] = [
   {
     n: 1,
-    title:
-      "Separated Route Details Based on Different Criteria (Fastest, Safest, etc.):",
-    shots: ["ui1a", "ui1b", "ui1c"],
+    prefix: "Provided Feedback:",
+    title: "Walking Navigation",
+    parts: ["vd1Hero", "vd1Details"],
   },
   {
     n: 2,
-    title: "Lane Display & Real-Time User Feedback:",
-    shots: ["ui2a", "ui2b", "ui2c"],
+    prefix: "Provided Feedback:",
+    title: "Public Transportation",
+    parts: ["vd2Hero", "vd2Details"],
   },
   {
     n: 3,
-    title: "Feedback from users upon arrival:",
-    shots: ["ui3a", "ui3b"],
+    prefix: "Provided Feedback:",
+    title: "Upon Arrival",
+    parts: ["vd3Hero", "vd3Details"],
   },
-  { n: 4, title: "In progress....", shots: [] },
+  {
+    n: 4,
+    prefix: "Introduced",
+    title: "Exploration Mode",
+    parts: ["vd4Hero", "vd4Details"],
+  },
+  {
+    n: 5,
+    prefix: "Supported",
+    title: "Emergency Conditions",
+    parts: ["vd5Hero", "vd5Details"],
+  },
+  {
+    n: 6,
+    prefix: "Personalized",
+    title: "Trip Planning",
+    parts: ["vd6Hero", "vd6Details", "vd6Details2"],
+  },
+  {
+    n: 7,
+    prefix: "Customized",
+    title: "Driving Experience",
+    parts: ["vd7Hero", "vd7Details"],
+  },
+  {
+    n: 8,
+    prefix: "Structured",
+    title: "Place Information",
+    parts: ["vd8Hero"],
+  },
 ];
+
+/** The dark hexagon carrying the block number. */
+function HexBadge({ n }: { n: number }) {
+  return (
+    <span
+      aria-hidden
+      className="flex size-[38px] shrink-0 items-center justify-center bg-[#12303E] font-dm text-[13px] font-bold text-white"
+      style={{
+        clipPath:
+          "polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%)",
+      }}
+    >
+      {n}
+    </span>
+  );
+}
 
 export function VisualDesignSection() {
   return (
     <Section>
       <Eyebrow>Visual Design</Eyebrow>
       <Heading className="mt-4">
-        From clues to sketches, a challenging process to understand how practical
-        ideas are and to minimize user frustrations
+        From clues to sketches, a challenging process to understand how
+        practical ideas are and to minimize user frustrations
       </Heading>
       <Body className="mt-1">
         While quick visual comprehension is generally beneficial, it becomes
@@ -51,34 +109,33 @@ export function VisualDesignSection() {
         Maps’ UI design patterns and implementing small yet impactful changes.
       </Body>
 
-      <div className="mt-8 flex flex-col gap-16 rounded-[10px] bg-white px-2 py-8 sm:px-6 md:mt-10 md:gap-20 md:px-8 md:py-[72px]">
+      <div className="mt-12 flex flex-col gap-14 md:mt-16 md:gap-20">
         {blocks.map((block, index) => (
           <div key={block.n}>
             {index > 0 && (
               <span
                 aria-hidden
-                className="mb-16 block h-1 w-full rounded-full bg-[#F2F4F7] md:mb-20"
+                className="mb-14 block h-px w-full bg-[#EAECF0] md:mb-20"
               />
             )}
 
-            <h3 className="flex items-start gap-2 font-dm text-[16px] font-bold leading-[1.5] text-[#1A2432] md:text-[18px]">
-              <span className="flex size-[24px] shrink-0 items-center justify-center rounded-full bg-[#1A2432] text-[12px] text-white">
-                {block.n}
+            <h3 className="flex items-center gap-3 font-dm text-[18px] leading-[1.5] text-[#98A2B3] md:text-[20px]">
+              <HexBadge n={block.n} />
+              <span>
+                {block.prefix}{" "}
+                <span className="font-bold text-[#1A2432]">{block.title}</span>
               </span>
-              {block.title}
             </h3>
 
-            {block.shots.length > 0 && (
-              <div className="mt-7 flex flex-col gap-4 md:gap-6">
-                {block.shots.map((shot) => (
-                  <Figure
-                    key={shot}
-                    name={shot}
-                    sizes="(min-width: 1180px) 1072px, 100vw"
-                  />
-                ))}
-              </div>
-            )}
+            <div className="mt-6 flex flex-col gap-6 md:mt-8 md:gap-10">
+              {block.parts.map((part) => (
+                <Figure
+                  key={part}
+                  name={part}
+                  sizes="(min-width: 1180px) 1136px, 100vw"
+                />
+              ))}
+            </div>
           </div>
         ))}
       </div>

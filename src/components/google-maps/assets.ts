@@ -38,7 +38,15 @@ function a(
 
 export const assets = {
   // Section 1 — Hero
-  heroDevices: a("hero-devices.webp", 1280, 840, "Two iPhones showing the redesigned Google Maps route screen and the new 'Add a report' sheet, over a travel-doodle backdrop", true),
+  heroCollage: a(
+    "hero-collage.webp",
+    566,
+    509,
+    "Collage of Google Maps redesign screens — the SOS sheet, a trip planner, route options, a place page and Exploration Mode"
+  ),
+
+  // Section 3 — My role
+  roleAvatar: a("role-avatar.webp", 96, 96, "Farnoosh Bagheri"),
 
   // Section 3 — Problem discovery: press sources and desk-research illustrations
   sourceCnn: a("source-cnn.webp", 96, 96, "CNN", true),
@@ -80,62 +88,33 @@ export const assets = {
   shotCitymapper: a("shot-citymapper.webp", 387, 840, "Citymapper showing public transport delays and multiple route options", true),
   shotNeshan: a("shot-neshan.webp", 387, 840, "Neshan showing lane exit guidance, road signs and speed control", true),
 
-  // Section 9 — Visual design (one composition per phone pair)
-  ui1a: a(
-    "ui-1a-route-details.webp",
-    1080,
-    874,
-    "Route screen before and after: route options split out by criteria with a Safety Mode prompt"
-  ),
-  ui1b: a(
-    "ui-1b-route-details.webp",
-    1080,
-    874,
-    "Route comparison screens showing fastest and safest options side by side"
-  ),
-  ui1c: a(
-    "ui-1c-route-details.webp",
-    1080,
-    874,
-    "Route detail screens showing risk zones and alternatives on the map"
-  ),
-  ui2a: a(
-    "ui-2a-lane-feedback.webp",
-    1080,
-    874,
-    "Turn-by-turn screens with lane guidance displayed above the map"
-  ),
-  ui2b: a(
-    "ui-2b-lane-feedback.webp",
-    1080,
-    874,
-    "Navigation screens with the in-trip report sheet for real-time user feedback"
-  ),
-  ui2c: a(
-    "ui-2c-lane-feedback.webp",
-    1080,
-    874,
-    "Navigation screens showing reports from other drivers on the route ahead"
-  ),
-  ui3a: a(
-    "ui-3a-arrival-feedback.webp",
-    1080,
-    874,
-    "Arrival screens asking the traveller to rate the route they just took"
-  ),
-  ui3b: a(
-    "ui-3b-arrival-feedback.webp",
-    1080,
-    874,
-    "Arrival feedback screens confirming the report and thanking the traveller"
-  ),
+  // Visual design — one image per part. Every block has a "hero" pair (the
+  // before/after phones plus their dashed annotation callouts); most also have
+  // a row of detail screens under it. `w`/`h` are provisional until the real
+  // exports land — re-read them off the files and update these.
+  vd1Hero: a("vd-1-walking-hero.webp", 1136, 570, "Walking Navigation before and after: reporting hazards in real time from the navigation screen"),
+  vd1Details: a("vd-1-walking-details.webp", 1136, 575, "Add a report sheet, the unsafe-area categories, reporting in progress and the confirmation"),
+  vd2Hero: a("vd-2-transit-hero.webp", 1136, 590, "Public Transportation before and after: confirming whether the bus arrived on time"),
+  vd2Details: a("vd-2-transit-details.webp", 1136, 590, "Confirming the stop location, pinning the correct place and the submitted bus report"),
+  vd3Hero: a("vd-3-arrival-hero.webp", 1136, 570, "Upon Arrival before and after: rating the navigation once the traveller reaches the destination"),
+  vd3Details: a("vd-3-arrival-details.webp", 1136, 580, "Choosing the biggest problem, reporting incorrect place details and the thank-you screen"),
+  vd4Hero: a("vd-4-exploration-hero.webp", 1136, 520, "Exploration Mode before and after: the new entry point and its onboarding sheet"),
+  vd4Details: a("vd-4-exploration-details.webp", 1136, 570, "Street-level and map views of Exploration Mode with frequently used paths"),
+  vd5Hero: a("vd-5-emergency-hero.webp", 1136, 740, "Emergency Conditions before and after: the SOS button and the call-911 sheet"),
+  vd5Details: a("vd-5-emergency-details.webp", 1136, 580, "The Can't Talk questionnaire, location sharing and the shared-location status"),
+  vd6Hero: a("vd-6-trip-hero.webp", 1136, 620, "Trip Planning before and after: the saved lists and the new trip planner"),
+  vd6Details: a("vd-6-trip-details.webp", 1136, 690, "Creating a plan, adding attractions, setting durations and choosing navigation preferences"),
+  vd6Details2: a("vd-6-trip-details-2.webp", 1136, 620, "The day-by-day plan timeline and starting navigation from a planned stop"),
+  vd7Hero: a("vd-7-driving-hero.webp", 1136, 560, "Driving Experience before and after: Safety Mode and sorting routes by safest"),
+  vd7Details: a("vd-7-driving-details.webp", 1136, 680, "Route options, the speed-limit alert and lane guidance during navigation"),
+  vd8Hero: a("vd-8-place-hero.webp", 1136, 590, "Place Information before and after: the restructured place page and nearby attractions"),
 
-  // Section 10 — Success metric icons
-  metricSafety: a("metric-safety.webp", 48, 48, ""),
-  metricExitMisses: a("metric-exit-misses.webp", 48, 48, ""),
-  metricIncident: a("metric-incident.webp", 48, 48, ""),
-  metricFeedback: a("metric-feedback.webp", 48, 48, ""),
-  metricTripPlanning: a("metric-trip-planning.webp", 48, 48, ""),
+  // Success metric icons
+  metricSafety: a("metric-safety.webp", 80, 94, "", true),
+  metricExitMisses: a("metric-exit-misses.webp", 90, 90, "", true),
+  metricIncident: a("metric-incident.webp", 80, 80, "", true),
+  metricFeedback: a("metric-feedback.webp", 90, 90, "", true),
+  metricTripPlanning: a("metric-trip-planning.webp", 90, 90, "", true),
 } satisfies Record<string, Asset>;
 
 export type AssetKey = keyof typeof assets;
