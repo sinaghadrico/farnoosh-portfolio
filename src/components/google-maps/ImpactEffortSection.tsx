@@ -2,6 +2,7 @@ import {
   Body,
   Eyebrow,
   Heading,
+  ScrollHint,
   Section,
   Strong,
 } from "@/components/google-maps/primitives";
@@ -174,6 +175,7 @@ export function ImpactEffortSection() {
           ))}
         </div>
       </div>
+      <ScrollHint className="xl:hidden" />
 
       <ul className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-3">
         {Object.entries(categories).map(([key, category]) => (

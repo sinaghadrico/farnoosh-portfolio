@@ -4,6 +4,7 @@ import {
   Body,
   Eyebrow,
   Heading,
+  ScrollHint,
   Section,
   Strong,
 } from "@/components/google-maps/primitives";
@@ -180,6 +181,7 @@ export function CompetitiveAnalysisSection() {
           </tbody>
         </table>
       </div>
+      <ScrollHint className="lg:hidden" />
 
       <div className="mt-12 flex gap-4 md:gap-6">
         <span aria-hidden className="text-[32px] leading-none md:text-[40px]">

@@ -161,3 +161,21 @@ export function ImageZone({
     </div>
   );
 }
+
+/**
+ * Caption for the two wide blocks that scroll sideways instead of shrinking
+ * (the competitor matrix and the impact/effort chart) — at their Figma sizes
+ * the labels stop being legible long before they stop fitting.
+ */
+export function ScrollHint({ className }: { className?: string }) {
+  return (
+    <p
+      className={cn(
+        "mt-3 font-dm text-[12px] text-[#98A2B3] md:text-[13px]",
+        className
+      )}
+    >
+      Scroll sideways to see the full chart →
+    </p>
+  );
+}

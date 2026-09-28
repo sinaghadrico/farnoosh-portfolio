@@ -110,8 +110,8 @@ export const assets = {
   vd8Hero: a("vd-8-place-hero.webp", 1136, 590, "Place Information before and after: the restructured place page and nearby attractions"),
 
   // Success metric icons
-  metricSafety: a("metric-safety.webp", 80, 94, "", true),
-  metricExitMisses: a("metric-exit-misses.webp", 90, 90, "", true),
+  metricSafety: a("metric-safety.webp", 40, 45, "", true),
+  metricExitMisses: a("metric-exit-misses.webp", 46, 46, "", true),
   metricIncident: a("metric-incident.webp", 80, 80, "", true),
   metricFeedback: a("metric-feedback.webp", 90, 90, "", true),
   metricTripPlanning: a("metric-trip-planning.webp", 90, 90, "", true),

@@ -125,7 +125,7 @@ export function InterviewSection() {
       <div className="mt-8 rounded-[10px] bg-[#FAFAFB] px-4 py-8 sm:px-6 md:mt-10 md:px-8 md:py-12">
         {/* lg and up: the Figma composition, cards pinned over the map. */}
         <div
-          className="relative hidden lg:block"
+          className="relative hidden xl:block"
           style={{ aspectRatio: `${MAP_W} / ${MAP_H}` }}
         >
           <Figure
@@ -165,7 +165,7 @@ export function InterviewSection() {
         </div>
 
         {/* Below lg: the map reads as a backdrop only, so stack the cards. */}
-        <div className="lg:hidden">
+        <div className="xl:hidden">
           <Figure
             name="interviewMap"
             className="rounded-lg"

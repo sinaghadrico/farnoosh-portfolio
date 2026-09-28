@@ -80,13 +80,13 @@ export function SuccessMetricSection() {
       </Heading>
       <Body className="mt-2">We will measure the following factors:</Body>
 
-      <ul className="mt-4 grid gap-4 md:grid-cols-3">
+      <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {metrics.map((metric) => (
           <MetricCard key={metric.title} {...metric} />
         ))}
       </ul>
 
-      <ul className="mt-4 grid gap-4 md:mx-auto md:w-[calc(100%-368px)] md:grid-cols-2">
+      <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:mx-auto lg:w-[68%]">
         {wideMetrics.map((metric) => (
           <MetricCard key={metric.title} {...metric} />
         ))}

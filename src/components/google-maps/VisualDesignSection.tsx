@@ -81,7 +81,7 @@ function HexBadge({ n }: { n: number }) {
   return (
     <span
       aria-hidden
-      className="flex size-[38px] shrink-0 items-center justify-center bg-[#12303E] font-dm text-[13px] font-bold text-white"
+      className="flex size-[30px] shrink-0 items-center justify-center bg-[#12303E] font-dm text-[12px] font-bold text-white md:size-[38px] md:text-[13px]"
       style={{
         clipPath:
           "polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%)",
@@ -119,7 +119,7 @@ export function VisualDesignSection() {
               />
             )}
 
-            <h3 className="flex items-center gap-3 font-dm text-[18px] leading-[1.5] text-[#98A2B3] md:text-[20px]">
+            <h3 className="flex items-center gap-2.5 font-dm text-[15px] leading-[1.5] text-[#98A2B3] sm:text-[17px] md:gap-3 md:text-[20px]">
               <HexBadge n={block.n} />
               <span>
                 {block.prefix}{" "}

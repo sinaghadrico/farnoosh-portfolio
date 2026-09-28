@@ -26,7 +26,7 @@ export function PersonaSection() {
         <Figure name="personaIllustration" sizes="(min-width: 1180px) 1136px, 100vw" />
       </div>
 
-      <div className="mt-6 grid gap-6 md:mt-8 md:grid-cols-2">
+      <div className="mt-6 grid gap-6 md:mt-8 lg:grid-cols-2">
         {/* The Trip Planner */}
         <article className="flex flex-col gap-8 rounded-[16px] border border-[#EAECF0] bg-white px-6 py-8 md:px-7 md:py-10">
           <div className="flex flex-col gap-5">

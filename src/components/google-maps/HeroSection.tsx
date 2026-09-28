@@ -24,8 +24,8 @@ export function HeroSection() {
         }}
       />
 
-      <div className="relative mx-auto flex w-full max-w-[1280px] flex-col gap-8 px-5 pb-10 pt-28 sm:px-10 md:flex-row md:items-center md:gap-6 md:px-[72px] md:pb-0 md:pr-0 md:pt-[120px]">
-        <div className="flex flex-col gap-5 md:w-[52%] md:shrink-0 md:pb-[72px]">
+      <div className="relative mx-auto flex w-full max-w-[1280px] flex-col gap-8 px-5 pb-10 pt-28 sm:px-10 md:px-[72px] md:pt-[120px] lg:flex-row lg:items-center lg:gap-6 lg:pb-0 lg:pr-0">
+        <div className="flex flex-col gap-5 lg:w-[52%] lg:shrink-0 lg:pb-[72px]">
           <p className="font-dm text-[14px] leading-[1.8] text-[#667085]">
             Google Maps Case Study by{" "}
             <a
@@ -55,12 +55,12 @@ export function HeroSection() {
 
         {/* Collage — clipped by the band in Figma, so it is pinned to the
             bottom and allowed to overflow. */}
-        <div className="-mb-10 md:mb-0 md:min-w-0 md:flex-1 md:self-end">
+        <div className="-mb-10 lg:mb-0 lg:min-w-0 lg:flex-1 lg:self-end">
           <Figure
             name="heroCollage"
             priority
-            className="md:max-h-[509px] md:w-auto"
-            sizes="(min-width: 1280px) 566px, (min-width: 768px) 45vw, 100vw"
+            className="mx-auto max-w-[520px] lg:mx-0 lg:max-h-[509px] lg:w-auto lg:max-w-none"
+            sizes="(min-width: 1280px) 566px, (min-width: 1024px) 45vw, 520px"
           />
         </div>
       </div>
