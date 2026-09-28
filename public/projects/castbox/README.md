@@ -1,6 +1,7 @@
 # Castbox case study — image exports
 
-Source: Figma → **My Case Studies → Castbox Case Study** (`1280 × 20373`).
+Source: Figma → **Castbox** (`1280 × 23123`, 19 sections)
+`https://www.figma.com/design/1ObUKYgX6vGZptRvA1OdLD/Castbox?node-id=1-11948`
 
 Drop each file below into this folder using the **exact file name**, then open
 `src/components/castbox/assets.ts` and flip that entry's `ready` to `true`.
@@ -18,7 +19,7 @@ ratio, so nothing breaks.
 - Sizes below are the **intrinsic pixel sizes** used for aspect ratio — the exact
   number matters less than the ratio.
 
-## The list (30 files)
+## The list (50 files)
 
 ### Section 8 — Interviews
 
@@ -96,7 +97,32 @@ above it (that's real text on the page). Heights are approximate.
 | `feedback-session-1.webp` | 1136×580 | Left Google Meet feedback capture |
 | `feedback-session-2.webp` | 1136×580 | Right Google Meet feedback capture |
 
-### Sections 15–17 — Spot illustrations
+### Section 15 — Design Iteration
+
+Six before/after rows. Export just the phone/sheet screenshot on each side —
+the quotes between them are real text on the page.
+
+| File | Size | What to select |
+| --- | --- | --- |
+| `iteration-1-before.webp` | 480×450 | Row 1, left — episode About tab with the document icon |
+| `iteration-1-after.webp` | 480×450 | Row 1, right — same screen after the fix |
+| `iteration-2-before.webp` | 364×436 | Row 2, left — playback menu with Delete / Trim Silence |
+| `iteration-2-after.webp` | 364×436 | Row 2, right — Clear / Skip Silence |
+| `iteration-3-before.webp` | 480×450 | Row 3, left — chapter list with the retweet-style icon |
+| `iteration-3-after.webp` | 480×450 | Row 3, right — same list with the clearer icons |
+| `iteration-4-before.webp` | 364×392 | Row 4, left — Sort by sheet with “Timestamp” |
+| `iteration-4-after.webp` | 364×392 | Row 4, right — “Episode Timeline” |
+| `iteration-5-before.webp` | 480×440 | Row 5, left — community feed with the checklist icon |
+| `iteration-5-after.webp` | 480×440 | Row 5, right — same feed with the hashtag icon |
+| `iteration-6-before.webp` | 480×500 | Row 6, left — lock screen with the comment chips |
+| `iteration-6-after.webp` | 480×500 | Row 6, right — same screen after the fix |
+| `iteration-avatar-1.webp` … `-8.webp` | 152×208 | The eight figures beside the quotes, top to bottom |
+
+**Shortcut:** if those eight figures are the same illustrations used in the
+Interviews section, just copy the matching `quote-avatar-*.webp` files under the
+new names — no need to re-export.
+
+### Sections 17–19 — Spot illustrations
 
 | File | Size | What to select |
 | --- | --- | --- |

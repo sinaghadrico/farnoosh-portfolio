@@ -78,7 +78,29 @@ export const assets = {
   feedbackSession1: a("feedback-session-1.webp", 1136, 580, "Google Meet feedback session showing the redesigned empty comments state"),
   feedbackSession2: a("feedback-session-2.webp", 1136, 580, "Google Meet feedback session showing the redesigned community post"),
 
-  // Sections 15–17 — Spot illustrations
+  // Section 15 — Design Iteration (added in the newer Figma file)
+  iteration1Before: a("iteration-1-before.webp", 480, 450, "Episode About tab before the fix, showing a document icon"),
+  iteration1After: a("iteration-1-after.webp", 480, 450, "Episode About tab after the fix, showing a file-size label"),
+  iteration2Before: a("iteration-2-before.webp", 364, 436, "Playback menu before the fix, with Delete and Trim Silence"),
+  iteration2After: a("iteration-2-after.webp", 364, 436, "Playback menu after the fix, with Clear and Skip Silence"),
+  iteration3Before: a("iteration-3-before.webp", 480, 450, "Chapter list before the fix, with a retweet-style icon"),
+  iteration3After: a("iteration-3-after.webp", 480, 450, "Chapter list after the fix, with clearer action icons"),
+  iteration4Before: a("iteration-4-before.webp", 364, 392, "Sort-by sheet before the fix, with a Timestamp option"),
+  iteration4After: a("iteration-4-after.webp", 364, 392, "Sort-by sheet after the fix, renamed to Episode Timeline"),
+  iteration5Before: a("iteration-5-before.webp", 480, 440, "Community feed before the fix, with a checklist-like icon"),
+  iteration5After: a("iteration-5-after.webp", 480, 440, "Community feed after the fix, with a hashtag icon"),
+  iteration6Before: a("iteration-6-before.webp", 480, 500, "Lock screen before the fix, with pre-written comment chips"),
+  iteration6After: a("iteration-6-after.webp", 480, 500, "Lock screen after the fix, with a compose affordance"),
+  iterationAvatar1: a("iteration-avatar-1.webp", 152, 208, ""),
+  iterationAvatar2: a("iteration-avatar-2.webp", 152, 208, ""),
+  iterationAvatar3: a("iteration-avatar-3.webp", 152, 208, ""),
+  iterationAvatar4: a("iteration-avatar-4.webp", 152, 208, ""),
+  iterationAvatar5: a("iteration-avatar-5.webp", 152, 208, ""),
+  iterationAvatar6: a("iteration-avatar-6.webp", 152, 208, ""),
+  iterationAvatar7: a("iteration-avatar-7.webp", 152, 208, ""),
+  iterationAvatar8: a("iteration-avatar-8.webp", 152, 208, ""),
+
+  // Sections 16–18 — Spot illustrations
   illusTarget: a("illus-target.webp", 430, 430, "Line illustration of a dart hitting a target beside analytics cards"),
   illusCrossroads: a("illus-crossroads.webp", 430, 430, "Line illustration of a person facing branching paths toward a flag"),
   illusCollaboration: a("illus-collaboration.webp", 590, 420, "Line illustration of two people working together at a laptop"),

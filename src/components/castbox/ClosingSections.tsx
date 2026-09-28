@@ -16,11 +16,13 @@ export function SuccessMetricSection() {
           </Body>
           <Body>
             During a one-month period, we would collaborate with the data analyst
-            team to examine user behavior and determine whether the engagement
-            rate of an individual user increases in relation to the number of
-            episodes they have listened to. If the rate increases compared to the
+            team to examine user behavior and the average number of comments per
+            episode and per podcast, the percentage of listeners who leave at
+            least one comment, and how many replies each comment receives. The
+            last of these confirms that comments are turning into conversations
+            rather than isolated posts. If these metrics increase compared to the
             previous one-month period, we can conclude that the design has
-            contributed to an increase in engagement rates.
+            contributed to an increase in community engagement.
           </Body>
         </div>
         <Figure
@@ -129,7 +131,7 @@ export function ThanksSection() {
 
         <div className="flex flex-col items-center gap-3 rounded-lg bg-white px-6 py-12 text-center">
           <p className="font-dm text-[18px] font-bold leading-[1.8] text-[#1A2432] md:text-[20px]">
-            For any collaboration, feel free to contact me!
+            For any collaboration, feel free to contact me
           </p>
           {/* The Figma design uses this address rather than site.email. */}
           <a
@@ -137,6 +139,12 @@ export function ThanksSection() {
             className="font-dm text-[14px] leading-[1.8] text-[#475467] hover:underline"
           >
             📩 farnooshbagheriii@gmail.com
+          </a>
+          <a
+            href="tel:+971525662144"
+            className="font-dm text-[14px] leading-[1.8] text-[#475467] hover:underline"
+          >
+            📞 +971 52 566 2144
           </a>
         </div>
       </div>

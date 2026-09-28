@@ -15,6 +15,7 @@ import { IdeationSection } from "@/components/castbox/IdeationSection";
 import { CrazyEightsSection } from "@/components/castbox/CrazyEightsSection";
 import { VisualDesignSection } from "@/components/castbox/VisualDesignSection";
 import { UserFeedbackSection } from "@/components/castbox/UserFeedbackSection";
+import { DesignIterationSection } from "@/components/castbox/DesignIterationSection";
 import {
   SuccessMetricSection,
   ChallengesSection,
@@ -75,6 +76,7 @@ export default function CastboxCaseStudy() {
       <CrazyEightsSection />
       <VisualDesignSection />
       <UserFeedbackSection />
+      <DesignIterationSection />
       <SuccessMetricSection />
       <ChallengesSection />
       <TakeawaysSection />
