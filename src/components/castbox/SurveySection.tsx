@@ -33,12 +33,12 @@ function ChartCard({
   description: string;
 }) {
   return (
-    <div className="flex flex-col items-center gap-8 rounded-lg border border-[#EAECF0] bg-white p-6 md:p-8 lg:flex-row lg:items-center lg:gap-12">
+    <div className="flex flex-col items-center gap-6 rounded-lg border border-[#EAECF0] bg-white p-5 sm:p-6 md:p-8 lg:flex-row lg:items-center lg:gap-10 xl:gap-12">
       <DonutChart slices={slices} />
-      <div className="flex-1 lg:min-w-[280px]">
+      <div className="w-full flex-1 lg:min-w-[240px] xl:min-w-[280px]">
         <DonutLegend slices={slices} />
       </div>
-      <div className="w-full lg:w-[420px] lg:self-stretch lg:border-l lg:border-[#EAECF0] lg:pl-12 lg:pt-8">
+      <div className="w-full lg:w-[340px] lg:shrink-0 lg:self-stretch lg:border-l lg:border-[#EAECF0] lg:pl-8 lg:pt-8 xl:w-[420px] xl:pl-12">
         <p className="font-dm text-[16px] font-bold leading-[1.8] text-[#1A2432]">
           {title}
         </p>

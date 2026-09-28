@@ -133,6 +133,21 @@ const rows: Row[] = [
 ];
 
 /**
+ * One side of a comparison row. The label shows only while the two screens are
+ * stacked two-up on small screens — above md the column headings cover it.
+ */
+function Screen({ name, label }: { name: AssetKey; label: string }) {
+  return (
+    <div className="flex min-w-0 flex-col items-center gap-2">
+      <p className="font-dm text-[12px] font-bold leading-[1.6] text-[#667085] lg:hidden">
+        {label}
+      </p>
+      <Figure name={name} className="w-full max-w-[240px]" sizes="240px" />
+    </div>
+  );
+}
+
+/**
  * Section 15 — "Design Iteration" (added in the newer Figma file).
  *
  * Six before/after pairs, each with the participant quote that prompted the
@@ -157,11 +172,13 @@ export function DesignIterationSection() {
         </div>
       </div>
 
-      <div className="mt-10 hidden justify-between px-8 md:flex">
-        <p className="w-[280px] text-center font-dm text-[15px] font-bold leading-[1.8] text-[#1A2432] md:text-[16px]">
+      {/* Column headings only make sense once the rows are side by side; below
+          that each image carries its own label. */}
+      <div className="mt-10 hidden justify-between gap-8 px-4 lg:flex">
+        <p className="max-w-[280px] flex-1 text-center font-dm text-[16px] font-bold leading-[1.8] text-[#1A2432]">
           Initial Design
         </p>
-        <p className="w-[280px] text-center font-dm text-[15px] font-bold leading-[1.8] text-[#1A2432] md:text-[16px]">
+        <p className="max-w-[280px] flex-1 text-center font-dm text-[16px] font-bold leading-[1.8] text-[#1A2432]">
           Iterated Design
         </p>
       </div>
@@ -172,23 +189,19 @@ export function DesignIterationSection() {
             key={i}
             className={
               i === 0
-                ? "grid items-center gap-6 py-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)_minmax(0,1fr)] md:gap-8"
-                : "grid items-center gap-6 border-t border-[#EAECF0] py-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)_minmax(0,1fr)] md:gap-8"
+                ? "grid grid-cols-2 items-center gap-x-4 gap-y-6 py-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-8"
+                : "grid grid-cols-2 items-center gap-x-4 gap-y-6 border-t border-[#EAECF0] py-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-8"
             }
           >
-            <Figure
-              name={row.before}
-              className="mx-auto w-full max-w-[240px]"
-              sizes="240px"
-            />
+            <Screen name={row.before} label="Initial Design" />
 
-            <div className="flex flex-col gap-4">
+            <div className="order-last col-span-2 flex min-w-0 flex-col gap-4 lg:order-none lg:col-span-1">
               {row.quotes.map((q, qi) => (
                 <div key={qi} className="flex items-center gap-3">
-                  <QuoteBubble className="flex-1">{q.text}</QuoteBubble>
+                  <QuoteBubble className="min-w-0 flex-1">{q.text}</QuoteBubble>
                   <Figure
                     name={q.avatar}
-                    className="w-[48px] shrink-0 md:w-[56px]"
+                    className="w-[44px] shrink-0 md:w-[56px]"
                     sizes="56px"
                     compact
                   />
@@ -196,11 +209,7 @@ export function DesignIterationSection() {
               ))}
             </div>
 
-            <Figure
-              name={row.after}
-              className="mx-auto w-full max-w-[240px]"
-              sizes="240px"
-            />
+            <Screen name={row.after} label="Iterated Design" />
           </div>
         ))}
       </div>

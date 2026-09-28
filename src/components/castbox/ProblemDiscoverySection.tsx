@@ -66,9 +66,9 @@ export function ProblemDiscoverySection() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-6 py-6 lg:flex-row lg:items-stretch">
+      <div className="flex flex-col gap-6 py-6 xl:flex-row xl:items-stretch">
         {/* 81% card */}
-        <div className="flex flex-col items-center justify-center gap-8 rounded-lg border border-[#EAECF0] bg-white p-8 lg:h-[292px] lg:shrink-0 lg:whitespace-nowrap">
+        <div className="flex flex-col items-center justify-center gap-8 rounded-lg border border-[#EAECF0] bg-white p-8 xl:h-[292px] xl:shrink-0 xl:whitespace-nowrap">
           <p className="flex items-end justify-center gap-1 font-dm font-bold leading-[1.6] text-[#287AED]">
             <span className="text-[56px] md:text-[64px]">81</span>
             <span className="text-[32px] opacity-20 md:text-[36px]">%</span>

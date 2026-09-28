@@ -24,7 +24,7 @@ export function DonutChart({
   return (
     <svg
       viewBox={`0 0 ${SIZE} ${SIZE}`}
-      className="h-auto w-[200px] shrink-0 md:w-[232px]"
+      className="h-auto w-full max-w-[200px] shrink-0 md:max-w-[232px]"
       role="img"
       aria-label={slices.map((s) => `${s.label}: ${s.value}%`).join(", ")}
     >

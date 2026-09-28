@@ -83,7 +83,7 @@ export function PersonasSection() {
             </p>
             <Figure
               name={p.art}
-              className="mx-auto mt-6 w-[220px] md:w-[280px]"
+              className="mx-auto mt-6 w-full max-w-[220px] md:max-w-[280px]"
               sizes="280px"
             />
             <div className="mt-8">

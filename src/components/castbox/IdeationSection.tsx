@@ -1,5 +1,6 @@
 import { Section, Eyebrow, Heading, Body } from "@/components/castbox/primitives";
 import { Figure } from "@/components/castbox/Figure";
+import { WideMedia } from "@/components/castbox/WideMedia";
 
 /** Section 11 — "Approaching user-centered solutions", the prioritisation matrix. */
 export function IdeationSection() {
@@ -26,13 +27,17 @@ export function IdeationSection() {
         </div>
       </div>
 
-      {/* The matrix is dense with 24 labelled chips — it ships as one export and
-          scrolls horizontally on narrow screens rather than reflowing. */}
-      <div className="mt-8 overflow-x-auto rounded-lg bg-white p-4 md:p-6">
-        <div className="min-w-[720px]">
-          <Figure name="prioritizationMatrix" />
+      {/* The matrix is dense with 24 labelled chips — it ships as one export
+          and scrolls sideways on narrow screens rather than reflowing. */}
+      <WideMedia
+        minWidth={760}
+        className="mt-8"
+        hint="Swipe to see the whole matrix"
+      >
+        <div className="rounded-lg bg-white p-4 md:p-6">
+          <Figure name="prioritizationMatrix" sizes="(min-width: 1024px) 1088px, 760px" />
         </div>
-      </div>
+      </WideMedia>
     </Section>
   );
 }

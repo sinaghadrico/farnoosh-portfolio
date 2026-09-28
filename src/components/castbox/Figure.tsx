@@ -24,15 +24,17 @@ export function Figure({ name, className, sizes, priority, compact }: Props) {
       <div
         title={`${asset.file} (${asset.w}×${asset.h})`}
         className={cn(
-          "flex flex-col items-center justify-center gap-1 rounded-lg border-2 border-dashed border-[#D0D5DD] bg-[#F2F4F7] text-center",
-          compact ? "p-0" : "p-4",
+          // min-w-0 + break-all so the file name can never push the
+          // placeholder wider than its grid or flex track.
+          "flex min-w-0 flex-col items-center justify-center gap-1 overflow-hidden rounded-lg border-2 border-dashed border-[#D0D5DD] bg-[#F2F4F7] text-center",
+          compact ? "p-0" : "p-2 md:p-4",
           className
         )}
         style={{ aspectRatio: `${asset.w} / ${asset.h}` }}
       >
         {!compact && (
           <>
-            <span className="font-mono text-[11px] font-medium text-[#667085]">
+            <span className="break-all font-mono text-[10px] font-medium leading-tight text-[#667085] md:text-[11px]">
               {asset.file}
             </span>
             <span className="font-mono text-[10px] text-[#98A2B3]">

@@ -117,17 +117,17 @@ export function InterviewsSection() {
             key={i}
             className={
               t.side === "left"
-                ? "flex items-center gap-4 md:w-[52%] md:self-start"
-                : "flex flex-row-reverse items-center gap-4 md:w-[52%] md:self-end"
+                ? "flex items-center gap-3 sm:gap-4 md:w-[56%] md:self-start lg:w-[52%]"
+                : "flex flex-row-reverse items-center gap-3 sm:gap-4 md:w-[56%] md:self-end lg:w-[52%]"
             }
           >
             <Figure
               name={t.avatar}
-              className="w-[64px] shrink-0 md:w-[76px]"
+              className="w-[52px] shrink-0 sm:w-[64px] md:w-[76px]"
               sizes="76px"
               compact
             />
-            <QuoteBubble className="flex-1">{t.quote}</QuoteBubble>
+            <QuoteBubble className="min-w-0 flex-1">{t.quote}</QuoteBubble>
           </div>
         ))}
       </div>

@@ -27,7 +27,7 @@ export function SuccessMetricSection() {
         </div>
         <Figure
           name="illusTarget"
-          className="mx-auto w-[180px] md:w-[215px]"
+          className="mx-auto w-full max-w-[180px] md:max-w-[215px]"
           sizes="215px"
         />
       </div>
@@ -43,7 +43,7 @@ export function ChallengesSection() {
       <div className="mt-5 grid items-center gap-8 md:grid-cols-[auto_1fr] md:gap-16">
         <Figure
           name="illusCrossroads"
-          className="mx-auto w-[180px] md:w-[215px] md:order-first"
+          className="mx-auto w-full max-w-[180px] md:order-first md:max-w-[215px]"
           sizes="215px"
         />
         <div className="flex flex-col gap-4">
@@ -96,7 +96,7 @@ export function TakeawaysSection() {
         </div>
         <Figure
           name="illusCollaboration"
-          className="mx-auto w-[240px] md:w-[295px]"
+          className="mx-auto w-full max-w-[240px] md:max-w-[295px]"
           sizes="295px"
         />
       </div>

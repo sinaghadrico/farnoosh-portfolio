@@ -1,5 +1,6 @@
 import { Section, Eyebrow, Heading, Body, StepBadge } from "@/components/castbox/primitives";
 import { Figure } from "@/components/castbox/Figure";
+import { WideMedia } from "@/components/castbox/WideMedia";
 import type { AssetKey } from "@/components/castbox/assets";
 
 type Block = {
@@ -110,7 +111,7 @@ export function VisualDesignSection() {
             </div>
 
             {block.compare && (
-              <div className="hidden justify-between px-4 md:flex">
+              <div className="hidden justify-between px-4 lg:flex">
                 <p className="font-dm text-[15px] font-bold leading-[1.8] text-[#1A2432] md:text-[16px]">
                   Castbox&apos;s current Design
                 </p>
@@ -122,11 +123,9 @@ export function VisualDesignSection() {
 
             {/* These compositions are laid out for a wide canvas; below the
                 breakpoint they scroll rather than squash to illegibility. */}
-            <div className="-mx-5 overflow-x-auto px-5 sm:-mx-10 sm:px-10 md:mx-0 md:px-0">
-              <div className="min-w-[860px] md:min-w-0">
-                <Figure name={block.art} />
-              </div>
-            </div>
+            <WideMedia minWidth={880} hint="Swipe to see the full comparison">
+              <Figure name={block.art} sizes="(min-width: 1024px) 1136px, 880px" />
+            </WideMedia>
           </div>
         ))}
       </div>

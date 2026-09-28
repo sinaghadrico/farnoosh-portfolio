@@ -105,7 +105,7 @@ export function AssumptionsSection() {
         </div>
       </div>
 
-      <div className="relative grid gap-6 py-12 sm:grid-cols-2 md:grid-cols-3 md:gap-12">
+      <div className="relative grid gap-6 py-8 sm:grid-cols-2 md:grid-cols-3 md:gap-8 md:py-12 lg:gap-12">
         {columns.map((col) => (
           <div key={col.title} className="flex flex-col gap-6">
             <SketchBox>{col.title}</SketchBox>
@@ -124,7 +124,7 @@ export function AssumptionsSection() {
           aria-hidden
           width={200}
           height={200}
-          className="pointer-events-none absolute bottom-12 left-[108px] hidden size-[200px] md:block"
+          className="pointer-events-none absolute bottom-12 left-[108px] hidden size-[200px] lg:block"
         />
       </div>
     </Section>
