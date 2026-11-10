@@ -1,8 +1,8 @@
+import { ScaleToFit } from "@/components/google-maps/ScaleToFit";
 import {
   Body,
   Eyebrow,
   Heading,
-  ScrollHint,
   Section,
   Strong,
 } from "@/components/google-maps/primitives";
@@ -11,9 +11,8 @@ import {
  * Section 8 — Impact/Effort matrix (Figma node 18:3809).
  *
  * The chart is a 1136×1136 square with every idea pinned at a fixed
- * coordinate, so it is rendered at that exact size inside a horizontally
- * scrollable rail rather than scaled down — at 10px the chips stop being
- * readable long before they stop fitting.
+ * coordinate. It is laid out at that exact size and scaled down as a whole on
+ * smaller screens, so phones see the same picture as desktop.
  */
 
 const SIZE = 1136;
@@ -112,7 +111,7 @@ export function ImpactEffortSection() {
         Google Maps interface.
       </Body>
 
-      <div className="-mx-5 mt-10 overflow-x-auto px-5 sm:-mx-10 sm:px-10 md:mx-0 md:mt-12 md:px-0">
+      <ScaleToFit width={SIZE} className="mt-10 md:mt-12">
         <div
           className="relative shrink-0"
           style={{ width: SIZE, height: SIZE }}
@@ -162,11 +161,13 @@ export function ImpactEffortSection() {
           {ideas.map((idea) => (
             <span
               key={idea.label}
-              className="absolute flex items-center rounded-lg border bg-white px-3 py-2 font-dm text-[10px] leading-[1.5] text-black"
+              className="absolute flex items-center whitespace-nowrap rounded-lg border bg-white px-3 py-2 font-dm text-[10px] leading-[1.5] text-black shadow-[0_4px_12px_rgba(16,24,40,0.08)]"
               style={{
                 left: idea.x,
                 top: idea.y,
-                width: idea.w,
+                // Figma widths are a floor — DM Sans runs a touch wider than
+                // the Figma font, so let the chip grow rather than wrap.
+                minWidth: idea.w,
                 borderColor: categories[idea.cat].color,
               }}
             >
@@ -174,8 +175,7 @@ export function ImpactEffortSection() {
             </span>
           ))}
         </div>
-      </div>
-      <ScrollHint className="xl:hidden" />
+      </ScaleToFit>
 
       <ul className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-3">
         {Object.entries(categories).map(([key, category]) => (

@@ -7,25 +7,55 @@ import {
 /**
  * Section 5 — Challenges and Constraints (Figma node 18:2480).
  *
- * The heading sits inside a hand-drawn orange box; the doubled, slightly
- * rotated outlines below stand in for that sketch stroke.
+ * The heading sits inside a hand-drawn orange box. The sketch is rebuilt from
+ * a crisp inner outline, a second slightly rotated outline with gaps masked
+ * out, and a few loose strokes that overshoot the corners like pencil lines.
+ * Everything is positioned in percentages so it holds at any card height.
  */
+
+const sketchGaps =
+  "linear-gradient(to right, #000 0 16%, transparent 16% 22%, #000 22% 34%, transparent 34% 36%, #000 36% 100%)";
+
+/** Loose strokes — [top/bottom/left/right offset, start %, end %, opacity]. */
+const strayLines: { side: "top" | "bottom" | "left" | "right"; offset: number; from: number; to: number; opacity: number }[] = [
+  { side: "top", offset: -10, from: 10, to: 14, opacity: 0.5 },
+  { side: "top", offset: -9, from: 16, to: 90, opacity: 0.45 },
+  { side: "top", offset: -3, from: 9, to: 82, opacity: 0.6 },
+  { side: "bottom", offset: -11, from: 1, to: 23, opacity: 0.55 },
+  { side: "bottom", offset: -5, from: 33, to: 98, opacity: 0.6 },
+  { side: "left", offset: -9, from: 24, to: 88, opacity: 0.5 },
+  { side: "left", offset: -5, from: 20, to: 70, opacity: 0.45 },
+  { side: "right", offset: -9, from: 46, to: 94, opacity: 0.5 },
+];
 export function ChallengesSection() {
   return (
     <Section>
       <div className="relative mx-auto w-full max-w-[934px] px-2 py-2">
         <span
           aria-hidden
-          className="absolute inset-0 rounded-2xl border border-[#FF8D28]/70 bg-[#FCF1E7]"
+          className="absolute inset-0 rounded-2xl border border-[#FF8D28]/80 bg-[#FAF0E6]"
         />
         <span
           aria-hidden
-          className="absolute -inset-[5px] rotate-[0.25deg] rounded-2xl border border-[#FF8D28]/40"
+          className="absolute -inset-[6px] rotate-[0.3deg] rounded-[20px] border border-[#FF8D28]/60"
+          style={{ maskImage: sketchGaps, WebkitMaskImage: sketchGaps }}
         />
-        <span
-          aria-hidden
-          className="absolute -inset-[10px] -rotate-[0.2deg] rounded-2xl border border-[#FF8D28]/25"
-        />
+        {strayLines.map((line, i) => {
+          const horizontal = line.side === "top" || line.side === "bottom";
+          return (
+            <span
+              key={i}
+              aria-hidden
+              className={horizontal ? "absolute h-px bg-[#FF8D28]" : "absolute w-px bg-[#FF8D28]"}
+              style={{
+                [line.side]: line.offset,
+                [horizontal ? "left" : "top"]: `${line.from}%`,
+                [horizontal ? "width" : "height"]: `${line.to - line.from}%`,
+                opacity: line.opacity,
+              }}
+            />
+          );
+        })}
 
         <div className="relative flex flex-col items-center gap-2 px-5 pb-6 pt-4 text-center md:px-8">
           <span aria-hidden className="text-[40px] leading-[1.8]">

@@ -37,7 +37,7 @@ export function Section({
     <section
       {...rest}
       className={cn(
-        "w-full bg-[#FCFCFC] px-5 py-10 sm:px-10 md:px-[72px] md:py-[72px]",
+        "w-full border-t border-[#E4E7EC] bg-[#FCFCFC] px-5 py-10 sm:px-10 md:px-[72px] md:py-[72px]",
         className
       )}
     >
@@ -159,23 +159,5 @@ export function ImageZone({
     >
       {children}
     </div>
-  );
-}
-
-/**
- * Caption for the two wide blocks that scroll sideways instead of shrinking
- * (the competitor matrix and the impact/effort chart) — at their Figma sizes
- * the labels stop being legible long before they stop fitting.
- */
-export function ScrollHint({ className }: { className?: string }) {
-  return (
-    <p
-      className={cn(
-        "mt-3 font-dm text-[12px] text-[#98A2B3] md:text-[13px]",
-        className
-      )}
-    >
-      Scroll sideways to see the full chart →
-    </p>
   );
 }

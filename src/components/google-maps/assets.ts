@@ -40,31 +40,34 @@ export const assets = {
   // Section 1 — Hero
   heroCollage: a(
     "hero-collage.webp",
-    566,
+    780,
     509,
-    "Collage of Google Maps redesign screens — the SOS sheet, a trip planner, route options, a place page and Exploration Mode"
+    "Collage of Google Maps redesign screens — the SOS sheet, a trip planner, route options, a place page and Exploration Mode",
+    true
   ),
 
   // Section 3 — My role
-  roleAvatar: a("role-avatar.webp", 96, 96, "Farnoosh Bagheri"),
+  roleAvatar: a("role-avatar.webp", 96, 96, "Farnoosh Bagheri", true),
 
   // Section 3 — Problem discovery: press sources and desk-research illustrations
   sourceCnn: a("source-cnn.webp", 96, 96, "CNN", true),
   sourceBusinessInsider: a("source-business-insider.webp", 96, 96, "Business Insider", true),
   sourceReddit: a("source-reddit.webp", 96, 96, "Reddit", true),
-  insightRouting: a("insight-routing.webp", 489, 209, "Illustration of a car skidding off a snowy road past a warning sign", true),
-  insightTransit: a("insight-transit.webp", 486, 324, "Illustration of an anxious traveller waiting at a bus stop", true),
+  insightRouting: a("insight-routing.webp", 244, 169, "Illustration of a car skidding off a snowy road past a warning sign", true),
+  insightTransit: a("insight-transit.webp", 244, 169, "Illustration of an anxious traveller waiting at a bus stop", true),
   insightLabels: a(
     "insight-labels.webp",
     244,
     169,
-    "Illustration of a person checking their phone at a confusing signpost"
+    "Illustration of a person checking their phone at a confusing signpost",
+    true
   ),
   insightAttractions: a(
     "insight-attractions.webp",
     244,
     169,
-    "Illustration of a traveller exploring a 3D map of a city"
+    "Illustration of a traveller exploring a 3D map of a city",
+    true
   ),
 
   // Section 4 — Interviews
@@ -92,29 +95,32 @@ export const assets = {
   // before/after phones plus their dashed annotation callouts); most also have
   // a row of detail screens under it. `w`/`h` are provisional until the real
   // exports land — re-read them off the files and update these.
-  vd1Hero: a("vd-1-walking-hero.webp", 1136, 570, "Walking Navigation before and after: reporting hazards in real time from the navigation screen"),
-  vd1Details: a("vd-1-walking-details.webp", 1136, 575, "Add a report sheet, the unsafe-area categories, reporting in progress and the confirmation"),
-  vd2Hero: a("vd-2-transit-hero.webp", 1136, 590, "Public Transportation before and after: confirming whether the bus arrived on time"),
-  vd2Details: a("vd-2-transit-details.webp", 1136, 590, "Confirming the stop location, pinning the correct place and the submitted bus report"),
-  vd3Hero: a("vd-3-arrival-hero.webp", 1136, 570, "Upon Arrival before and after: rating the navigation once the traveller reaches the destination"),
-  vd3Details: a("vd-3-arrival-details.webp", 1136, 580, "Choosing the biggest problem, reporting incorrect place details and the thank-you screen"),
-  vd4Hero: a("vd-4-exploration-hero.webp", 1136, 520, "Exploration Mode before and after: the new entry point and its onboarding sheet"),
-  vd4Details: a("vd-4-exploration-details.webp", 1136, 570, "Street-level and map views of Exploration Mode with frequently used paths"),
-  vd5Hero: a("vd-5-emergency-hero.webp", 1136, 740, "Emergency Conditions before and after: the SOS button and the call-911 sheet"),
-  vd5Details: a("vd-5-emergency-details.webp", 1136, 580, "The Can't Talk questionnaire, location sharing and the shared-location status"),
-  vd6Hero: a("vd-6-trip-hero.webp", 1136, 620, "Trip Planning before and after: the saved lists and the new trip planner"),
-  vd6Details: a("vd-6-trip-details.webp", 1136, 690, "Creating a plan, adding attractions, setting durations and choosing navigation preferences"),
-  vd6Details2: a("vd-6-trip-details-2.webp", 1136, 620, "The day-by-day plan timeline and starting navigation from a planned stop"),
-  vd7Hero: a("vd-7-driving-hero.webp", 1136, 560, "Driving Experience before and after: Safety Mode and sorting routes by safest"),
-  vd7Details: a("vd-7-driving-details.webp", 1136, 680, "Route options, the speed-limit alert and lane guidance during navigation"),
-  vd8Hero: a("vd-8-place-hero.webp", 1136, 590, "Place Information before and after: the restructured place page and nearby attractions"),
+  vd1Hero: a("vd-1-walking-hero.webp", 1136, 658, "Walking Navigation before and after: reporting hazards in real time from the navigation screen", true),
+  vd1Details: a("vd-1-walking-details.webp", 1136, 606, "Add a report sheet, the unsafe-area categories, reporting in progress and the confirmation", true),
+  vd2Hero: a("vd-2-transit-hero.webp", 1136, 658, "Public Transportation before and after: confirming whether the bus arrived on time", true),
+  vd2Details: a("vd-2-transit-details.webp", 1136, 606, "Confirming the stop location, pinning the correct place and the submitted bus report", true),
+  vd3Hero: a("vd-3-arrival-hero.webp", 1136, 658, "Upon Arrival before and after: rating the navigation once the traveller reaches the destination", true),
+  vd3Details: a("vd-3-arrival-details.webp", 1136, 658, "Choosing the biggest problem, reporting incorrect place details and the thank-you screen", true),
+  vd4Hero: a("vd-4-exploration-hero.webp", 1136, 658, "Exploration Mode before and after: the new entry point and its onboarding sheet", true),
+  vd4Details: a("vd-4-exploration-details.webp", 1136, 658, "Street-level and map views of Exploration Mode with frequently used paths", true),
+  vd5Hero: a("vd-5-emergency-hero.webp", 1136, 658, "Emergency Conditions before and after: the SOS button and the call-911 sheet", true),
+  vd5Details: a("vd-5-emergency-details.webp", 1136, 658, "The Can't Talk questionnaire, location sharing and the shared-location status", true),
+  vd6Hero: a("vd-6-trip-hero.webp", 1136, 658, "Trip Planning before and after: the saved lists and the new trip planner", true),
+  vd6Details: a("vd-6-trip-details.webp", 1136, 696, "Creating a plan, adding attractions, setting durations and choosing navigation preferences", true),
+  vd6Details2: a("vd-6-trip-details-2.webp", 1136, 658, "The day-by-day plan timeline and starting navigation from a planned stop", true),
+  vd7Hero: a("vd-7-driving-hero.webp", 1136, 658, "Driving Experience before and after: Safety Mode and sorting routes by safest", true),
+  vd7Details: a("vd-7-driving-details.webp", 1136, 734, "Route options, the speed-limit alert and lane guidance during navigation", true),
+  vd8Hero: a("vd-8-place-hero.webp", 1136, 658, "Place Information before and after: the restructured place page and nearby attractions", true),
 
   // Success metric icons
-  metricSafety: a("metric-safety.webp", 40, 45, "", true),
-  metricExitMisses: a("metric-exit-misses.webp", 46, 46, "", true),
+  metricSafety: a("metric-safety.webp", 80, 94, "", true),
+  metricExitMisses: a("metric-exit-misses.webp", 90, 90, "", true),
   metricIncident: a("metric-incident.webp", 80, 80, "", true),
   metricFeedback: a("metric-feedback.webp", 90, 90, "", true),
   metricTripPlanning: a("metric-trip-planning.webp", 90, 90, "", true),
+
+  // Section 12 — Thanks
+  thanksStar: a("thanks-star.webp", 100, 103, "", true),
 } satisfies Record<string, Asset>;
 
 export type AssetKey = keyof typeof assets;

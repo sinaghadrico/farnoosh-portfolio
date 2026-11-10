@@ -55,8 +55,9 @@ function List({ items }: { items: string[] }) {
 }
 
 export function ScopeSection() {
+  // Sits directly under the hero band, so no divider.
   return (
-    <Section>
+    <Section className="border-t-0">
       <Heading>Case Study Scope</Heading>
 
       <div className="mt-8 grid gap-10 sm:grid-cols-2 md:mt-10 lg:grid-cols-3 lg:gap-[72px]">

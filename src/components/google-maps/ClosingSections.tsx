@@ -60,7 +60,7 @@ function MetricCard({
   return (
     <li className="flex flex-col gap-4 rounded-[20px] bg-white p-4">
       <div className="flex flex-col items-center gap-4 py-2">
-        <Figure name={icon} compact className="size-[45px]" sizes="45px" />
+        <Figure name={icon} compact className="size-[45px] object-contain" sizes="45px" />
         <h3 className="text-center font-dm text-[14px] font-bold leading-[1.5] text-[#1A2432]">
           {title}
         </h3>
@@ -152,10 +152,13 @@ export function TakeawaysSection() {
               borderColor: takeaway.border,
             }}
           >
-            {/* Oversized ghost numeral, bleeding off the top-right corner. */}
+            {/* Oversized outlined numeral in the card's accent colour, its top
+                pinned to the card's top edge (the translate cancels the font's
+                built-in space above the digits) and cropped at the bottom. */}
             <span
               aria-hidden
-              className="pointer-events-none absolute -top-10 right-8 select-none font-dm text-[130px] font-bold leading-none text-[#1A2432]/[0.04] md:text-[170px]"
+              className="pointer-events-none absolute right-4 top-0 -translate-y-[15%] select-none font-dm text-[200px] font-normal leading-none text-transparent md:right-8 md:text-[260px]"
+              style={{ WebkitTextStroke: `2px ${takeaway.border}1F` }}
             >
               {takeaway.n}
             </span>
@@ -180,9 +183,12 @@ export function ThanksSection() {
   return (
     <Section className="pb-16">
       <div className="rounded-[16px] border border-[#F2F4F7] bg-white px-6 py-10 text-center md:px-8 md:py-12">
-        <p aria-hidden className="font-dm text-[48px] leading-none md:text-[64px]">
-          🌠
-        </p>
+        <Figure
+          name="thanksStar"
+          compact
+          className="mx-auto size-[48px] object-contain md:size-[64px]"
+          sizes="64px"
+        />
         <Heading className="mt-5">
           That’s it! I really appreciate the time you spent
         </Heading>

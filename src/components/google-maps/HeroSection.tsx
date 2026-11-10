@@ -60,7 +60,7 @@ export function HeroSection() {
             name="heroCollage"
             priority
             className="mx-auto max-w-[520px] lg:mx-0 lg:max-h-[509px] lg:w-auto lg:max-w-none"
-            sizes="(min-width: 1280px) 566px, (min-width: 1024px) 45vw, 520px"
+            sizes="(min-width: 1280px) 780px, (min-width: 1024px) 45vw, 520px"
           />
         </div>
       </div>

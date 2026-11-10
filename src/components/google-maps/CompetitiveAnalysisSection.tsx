@@ -1,10 +1,10 @@
+import { ScaleToFit } from "@/components/google-maps/ScaleToFit";
 import { Figure } from "@/components/google-maps/Figure";
 import type { AssetKey } from "@/components/google-maps/assets";
 import {
   Body,
   Eyebrow,
   Heading,
-  ScrollHint,
   Section,
   Strong,
 } from "@/components/google-maps/primitives";
@@ -21,9 +21,19 @@ type Competitor = {
 };
 
 const competitors: Competitor[] = [
-  { name: "Apple Maps", icon: "appAppleMaps", tint: "#F1FEF3", glow: "#34A853" },
+  {
+    name: "Apple Maps",
+    icon: "appAppleMaps",
+    tint: "#F1FEF3",
+    glow: "#34A853",
+  },
   { name: "Waze", icon: "appWaze", tint: "#F2FCFF", glow: "#33CCFF" },
-  { name: "Citymapper", icon: "appCitymapper", tint: "#F3FFF2", glow: "#0BB04C" },
+  {
+    name: "Citymapper",
+    icon: "appCitymapper",
+    tint: "#F3FFF2",
+    glow: "#0BB04C",
+  },
   { name: "KakaoMap", icon: "appKakaoMap", tint: "#FFFDEB", glow: "#FFCD00" },
   { name: "Maps.me", icon: "appMapsMe", tint: "#F4FFF2", glow: "#67B32B" },
   { name: "Neshan", icon: "appNeshan", tint: "#F2FAFF", glow: "#E2231A" },
@@ -35,7 +45,10 @@ const features: { label: string[]; has: number[] }[] = [
   { label: ["Turn-by-turn Directions", "&", "Lane Information"], has: [1, 5] },
   { label: ["Auto Zoom-in", "based on", "Driving Speed"], has: [1] },
   { label: ["Route Options", "Separately"], has: [0, 1] },
-  { label: ["Step-free Routes &", "Shorter Walking", "Distances"], has: [2, 4] },
+  {
+    label: ["Step-free Routes &", "Shorter Walking", "Distances"],
+    has: [2, 4],
+  },
   { label: ["Other Users Navigating", "in Real-Time"], has: [1] },
   { label: ["Child-safe routing"], has: [3] },
   { label: ["Live train tracking"], has: [2, 3] },
@@ -109,22 +122,23 @@ export function CompetitiveAnalysisSection() {
       <Eyebrow>Gaps, Gains and Growth</Eyebrow>
       <Heading className="mt-4">
         Google Maps is a leading navigation platform among competitors, but
-        warnings for potentially unsafe or suspicious routes represent a gap that
-        could turn into an opportunity
+        warnings for potentially unsafe or suspicious routes represent a gap
+        that could turn into an opportunity
       </Heading>
       <Body className="mt-1">
         We learned that the trend is moving toward increased{" "}
         <Strong>user interaction</Strong>,{" "}
         <Strong>real-time feedback and updates</Strong>, and{" "}
         <Strong>improved transparency and clarity</Strong> in presenting
-        information about routes, places, and other services, all contributing to
-        a <Strong>smarter</Strong>, <Strong>more organized</Strong>, and{" "}
+        information about routes, places, and other services, all contributing
+        to a <Strong>smarter</Strong>, <Strong>more organized</Strong>, and{" "}
         <Strong>integrated travel experience</Strong>.
       </Body>
 
-      {/* Feature matrix — scrolls sideways rather than squeezing the columns. */}
-      <div className="-mx-5 mt-10 overflow-x-auto px-5 sm:-mx-10 sm:px-10 md:mx-0 md:mt-12 md:px-0">
-        <table className="w-full min-w-[900px] border-separate border-spacing-0">
+      {/* Feature matrix — keeps its desktop layout and scales down on
+          smaller screens rather than squeezing the columns. */}
+      <ScaleToFit width={1136} className="mt-10 md:mt-12">
+        <table className="w-full border-separate border-spacing-0">
           <caption className="sr-only">
             Feature comparison of Google Maps competitors
           </caption>
@@ -180,8 +194,7 @@ export function CompetitiveAnalysisSection() {
             ))}
           </tbody>
         </table>
-      </div>
-      <ScrollHint className="lg:hidden" />
+      </ScaleToFit>
 
       <div className="mt-12 flex gap-4 md:gap-6">
         <span aria-hidden className="text-[32px] leading-none md:text-[40px]">
@@ -200,23 +213,25 @@ export function CompetitiveAnalysisSection() {
         </p>
       </div>
 
-      <ul className="mt-10 grid gap-6 rounded-[24px] bg-[#F2F4F7] p-5 pb-7 sm:grid-cols-2 md:mt-12 lg:grid-cols-5">
-        {shots.map((shot) => (
-          <li key={shot.app} className="flex flex-col items-center gap-5">
-            <Figure
-              name={shot.image}
-              className="rounded-lg"
-              sizes="(min-width: 1024px) 193px, (min-width: 640px) 45vw, 90vw"
-            />
-            <div className="text-center">
-              <p className="font-dm text-[12px] text-[#1A73E8]">{shot.app}</p>
-              <p className="mt-1 font-dm text-[14px] leading-[1.5] text-[#667085]">
-                {shot.caption}
-              </p>
-            </div>
-          </li>
-        ))}
-      </ul>
+      <ScaleToFit width={1136} className="mt-10 md:mt-12">
+        <ul className="grid grid-cols-5 gap-6 rounded-[24px] bg-[#F2F4F7] p-5 pb-7">
+          {shots.map((shot) => (
+            <li key={shot.app} className="flex flex-col items-center gap-5">
+              <Figure
+                name={shot.image}
+                className="rounded-lg"
+                sizes="(min-width: 1024px) 193px, 20vw"
+              />
+              <div className="text-center">
+                <p className="font-dm text-[12px] text-[#1A73E8]">{shot.app}</p>
+                <p className="mt-1 font-dm text-[14px] leading-[1.5] text-[#667085]">
+                  {shot.caption}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </ScaleToFit>
     </Section>
   );
 }
