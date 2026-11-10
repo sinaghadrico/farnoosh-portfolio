@@ -198,7 +198,7 @@ export function DesignIterationSection() {
             <div className="order-last col-span-2 flex min-w-0 flex-col gap-4 lg:order-none lg:col-span-1">
               {row.quotes.map((q, qi) => (
                 <div key={qi} className="flex items-center gap-3">
-                  <QuoteBubble className="min-w-0 flex-1">{q.text}</QuoteBubble>
+                  <QuoteBubble variant="plain" className="min-w-0 flex-1">{q.text}</QuoteBubble>
                   <Figure
                     name={q.avatar}
                     className="w-[44px] shrink-0 md:w-[56px]"

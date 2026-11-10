@@ -27,8 +27,8 @@ export function SuccessMetricSection() {
         </div>
         <Figure
           name="illusTarget"
-          className="mx-auto w-full max-w-[180px] md:max-w-[215px]"
-          sizes="215px"
+          className="mx-auto w-[180px] md:w-[212px]"
+          sizes="212px"
         />
       </div>
     </Section>
@@ -43,7 +43,7 @@ export function ChallengesSection() {
       <div className="mt-5 grid items-center gap-8 md:grid-cols-[auto_1fr] md:gap-16">
         <Figure
           name="illusCrossroads"
-          className="mx-auto w-full max-w-[180px] md:order-first md:max-w-[215px]"
+          className="mx-auto w-[180px] md:order-first md:w-[213px]"
           sizes="215px"
         />
         <div className="flex flex-col gap-4">
@@ -96,7 +96,7 @@ export function TakeawaysSection() {
         </div>
         <Figure
           name="illusCollaboration"
-          className="mx-auto w-full max-w-[240px] md:max-w-[295px]"
+          className="mx-auto w-[240px] md:w-[295px]"
           sizes="295px"
         />
       </div>
@@ -118,9 +118,14 @@ export function ThanksSection() {
           </p>
           <p className="max-w-[560px] text-balance font-dm text-[14px] leading-[1.8] text-[#475467]">
             We would like to thank{" "}
-            <span className="rounded bg-[#F2F4F7] px-2 py-1 font-bold text-[#1A2432] underline">
+            <a
+              href="https://www.linkedin.com/in/marzie-nadali/"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="whitespace-nowrap rounded bg-[#F2F4F7] px-2 py-1 font-bold text-[#1A2432] underline transition-colors hover:bg-[#EAECF0]"
+            >
               ✏️ Marzie Nadali
-            </span>{" "}
+            </a>{" "}
             (UX Leader turned Entrepreneur) for being our mentor and helping us
             implement this case study.
           </p>

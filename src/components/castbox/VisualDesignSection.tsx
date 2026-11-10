@@ -1,6 +1,7 @@
-import { Section, Eyebrow, Heading, Body, StepBadge } from "@/components/castbox/primitives";
+import { Section, Eyebrow, Heading, Body } from "@/components/castbox/primitives";
+import { HexBadge } from "@/components/HexBadge";
 import { Figure } from "@/components/castbox/Figure";
-import { WideMedia } from "@/components/castbox/WideMedia";
+import { ScaleToFit } from "@/components/ScaleToFit";
 import type { AssetKey } from "@/components/castbox/assets";
 
 type Block = {
@@ -9,14 +10,12 @@ type Block = {
   title: React.ReactNode;
   art: AssetKey;
   /** Blocks 1–3 carry the before/after column labels; 4 and 5 don't. */
-  compare?: boolean;
 };
 
 const blocks: Block[] = [
   {
     n: 1,
     art: "ui1Playback",
-    compare: true,
     title: (
       <>
         Changes to the <strong className="font-bold text-[#1A2432]">Playback</strong> page:
@@ -26,7 +25,6 @@ const blocks: Block[] = [
   {
     n: 2,
     art: "ui2Comments",
-    compare: true,
     title: (
       <>
         Changes to the <strong className="font-bold text-[#1A2432]">Comment</strong> section:
@@ -36,7 +34,6 @@ const blocks: Block[] = [
   {
     n: 3,
     art: "ui3Community",
-    compare: true,
     title: (
       <>
         Changes to the <strong className="font-bold text-[#1A2432]">Community</strong> section:
@@ -104,28 +101,17 @@ export function VisualDesignSection() {
             }
           >
             <div className="flex items-center gap-4">
-              <StepBadge n={block.n} />
+              <HexBadge n={block.n} />
               <p className="font-dm text-[18px] leading-[1.6] text-[#98A2B3] md:text-[22px]">
                 {block.title}
               </p>
             </div>
 
-            {block.compare && (
-              <div className="hidden justify-between px-4 lg:flex">
-                <p className="font-dm text-[15px] font-bold leading-[1.8] text-[#1A2432] md:text-[16px]">
-                  Castbox&apos;s current Design
-                </p>
-                <p className="font-dm text-[15px] font-bold leading-[1.8] text-[#1A2432] md:text-[16px]">
-                  Redesigned Version
-                </p>
-              </div>
-            )}
-
-            {/* These compositions are laid out for a wide canvas; below the
-                breakpoint they scroll rather than squash to illegibility. */}
-            <WideMedia minWidth={880} hint="Swipe to see the full comparison">
-              <Figure name={block.art} sizes="(min-width: 1024px) 1136px, 880px" />
-            </WideMedia>
+            {/* Laid out for the desktop canvas and scaled down as a whole on
+                smaller screens. */}
+            <ScaleToFit width={1136}>
+              <Figure name={block.art} sizes="(min-width: 1024px) 1136px, 100vw" />
+            </ScaleToFit>
           </div>
         ))}
       </div>

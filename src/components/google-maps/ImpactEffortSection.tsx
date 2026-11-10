@@ -1,4 +1,4 @@
-import { ScaleToFit } from "@/components/google-maps/ScaleToFit";
+import { ScaleToFit } from "@/components/ScaleToFit";
 import {
   Body,
   Eyebrow,

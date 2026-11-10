@@ -194,12 +194,17 @@ export function ThanksSection() {
         </Heading>
         <p className="mt-1 font-dm text-[15px] leading-[1.8] text-[#475467] md:text-[16px]">
           We would like to thank{" "}
-          <span className="whitespace-nowrap rounded bg-[#F2F4F7] px-1.5 py-0.5">
+          <a
+            href="https://www.linkedin.com/in/marzie-nadali/"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="whitespace-nowrap rounded bg-[#F2F4F7] px-1.5 py-0.5 transition-colors hover:bg-[#EAECF0]"
+          >
             🪄{" "}
             <span className="font-bold text-[#1A2432] underline underline-offset-2">
               Marzie Nadali
             </span>
-          </span>{" "}
+          </a>{" "}
           (UX Leader turned Entrepreneur)
           <br className="hidden sm:block" /> for being our mentor and helping us
           implement this case study.

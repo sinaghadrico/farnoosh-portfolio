@@ -23,16 +23,16 @@ export function UserFeedbackSection() {
       </div>
 
       <div className="mt-10 grid gap-6 md:grid-cols-3 md:items-center">
-        <QuoteBubble className="md:mt-10">
+        <QuoteBubble variant="speech" className="md:mt-10">
           “This new <strong className="font-bold">layout</strong> makes it{" "}
           <strong className="font-bold">easier</strong> for me to read posts and
           comments, and replies.”
         </QuoteBubble>
-        <QuoteBubble>
+        <QuoteBubble variant="speech">
           “I’ve always looked for a way to share my emotions{" "}
           <strong className="font-bold">in the moment</strong>”
         </QuoteBubble>
-        <QuoteBubble className="md:mt-6">
+        <QuoteBubble variant="speech" className="md:mt-6">
           “The design is <strong className="font-bold">modern, clear</strong> and{" "}
           <strong className="font-bold">structured</strong> and encourages me to
           share my thoughts.”

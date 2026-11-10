@@ -80,12 +80,3 @@ export function Body({
     </p>
   );
 }
-
-/** Numbered step badge used by the "Changes to the … section" blocks. */
-export function StepBadge({ n }: { n: number }) {
-  return (
-    <span className="flex size-[22px] shrink-0 items-center justify-center rounded-full bg-[#1A2432] font-dm text-[11px] font-bold text-white">
-      {n}
-    </span>
-  );
-}

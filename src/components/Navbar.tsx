@@ -50,7 +50,9 @@ export function Navbar() {
       <header
         className={cn(
           "fixed inset-x-0 top-0 z-50 ",
-          scrolled
+          // The Google Maps hero is a coloured band, so the bar stays solid
+          // there instead of floating transparently over it.
+          scrolled || pathname.startsWith("/projects/google-maps")
             ? "border-b border-border bg-bg/80 backdrop-blur-xl"
             : "border-b border-transparent bg-transparent",
         )}

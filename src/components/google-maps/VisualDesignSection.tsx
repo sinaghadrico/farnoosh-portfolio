@@ -6,6 +6,7 @@ import {
   Heading,
   Section,
 } from "@/components/google-maps/primitives";
+import { HexBadge } from "@/components/HexBadge";
 
 /**
  * Section 10 — Visual design.
@@ -75,22 +76,6 @@ const blocks: Block[] = [
     parts: ["vd8Hero"],
   },
 ];
-
-/** The dark hexagon carrying the block number. */
-function HexBadge({ n }: { n: number }) {
-  return (
-    <span
-      aria-hidden
-      className="flex size-[30px] shrink-0 items-center justify-center bg-[#12303E] font-dm text-[12px] font-bold text-white md:size-[38px] md:text-[13px]"
-      style={{
-        clipPath:
-          "polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%)",
-      }}
-    >
-      {n}
-    </span>
-  );
-}
 
 export function VisualDesignSection() {
   return (

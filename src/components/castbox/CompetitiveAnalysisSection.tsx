@@ -1,5 +1,6 @@
 import { Section, Eyebrow, Heading, Body } from "@/components/castbox/primitives";
 import { Figure } from "@/components/castbox/Figure";
+import { ScaleToFit } from "@/components/ScaleToFit";
 import type { AssetKey } from "@/components/castbox/assets";
 
 const competitors: { logo: AssetKey; name: string }[] = [
@@ -100,31 +101,30 @@ export function CompetitiveAnalysisSection() {
         </div>
       </div>
 
-      <div className="mt-8 rounded-lg bg-white p-6 md:p-8">
-        <ul className="flex flex-wrap items-start justify-center gap-4 sm:gap-8 md:gap-12">
+      <div className="mt-8 rounded-lg bg-white p-4 sm:p-6 md:p-8">
+        {/* One row at every width: on phones the logos and labels shrink
+            rather than wrapping onto a second line. */}
+        <ul className="flex flex-nowrap items-start justify-between gap-2 sm:justify-center sm:gap-8 md:gap-12">
           {competitors.map((c) => (
-            <li key={c.name} className="flex w-[76px] flex-col items-center gap-3 sm:w-[96px]">
-              <Figure name={c.logo} className="w-[48px] sm:w-[64px]" sizes="64px" compact />
-              <span className="text-center font-dm text-[14px] leading-[1.8] text-[#475467]">
+            <li key={c.name} className="flex flex-col items-center gap-2 sm:w-[96px] sm:gap-3">
+              <Figure name={c.logo} className="w-[34px] sm:w-[64px]" sizes="64px" compact />
+              <span className="whitespace-nowrap text-center font-dm text-[10px] leading-[1.8] text-[#475467] sm:text-[14px]">
                 {c.name}
               </span>
             </li>
           ))}
         </ul>
 
-        {/* Five tall phone shots: a scroll-snapping row on small screens keeps
-            each one readable instead of shrinking all five into a grid. */}
-        <div className="mt-8 rounded-2xl bg-[#F2F4F7] p-4 md:p-6">
-          <ul className="-mx-1 flex snap-x snap-mandatory gap-4 overflow-x-auto px-1 pb-2 lg:mx-0 lg:grid lg:grid-cols-5 lg:overflow-visible lg:px-0 lg:pb-0">
+        {/* Five tall phone shots, kept in one row and scaled down as a whole
+            on smaller screens. */}
+        <ScaleToFit width={1136} className="mt-8">
+          <ul className="grid grid-cols-5 gap-4 rounded-2xl bg-[#F2F4F7] p-6">
             {shots.map((s) => (
-              <li
-                key={s.caption}
-                className="flex w-[160px] shrink-0 snap-start flex-col gap-3 sm:w-[190px] lg:w-auto"
-              >
+              <li key={s.caption} className="flex flex-col gap-3">
                 <Figure
                   name={s.art}
                   className="rounded-xl"
-                  sizes="(min-width: 1024px) 196px, 190px"
+                  sizes="(min-width: 1024px) 196px, 20vw"
                 />
                 <p className="text-center font-dm text-[13px] leading-[1.6] text-[#667085]">
                   {s.caption}
@@ -132,7 +132,7 @@ export function CompetitiveAnalysisSection() {
               </li>
             ))}
           </ul>
-        </div>
+        </ScaleToFit>
 
         <p className="mt-10 font-dm text-[15px] font-bold leading-[1.8] text-[#1A2432] md:text-[16px]">
           What did we find?
