@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SketchFrame } from "@/components/SketchFrame";
 import { Section, Eyebrow, Heading, Body } from "@/components/castbox/primitives";
 
 type Card = { text: string; validated?: boolean };
@@ -44,26 +45,18 @@ const columns: { title: string; cards: Card[] }[] = [
   },
 ];
 
-/**
- * The column headers in Figma are hand-drawn sketch boxes — a filled rounded
- * rect with a doubled, slightly-off outline. Two offset rings reproduce that
- * without shipping an image per header.
- */
+/** The column headers in Figma are hand-drawn sketch boxes. */
 function SketchBox({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative flex h-[96px] items-center justify-center px-6 text-center">
-      <span
-        aria-hidden
-        className="absolute inset-0 rounded-2xl border border-[#C2C9D6] bg-[#EAECF0]"
-      />
-      <span
-        aria-hidden
-        className="absolute -inset-[3px] rotate-[0.35deg] rounded-2xl border border-[#C2C9D6]/70"
-      />
-      <p className="relative font-dm text-[15px] font-bold leading-[1.8] text-[#1A2432] md:text-[16px]">
+    <SketchFrame
+      color="#C2C9D6"
+      fill="#EAECF0"
+      className="flex h-[96px] items-center justify-center px-6 text-center"
+    >
+      <p className="font-dm text-[15px] font-bold leading-[1.8] text-[#1A2432] md:text-[16px]">
         {children}
       </p>
-    </div>
+    </SketchFrame>
   );
 }
 

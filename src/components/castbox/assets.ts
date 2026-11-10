@@ -25,42 +25,48 @@ export type Asset = {
   ready: boolean;
 };
 
-function a(file: string, w: number, h: number, alt: string): Asset {
-  return { file, w, h, alt, ready: false };
+function a(
+  file: string,
+  w: number,
+  h: number,
+  alt: string,
+  ready = false
+): Asset {
+  return { file, w, h, alt, ready };
 }
 
 export const assets = {
   // Section 8 — Interviews
-  meetInterview1: a("meet-interview-1.webp", 736, 344, "Google Meet interview session with three participants"),
-  meetInterview2: a("meet-interview-2.webp", 736, 344, "Google Meet interview session with three participants"),
-  meetInterview3: a("meet-interview-3.webp", 736, 344, "Google Meet interview session with three participants"),
-  quoteAvatar1: a("quote-avatar-1.webp", 152, 208, ""),
-  quoteAvatar2: a("quote-avatar-2.webp", 152, 208, ""),
-  quoteAvatar3: a("quote-avatar-3.webp", 152, 208, ""),
-  quoteAvatar4: a("quote-avatar-4.webp", 152, 208, ""),
-  quoteAvatar5: a("quote-avatar-5.webp", 152, 208, ""),
-  quoteAvatar6: a("quote-avatar-6.webp", 152, 208, ""),
+  meetInterview1: a("meet-interview-1.webp", 740, 360, "Google Meet interview session with three participants", true),
+  meetInterview2: a("meet-interview-2.webp", 740, 360, "Google Meet interview session with three participants", true),
+  meetInterview3: a("meet-interview-3.webp", 740, 360, "Google Meet interview session with three participants", true),
+  quoteAvatar1: a("quote-avatar-1.webp", 148, 181, "", true),
+  quoteAvatar2: a("quote-avatar-2.webp", 148, 191, "", true),
+  quoteAvatar3: a("quote-avatar-3.webp", 133, 185, "", true),
+  quoteAvatar4: a("quote-avatar-4.webp", 136, 180, "", true),
+  quoteAvatar5: a("quote-avatar-5.webp", 136, 200, "", true),
+  quoteAvatar6: a("quote-avatar-6.webp", 139, 184, "", true),
 
   // Section 9 — Persona profiles
-  personaMultitasker: a("persona-multitasker.webp", 280, 400, "Line illustration of a person on a treadmill listening to a podcast"),
-  personaSociable: a("persona-sociable.webp", 280, 400, "Line illustration of two people walking and talking"),
-  personaTechEnthusiast: a("persona-tech-enthusiast.webp", 280, 400, "Line illustration of a person wearing a VR headset"),
+  personaMultitasker: a("persona-multitasker.webp", 142, 385, "Line illustration of a person on a treadmill listening to a podcast", true),
+  personaSociable: a("persona-sociable.webp", 224, 365, "Line illustration of two people walking and talking", true),
+  personaTechEnthusiast: a("persona-tech-enthusiast.webp", 203, 365, "Line illustration of a person wearing a VR headset", true),
 
   // Section 10 — Competitive analysis
-  logoSoundcloud: a("logo-soundcloud.webp", 128, 128, "SoundCloud"),
-  logoSpotify: a("logo-spotify.webp", 128, 128, "Spotify"),
-  logoApplePodcast: a("logo-apple-podcast.webp", 128, 128, "Apple Podcast"),
-  logoYoutube: a("logo-youtube.webp", 128, 128, "YouTube"),
-  logoTelegram: a("logo-telegram.webp", 128, 128, "Telegram"),
-  iconMarketGap: a("icon-market-gap.webp", 48, 48, "Market gap"),
-  competitorShot1: a("competitor-1-soundcloud.webp", 392, 780, "SoundCloud player with quick comment interactions"),
-  competitorShot2: a("competitor-2-spotify.webp", 392, 780, "Spotify comments list with structured community replies"),
-  competitorShot3: a("competitor-3-apple.webp", 392, 780, "Apple Podcast in-app conversation thread"),
-  competitorShot4: a("competitor-4-youtube.webp", 392, 780, "YouTube chaptered episode with categorised comments"),
-  competitorShot5: a("competitor-5-telegram.webp", 392, 780, "Timestamped commenting on a video"),
+  logoSoundcloud: a("logo-soundcloud.webp", 128, 128, "SoundCloud", true),
+  logoSpotify: a("logo-spotify.webp", 128, 128, "Spotify", true),
+  logoApplePodcast: a("logo-apple-podcast.webp", 128, 128, "Apple Podcast", true),
+  logoYoutube: a("logo-youtube.webp", 128, 128, "YouTube", true),
+  logoTelegram: a("logo-telegram.webp", 128, 128, "Telegram", true),
+  iconMarketGap: a("icon-market-gap.webp", 48, 48, "Market gap", true),
+  competitorShot1: a("competitor-1-soundcloud.webp", 387, 783, "SoundCloud player with quick comment interactions", true),
+  competitorShot2: a("competitor-2-spotify.webp", 387, 783, "Spotify comments list with structured community replies", true),
+  competitorShot3: a("competitor-3-apple.webp", 388, 783, "Apple Podcast in-app conversation thread", true),
+  competitorShot4: a("competitor-4-youtube.webp", 387, 783, "YouTube chaptered episode with categorised comments", true),
+  competitorShot5: a("competitor-5-telegram.webp", 387, 783, "Timestamped commenting on a video", true),
 
   // Section 11 — Ideation
-  prioritizationMatrix: a("prioritization-matrix.webp", 2272, 1200, "Idea prioritisation matrix plotting 24 ideas by impact against effort, colour-coded per persona"),
+  prioritizationMatrix: a("prioritization-matrix.webp", 2272, 1204, "Idea prioritisation matrix plotting 24 ideas by impact against effort, colour-coded per persona", true),
 
   // Section 12 — Crazy 8s
   crazy8s1: a("crazy8s-1.webp", 710, 1000, "Hand-drawn Crazy 8s sketches of the player and comment screens"),
